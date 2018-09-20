@@ -2,7 +2,6 @@ import tensorflow as tf
 
 
 def conv_network(x_state, n_outputs, name):
-
     conv_n_maps = [32, 64, 64]
     conv_kernel_sizes = [(8, 8), (4, 4), (3, 3)]
     conv_strides = [4, 2, 1]
@@ -33,4 +32,36 @@ def conv_network(x_state, n_outputs, name):
                                        scope=scope.name)
     trainable_vars_by_name = {var.name[len(scope.name):]: var
                               for var in trainable_vars}
+    return outputs, trainable_vars_by_name
+
+
+def q_network(X_state, n_outputs, name):
+    # First let's build the two DQNs (online & target)
+    n_hidden = 512
+    hidden_activation = tf.nn.relu
+
+    initializer = tf.contrib.layers.variance_scaling_initializer()
+
+    with tf.variable_scope(name) as scope:
+        hidden1 = tf.layers.dense(X_state, n_hidden,
+                                  activation=hidden_activation,
+                                  kernel_initializer=initializer)
+        # hidden2 = tf.layers.dense(hidden1, n_hidden,
+        #                           kernel_initializer=initializer)
+        # hidden3 = tf.layers.dense(hidden2, n_outputs,
+        #                           kernel_initializer=initializer)
+
+    outputs = tf.layers.dense(hidden1, n_outputs,
+                              kernel_initializer=initializer)
+
+    trainable_vars = tf.get_collection(tf.GraphKeys.TRAINABLE_VARIABLES, scope=scope.name)
+
+    trainable_vars_by_name = {var.name[len(scope.name):]: var for var in trainable_vars}
+
+    print("Network:")
+    print("Input shape:", X_state.shape)
+    print("Output shape: ", outputs.shape)
+    for var in trainable_vars_by_name:
+        print("Trainable var:", var)
+
     return outputs, trainable_vars_by_name

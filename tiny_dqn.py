@@ -1,28 +1,4 @@
 from __future__ import division, print_function, unicode_literals
-
-# Handle arguments (before slow imports so --help can be fast)
-import argparse
-
-parser = argparse.ArgumentParser(
-    description="Train a DQN net to play MsMacman.")
-parser.add_argument("-n", "--number-steps", type=int, default=4000000,
-                    help="total number of training steps")
-parser.add_argument("-l", "--learn-iterations", type=int, default=4,
-                    help="number of game iterations between each training step")
-parser.add_argument("-s", "--save-steps", type=int, default=1000,
-                    help="number of training steps between saving checkpoints")
-parser.add_argument("-c", "--copy-steps", type=int, default=10000,
-                    help="number of training steps between copies of online DQN to target DQN")
-parser.add_argument("-r", "--render", action="store_true", default=False,
-                    help="render the game during training or testing")
-parser.add_argument("-p", "--path", default="model/my_dqn.ckpt",
-                    help="path of the checkpoint file")
-parser.add_argument("-t", "--test", action="store_true", default=False,
-                    help="test (no learning and minimal epsilon)")
-parser.add_argument("-v", "--verbosity", action="count", default=0,
-                    help="increase output verbosity")
-args = parser.parse_args()
-
 from collections import deque
 import gym
 import numpy as np
@@ -30,6 +6,29 @@ import os
 import tensorflow as tf
 from networks.qnetworks import conv_network
 from summaries.summaries import variable_summaries
+from collections import namedtuple
+
+args_struct = namedtuple(
+    'args',
+    'number_steps learn_iterations, save_steps copy_steps '
+    'render path test verbosity training_start batch_size ')
+args = args_struct(
+    number_steps=10000,
+    learn_iterations=4,
+    training_start=1000,
+    save_steps=1000,
+    copy_steps=1000,
+    # render=False,
+    render=True,
+    path='my_dqn.ckpt',
+    test=False,
+    # test=True,
+    verbosity=1,
+    batch_size=90
+)
+
+print("Args:")
+print(args)
 
 env = gym.make("MsPacman-v0")
 done = True  # env needs to be reset

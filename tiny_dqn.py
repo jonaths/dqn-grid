@@ -19,11 +19,11 @@ args = args_struct(
     training_start=1000,
     save_steps=1000,
     copy_steps=1000,
-    render=False,
-    # render=True,
+    # render=False,
+    render=True,
     path='model/my_dqn.ckpt',
-    test=False,
-    # test=True,
+    # test=False,
+    test=True,
     verbosity=1,
     batch_size=90
 )
@@ -64,7 +64,7 @@ copy_ops = [target_var.assign(online_vars[var_name])
 copy_online_to_target = tf.group(*copy_ops)
 
 # Now for the training operations
-learning_rate = 0.05
+learning_rate = 0.01
 momentum = 0.95
 
 with tf.variable_scope("train"):

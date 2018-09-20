@@ -1,11 +1,12 @@
 from __future__ import division, print_function, unicode_literals
 from collections import deque
 import gym
+import gym_windy
 import numpy as np
 import os
 import tensorflow as tf
-from networks.qnetworks import conv_network
-from summaries.summaries import variable_summaries
+from networks.qnetworks import conv_network, ff_network
+from summaries.summaries import variable_summaries, simple_summaries
 from collections import namedtuple
 
 args_struct = namedtuple(
@@ -13,14 +14,14 @@ args_struct = namedtuple(
     'number_steps learn_iterations, save_steps copy_steps '
     'render path test verbosity training_start batch_size ')
 args = args_struct(
-    number_steps=10000,
+    number_steps=50000,
     learn_iterations=4,
     training_start=1000,
     save_steps=1000,
     copy_steps=1000,
-    # render=False,
-    render=True,
-    path='my_dqn.ckpt',
+    render=False,
+    # render=True,
+    path='model/my_dqn.ckpt',
     test=False,
     # test=True,
     verbosity=1,
@@ -30,18 +31,32 @@ args = args_struct(
 print("Args:")
 print(args)
 
-env = gym.make("MsPacman-v0")
+# atari -----------------------
+# env = gym.make("MsPacman-v0")
+# -----------------------------
+
+env = gym.make("wall-v0")
+env.set_state_type('onehot')
+
 done = True  # env needs to be reset
 
-# First let's build the two DQNs (online & target)
-input_height = 88
-input_width = 80
+# atari ----------------------
+# input_height = 88
+# input_width = 80
+# input_channels = 1
+# ----------------------------
+
+input_height = env.rows
+input_width = env.cols
 input_channels = 1
+
 n_outputs = env.action_space.n  # 9 discrete actions are available
 
-X_state = tf.placeholder(tf.float32, shape=[None, input_height, input_width, input_channels])
-online_q_values, online_vars = conv_network(X_state, n_outputs=n_outputs, name="q_networks/online")
-target_q_values, target_vars = conv_network(X_state, n_outputs=n_outputs, name="q_networks/target")
+# X_state = tf.placeholder(tf.float32, shape=[None, input_height, input_width, input_channels])
+X_state = tf.placeholder(tf.float32, shape=[None, input_height * input_width])
+
+online_q_values, online_vars = ff_network(X_state, n_outputs=n_outputs, name="q_networks/online")
+target_q_values, target_vars = ff_network(X_state, n_outputs=n_outputs, name="q_networks/target")
 
 # We need an operation to copy the online DQN to the target DQN
 copy_ops = [target_var.assign(online_vars[var_name])
@@ -49,7 +64,7 @@ copy_ops = [target_var.assign(online_vars[var_name])
 copy_online_to_target = tf.group(*copy_ops)
 
 # Now for the training operations
-learning_rate = 0.001
+learning_rate = 0.05
 momentum = 0.95
 
 with tf.variable_scope("train"):
@@ -69,8 +84,10 @@ with tf.variable_scope("train"):
 
 # agrupa los summaries en el grafo para que no aparezcan por todos lados
 with tf.name_scope('summaries'):
-    variable_summaries(linear_error, 'linear_error')
-    variable_summaries(loss, 'loss')
+    simple_summaries(linear_error, 'linear_error')
+    simple_summaries(loss, 'loss')
+    simple_summaries(online_q_values, 'online_q_values')
+
 
 # evita agregar al grafo los summaries uno por uno
 merged = tf.summary.merge_all()
@@ -114,17 +131,19 @@ mspacman_color = np.array([210, 164, 74]).mean()
 
 
 def preprocess_observation(obs):
-    img = obs[1:176:2, ::2]  # crop and downsize
-    img = img.mean(axis=2)  # to greyscale
-    img[img == mspacman_color] = 0  # Improve contrast
-    img = (img - 128) / 128 - 1  # normalize from -1. to 1.
-    return img.reshape(88, 80, 1)
+    # img = obs[1:176:2, ::2]  # crop and downsize
+    # img = img.mean(axis=2)  # to greyscale
+    # img[img == mspacman_color] = 0  # Improve contrast
+    # img = (img - 128) / 128 - 1  # normalize from -1. to 1.
+    # return img.reshape(88, 80, 1)
+    return obs
 
 
 # TensorFlow - Execution phase
-training_start = 10000  # start training after 10,000 game iterations
+training_start = args.training_start
 discount_rate = 0.99
-skip_start = 90  # Skip the start of every game (it's just waiting time).
+skip_start = 0  # Skip the start of every game (it's just waiting time).
+# skip_start = 90  # Skip the start of every game (it's just waiting time).
 batch_size = 50
 iteration = 0  # game iterations
 done = True  # env needs to be reset

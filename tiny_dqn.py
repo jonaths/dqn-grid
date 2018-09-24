@@ -14,16 +14,16 @@ args_struct = namedtuple(
     'number_steps learn_iterations, save_steps copy_steps '
     'render path test verbosity training_start batch_size ')
 args = args_struct(
-    number_steps=50000,
+    number_steps=20000,
     learn_iterations=4,
     training_start=1000,
     save_steps=1000,
-    copy_steps=1000,
-    # render=False,
-    render=True,
+    copy_steps=500,
+    render=False,
+    # render=True,
     path='model/my_dqn.ckpt',
-    # test=False,
-    test=True,
+    test=False,
+    # test=True,
     verbosity=1,
     batch_size=90
 )
@@ -35,7 +35,7 @@ print(args)
 # env = gym.make("MsPacman-v0")
 # -----------------------------
 
-env = gym.make("wall-v0")
+env = gym.make("border-v0")
 env.set_state_type('onehot')
 
 done = True  # env needs to be reset

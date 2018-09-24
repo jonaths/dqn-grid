@@ -5,7 +5,7 @@ import tensorflow as tf
 from summaries.summaries import variable_summaries, simple_summaries
 
 
-class DQNAgent:
+class DQNAgent(object):
     def __init__(self, num_actions, eps_min, eps_max, eps_decay_steps):
         # replay memory
         self.replay_memory_size = 20000

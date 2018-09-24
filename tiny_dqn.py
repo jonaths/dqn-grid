@@ -8,7 +8,7 @@ import tensorflow as tf
 from networks.qnetworks import conv_network, ff_network
 from summaries.summaries import variable_summaries, simple_summaries
 from collections import namedtuple
-from agents.dqn import DQNAgent
+from agents.dqn_lipton import DQNLiptonAgent
 
 args_struct = namedtuple(
     'args',
@@ -64,7 +64,7 @@ eps_decay_steps = args.number_steps // 2
 # We need to preprocess the images to speed up training
 mspacman_color = np.array([210, 164, 74]).mean()
 
-agent = DQNAgent(n_outputs, eps_min, eps_max, eps_decay_steps)
+agent = DQNLiptonAgent(n_outputs, eps_min, eps_max, eps_decay_steps)
 agent.create_networks(X_state)
 
 # TensorFlow - Execution phase

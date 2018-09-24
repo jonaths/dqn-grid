@@ -2,10 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6efc7fa8-cf53-47f1-918a-b13a355d856e" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/agents/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/agents/dqn.py" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/output/events.out.tfevents.1537809953.jonathan-5555" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/agents/dqn_lipton.py" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/output/events.out.tfevents.1537817947.jonathan-5555" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/output/events.out.tfevents.1537819060.jonathan-5555" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/output/events.out.tfevents.1537819103.jonathan-5555" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/output/events.out.tfevents.1537819850.jonathan-5555" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/output/events.out.tfevents.1537820152.jonathan-5555" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/output/events.out.tfevents.1537820328.jonathan-5555" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/output/events.out.tfevents.1537820638.jonathan-5555" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/output/events.out.tfevents.1537820677.jonathan-5555" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/output/events.out.tfevents.1537821335.jonathan-5555" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/agents/dqn.py" afterPath="$PROJECT_DIR$/agents/dqn.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tiny_dqn.py" afterPath="$PROJECT_DIR$/tiny_dqn.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -22,8 +31,8 @@
           <file leaf-file-name="tiny_dqn.py" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/tiny_dqn.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-286">
-                  <caret line="73" column="0" lean-forward="false" selection-start-line="73" selection-start-column="0" selection-end-line="73" selection-end-column="0" />
+                <state relative-caret-position="794">
+                  <caret line="145" column="35" lean-forward="false" selection-start-line="145" selection-start-column="35" selection-end-line="145" selection-end-column="35" />
                   <folding>
                     <element signature="e#0#65#0" expanded="true" />
                   </folding>
@@ -55,14 +64,24 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="dqn.py" pinned="false" current-in-tab="true">
+          <file leaf-file-name="dqn.py" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/agents/dqn.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-120">
-                  <caret line="46" column="37" lean-forward="false" selection-start-line="46" selection-start-column="37" selection-end-line="46" selection-end-column="37" />
+                <state relative-caret-position="180">
+                  <caret line="12" column="33" lean-forward="false" selection-start-line="12" selection-start-column="33" selection-end-line="12" selection-end-column="33" />
                   <folding>
                     <element signature="e#0#18#0" expanded="true" />
                   </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="dqn_lipton.py" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/agents/dqn_lipton.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="30">
+                  <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+                  <folding />
                 </state>
               </provider>
             </entry>
@@ -102,8 +121,10 @@
         <option value="$PROJECT_DIR$/networks/qnetworks.py" />
         <option value="$PROJECT_DIR$/summaries/summaries.py" />
         <option value="$PROJECT_DIR$/test.py" />
+        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/tiny_dqn.py" />
         <option value="$PROJECT_DIR$/agents/dqn.py" />
+        <option value="$PROJECT_DIR$/agents/dqn_lipton.py" />
       </list>
     </option>
   </component>
@@ -170,12 +191,13 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/summaries" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/agents" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/networks" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/summaries" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -395,16 +417,6 @@
     <entry file="file://$PROJECT_DIR$/networks/conv_q_network.py" />
     <entry file="file://$PROJECT_DIR$/update.py" />
     <entry file="file://$PROJECT_DIR$/networks/ff_q_network.py" />
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="119">
-            <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/model/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -435,22 +447,41 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tiny_dqn.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-286">
-          <caret line="73" column="0" lean-forward="false" selection-start-line="73" selection-start-column="0" selection-end-line="73" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#65#0" expanded="true" />
-          </folding>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="0">
+            <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <folding />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/agents/dqn.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-120">
-          <caret line="46" column="37" lean-forward="false" selection-start-line="46" selection-start-column="37" selection-end-line="46" selection-end-column="37" />
+        <state relative-caret-position="180">
+          <caret line="12" column="33" lean-forward="false" selection-start-line="12" selection-start-column="33" selection-end-line="12" selection-end-column="33" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/agents/dqn_lipton.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tiny_dqn.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="794">
+          <caret line="145" column="35" lean-forward="false" selection-start-line="145" selection-start-column="35" selection-end-line="145" selection-end-column="35" />
+          <folding>
+            <element signature="e#0#65#0" expanded="true" />
           </folding>
         </state>
       </provider>

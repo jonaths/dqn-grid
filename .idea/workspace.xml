@@ -2,6 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6efc7fa8-cf53-47f1-918a-b13a355d856e" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/agents/__init__.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/agents/dqn.py" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/output/events.out.tfevents.1537809953.jonathan-5555" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tiny_dqn.py" afterPath="$PROJECT_DIR$/tiny_dqn.py" />
     </list>
@@ -19,8 +22,8 @@
           <file leaf-file-name="tiny_dqn.py" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/tiny_dqn.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="135">
-                  <caret line="16" column="18" lean-forward="false" selection-start-line="16" selection-start-column="18" selection-end-line="16" selection-end-column="18" />
+                <state relative-caret-position="-286">
+                  <caret line="73" column="0" lean-forward="false" selection-start-line="73" selection-start-column="0" selection-end-line="73" selection-end-column="0" />
                   <folding>
                     <element signature="e#0#65#0" expanded="true" />
                   </folding>
@@ -32,11 +35,11 @@
       </split-first>
       <split-second>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="qnetworks.py" pinned="false" current-in-tab="true">
+          <file leaf-file-name="qnetworks.py" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/networks/qnetworks.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="644">
-                  <caret line="48" column="54" lean-forward="false" selection-start-line="48" selection-start-column="8" selection-end-line="48" selection-end-column="54" />
+                <state relative-caret-position="150">
+                  <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
                   <folding />
                 </state>
               </provider>
@@ -48,6 +51,18 @@
                 <state relative-caret-position="285">
                   <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
                   <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="dqn.py" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/agents/dqn.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="-120">
+                  <caret line="46" column="37" lean-forward="false" selection-start-line="46" selection-start-column="37" selection-end-line="46" selection-end-column="37" />
+                  <folding>
+                    <element signature="e#0#18#0" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -88,6 +103,7 @@
         <option value="$PROJECT_DIR$/summaries/summaries.py" />
         <option value="$PROJECT_DIR$/test.py" />
         <option value="$PROJECT_DIR$/tiny_dqn.py" />
+        <option value="$PROJECT_DIR$/agents/dqn.py" />
       </list>
     </option>
   </component>
@@ -98,10 +114,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1741" />
-    <option name="y" value="314" />
-    <option name="width" value="1024" />
-    <option name="height" value="555" />
+    <option name="x" value="1366" />
+    <option name="y" value="-2" />
+    <option name="width" value="1920" />
+    <option name="height" value="1202" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -126,6 +142,11 @@
             <path>
               <item name="tiny-dqn" type="b2602c69:ProjectViewProjectNode" />
               <item name="tiny-dqn" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tiny-dqn" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tiny-dqn" type="462c0819:PsiDirectoryNode" />
+              <item name="agents" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="tiny-dqn" type="b2602c69:ProjectViewProjectNode" />
@@ -193,7 +214,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32959852" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -212,6 +233,32 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
@@ -372,14 +419,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/networks/qnetworks.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="644">
-          <caret line="48" column="54" lean-forward="false" selection-start-line="48" selection-start-column="8" selection-end-line="48" selection-end-column="54" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/summaries/summaries.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
@@ -388,12 +427,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/networks/qnetworks.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/tiny_dqn.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="16" column="18" lean-forward="false" selection-start-line="16" selection-start-column="18" selection-end-line="16" selection-end-column="18" />
+        <state relative-caret-position="-286">
+          <caret line="73" column="0" lean-forward="false" selection-start-line="73" selection-start-column="0" selection-end-line="73" selection-end-column="0" />
           <folding>
             <element signature="e#0#65#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/agents/dqn.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-120">
+          <caret line="46" column="37" lean-forward="false" selection-start-line="46" selection-start-column="37" selection-end-line="46" selection-end-column="37" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
           </folding>
         </state>
       </provider>

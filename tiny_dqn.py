@@ -64,8 +64,9 @@ eps_decay_steps = args.number_steps // 2
 # We need to preprocess the images to speed up training
 mspacman_color = np.array([210, 164, 74]).mean()
 
-agent = DQNLiptonAgent(n_outputs, eps_min, eps_max, eps_decay_steps)
-agent.create_networks(X_state)
+agent = DQNLiptonAgent(X_state, n_outputs, eps_min, eps_max, eps_decay_steps)
+agent.create_q_networks()
+agent.create_fear_networks()
 
 # TensorFlow - Execution phase
 training_start = args.training_start
@@ -99,7 +100,8 @@ with tf.Session() as sess:
                   "Loss {:5f}    Mean Max-Q {:5f}   ".format(
                 iteration, step, args.number_steps, step * 100 / args.number_steps,
                 loss_val, mean_max_q), end="")
-        if done:  # game over, start again
+        if done:
+            # game over, start again
             obs = env.reset()
             for skip in range(skip_start):  # skip the start of each game
                 obs, reward, done, info = env.step(0)
@@ -132,8 +134,12 @@ with tf.Session() as sess:
             game_length = 0
 
         if iteration < training_start or iteration % args.learn_iterations != 0:
-            continue  # only train after warmup period and at regular intervals
+            # only train after warmup period and at regular intervals
+            continue
 
+        # Genera una tupla con batch_size muestras de cada parametro del MDP
+        # mas una etiqueta que 1 o 0 que indica si la muestra es de la lista
+        # danger o safe
         X_state_val, \
         X_action_val, \
         rewards, \

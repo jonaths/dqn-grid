@@ -6,7 +6,8 @@ from summaries.summaries import variable_summaries, simple_summaries
 
 
 class DQNAgent(object):
-    def __init__(self, num_actions, eps_min, eps_max, eps_decay_steps):
+    def __init__(self, X_state, num_actions, eps_min, eps_max, eps_decay_steps):
+        self.X_state = X_state
         # replay memory
         self.replay_memory_size = 20000
         self.replay_memory = deque([], maxlen=self.replay_memory_size)
@@ -18,7 +19,6 @@ class DQNAgent(object):
         # training
         self.batch_size = 50
         self.discount_rate = 0.99
-        self.X_state = None
         self.online_q_values = None
         self.online_vars = None
         self.target_q_values = None
@@ -44,26 +44,25 @@ class DQNAgent(object):
 
         pass
 
-    def create_networks(self, x_state):
+    def create_q_networks(self):
 
-        self.X_state = x_state
-
-        self.online_q_values, self.online_vars = ff_network(x_state, n_outputs=self.num_actions,
-                                                            name="q_networks/online")
-        self.target_q_values, self.target_vars = ff_network(x_state, n_outputs=self.num_actions,
-                                                            name="q_networks/target")
+        self.online_q_values, self.online_vars = \
+            ff_network(self.X_state, n_outputs=self.num_actions, name="q_networks/online")
+        self.target_q_values, self.target_vars = \
+            ff_network(self.X_state, n_outputs=self.num_actions, name="q_networks/target")
 
         # We need an operation to copy the online DQN to the target DQN
         self.copy_ops = [target_var.assign(self.online_vars[var_name])
-                    for var_name, target_var in self.target_vars.items()]
+                         for var_name, target_var in self.target_vars.items()]
         self.copy_online_to_target = tf.group(*self.copy_ops)
 
         # Now for the training operations
         with tf.variable_scope("train"):
             self.X_action = tf.placeholder(tf.int32, shape=[None])
             self.y = tf.placeholder(tf.float32, shape=[None, 1])
-            self.q_value = tf.reduce_sum(self.online_q_values * tf.one_hot(self.X_action, self.num_actions),
-                                    axis=1, keep_dims=True)
+            self.q_value = tf.reduce_sum(
+                self.online_q_values * tf.one_hot(self.X_action, self.num_actions),
+                axis=1, keep_dims=True)
             self.error = tf.abs(self.y - self.q_value)
             self.clipped_error = tf.clip_by_value(self.error, 0.0, 1.0)
             self.linear_error = 2 * (self.error - self.clipped_error)

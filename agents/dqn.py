@@ -85,8 +85,8 @@ class DQNAgent(object):
         self.init = tf.global_variables_initializer()
         self.saver = tf.train.Saver()
 
-    def sample_memories(self, batch_size):
-        indices = np.random.permutation(len(self.replay_memory))[:batch_size]
+    def sample_memories(self):
+        indices = np.random.permutation(len(self.replay_memory))[:self.batch_size]
         cols = [[], [], [], [], []]  # state, action, reward, next_state, continue
         for idx in indices:
             memory = self.replay_memory[idx]
@@ -111,10 +111,3 @@ class DQNAgent(object):
         # img = (img - 128) / 128 - 1  # normalize from -1. to 1.
         # return img.reshape(88, 80, 1)
         return obs
-
-    def sample(self):
-        self.X_state_val, self.X_action_val, self.rewards, self.X_next_state_val, self.continues = (
-            self.sample_memories(self.batch_size))
-        self.next_q_values = self.target_q_values.eval(feed_dict={self.X_state: self.X_next_state_val})
-        self.max_next_q_values = np.max(self.next_q_values, axis=1, keepdims=True)
-        self.y_val = self.rewards + self.continues * self.discount_rate * self.max_next_q_values

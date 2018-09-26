@@ -94,11 +94,11 @@ with tf.Session() as sess:
         if step >= args.number_steps:
             break
         iteration += 1
-        if args.verbosity > 0:
-            print("\rIteration {}   Training step {}/{} ({:.1f})%   "
-                  "Loss {:5f}    Mean Max-Q {:5f}   ".format(
-                iteration, step, args.number_steps, step * 100 / args.number_steps,
-                loss_val, mean_max_q), end="")
+        # if args.verbosity > 0:
+            # print("\rIteration {}   Training step {}/{} ({:.1f})%   "
+            #       "Loss {:5f}    Mean Max-Q {:5f}   ".format(
+            #     iteration, step, args.number_steps, step * 100 / args.number_steps,
+            #     loss_val, mean_max_q), end="")
         if done:  # game over, start again
             obs = env.reset()
             for skip in range(skip_start):  # skip the start of each game
@@ -117,7 +117,7 @@ with tf.Session() as sess:
         next_state = agent.preprocess_observation(obs)
 
         # Let's memorize what happened
-        agent.replay_memory.append((state, action, reward, next_state, 1.0 - done))
+        agent.append_to_memory(state, action, reward, next_state, done)
         state = next_state
 
         if args.test:
@@ -134,23 +134,15 @@ with tf.Session() as sess:
         if iteration < training_start or iteration % args.learn_iterations != 0:
             continue  # only train after warmup period and at regular intervals
 
-        X_state_val, \
-        X_action_val, \
-        rewards, \
-        X_next_state_val, \
-        continues = (agent.sample_memories())
-
-        next_q_values = agent.target_q_values.eval(feed_dict={X_state: X_next_state_val})
-        max_next_q_values = np.max(next_q_values, axis=1, keepdims=True)
-        y_val = rewards + continues * agent.discount_rate * max_next_q_values
+        agent.sample()
 
         # Train the online DQN
         _, loss_val, summary = sess.run([agent.training_op, agent.loss, agent.merged],
-                                        feed_dict={agent.X_state: X_state_val,
-                                                   agent.X_action: X_action_val,
-                                                   agent.y: y_val})
+                                        feed_dict={agent.X_state: agent.X_state_val,
+                                                   agent.X_action: agent.X_action_val,
+                                                   agent.y: agent.y_val})
 
-        if step % 50 == 0:
+        if step % 10 == 0:
             writer.add_summary(summary, step)
 
         # Regularly copy the online DQN to the target DQN

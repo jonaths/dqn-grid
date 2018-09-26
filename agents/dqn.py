@@ -85,6 +85,14 @@ class DQNAgent(object):
         self.init = tf.global_variables_initializer()
         self.saver = tf.train.Saver()
 
+    def append_to_memory(self, state, action, reward, next_state, done):
+        # esto solo es para debug
+        # state = np.argmax(state, axis=0)
+        # next_state = np.argmax(next_state, axis=0)
+
+        current_tuple = (state, action, reward, next_state, 1.0 - done)
+        self.replay_memory.append(current_tuple)
+
     def sample_memories(self):
         indices = np.random.permutation(len(self.replay_memory))[:self.batch_size]
         cols = [[], [], [], [], []]  # state, action, reward, next_state, continue

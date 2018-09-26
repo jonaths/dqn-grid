@@ -117,7 +117,7 @@ with tf.Session() as sess:
         next_state = agent.preprocess_observation(obs)
 
         # Let's memorize what happened
-        agent.replay_memory.append((state, action, reward, next_state, 1.0 - done))
+        agent.append_to_memory(state, action, reward, next_state, done)
         state = next_state
 
         if args.test:

@@ -68,3 +68,28 @@ class DQNLiptonAgent(DQNAgent):
             for i in range(self.nk + 1):
                 also_dangerous = self.safe_memory.pop()
                 self.danger_memory.append(also_dangerous)
+
+    def sample_memories(self):
+
+        # la muestra para entrenamiento
+        sample = []
+        safe_indices = np.random.permutation(len(self.safe_memory))[:self.batch_size / 2]
+        for i in safe_indices:
+            # agrega la muestra de la memoria segura y una etiqueta de 0
+            sample.append(self.safe_memory[i] + (0., ))
+        danger_indices = np.random.permutation(len(self.danger_memory))[:self.batch_size / 2]
+        for i in danger_indices:
+            # agrega la muestra de la memoria segura y una etiqueta de 1
+            sample.append(self.safe_memory[i] + (1., ))
+
+        # state, action, reward, next_state, continue, fear_prob
+        cols = [[], [], [], [], [], []]
+        for s in sample:
+            for col, value in zip(cols, s):
+                col.append(value)
+
+        cols = [np.array(col) for col in cols]
+
+        # una tupla con batch_sizes muestras de cada campo
+        return (cols[0], cols[1], cols[2].reshape(-1, 1), cols[3],
+                cols[4].reshape(-1, 1), cols[5])

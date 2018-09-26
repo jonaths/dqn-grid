@@ -138,7 +138,8 @@ with tf.Session() as sess:
         X_action_val, \
         rewards, \
         X_next_state_val, \
-        continues = (agent.sample_memories())
+        continues, \
+        fear_prob = (agent.sample_memories())
 
         next_q_values = agent.target_q_values.eval(feed_dict={X_state: X_next_state_val})
         max_next_q_values = np.max(next_q_values, axis=1, keepdims=True)

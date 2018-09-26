@@ -1,13 +1,19 @@
 from collections import deque
 import tensorflow as tf
 from agents.dqn import DQNAgent
-
+import copy
+import sys
+import numpy as np
 
 class DQNLiptonAgent(DQNAgent):
     def __init__(self, num_actions, eps_min, eps_max, eps_decay_steps):
         # replay memory
         self.replay_memory_size = 20000
         self.replay_memory = deque([], maxlen=self.replay_memory_size)
+        self.safe_memory = deque([], maxlen=self.replay_memory_size)
+        self.danger_memory = deque([], maxlen=self.replay_memory_size)
+        # el numero de pasos al estado peligroso
+        self.nk = 2;
         # learning and environment
         self.num_actions = num_actions
         self.eps_min = eps_min
@@ -41,3 +47,24 @@ class DQNLiptonAgent(DQNAgent):
         self.saver = None
 
         pass
+
+    def append_to_memory(self, state, action, reward, next_state, done):
+
+        # esto solo es para debug
+        # state = np.argmax(state, axis=0)
+        # next_state = np.argmax(next_state, axis=0)
+
+        current_tuple = (state, action, reward, next_state, 1.0 - done)
+        self.replay_memory.append(current_tuple)
+
+        # determinar si el estado es peligroso
+        # esto se puede cambiar
+        is_dangerous = reward < -1
+
+        if is_dangerous:
+
+            self.safe_memory = copy.deepcopy(self.replay_memory)
+
+            for i in range(self.nk + 1):
+                also_dangerous = self.safe_memory.pop()
+                self.danger_memory.append(also_dangerous)

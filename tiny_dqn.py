@@ -9,13 +9,14 @@ from networks.qnetworks import conv_network, ff_network
 from summaries.summaries import variable_summaries, simple_summaries
 from collections import namedtuple
 from agents.dqn_lipton import DQNLiptonAgent
+import sys
 
 args_struct = namedtuple(
     'args',
     'number_steps learn_iterations, save_steps copy_steps '
     'render path test verbosity training_start batch_size ')
 args = args_struct(
-    number_steps=20000,
+    number_steps=25000,
     learn_iterations=4,
     training_start=1000,
     save_steps=1000,
@@ -66,7 +67,12 @@ mspacman_color = np.array([210, 164, 74]).mean()
 
 agent = DQNLiptonAgent(X_state, n_outputs, eps_min, eps_max, eps_decay_steps)
 agent.create_q_networks()
-agent.create_fear_networks()
+# agent.create_fear_networks()
+agent.init = tf.global_variables_initializer()
+agent.saver = tf.train.Saver()
+
+# evita agregar al grafo los summaries uno por uno
+agent.merged = tf.summary.merge_all()
 
 # TensorFlow - Execution phase
 training_start = args.training_start
@@ -145,17 +151,36 @@ with tf.Session() as sess:
         rewards, \
         X_next_state_val, \
         continues, \
-        fear_prob = (agent.sample_memories())
+        fear_val = (agent.sample_memories())
 
         next_q_values = agent.target_q_values.eval(feed_dict={X_state: X_next_state_val})
         max_next_q_values = np.max(next_q_values, axis=1, keepdims=True)
-        y_val = rewards + continues * agent.discount_rate * max_next_q_values
+
+        # normal dqn
+        # y_val = rewards + continues * agent.discount_rate * max_next_q_values
+        # lipton dqn
+        y_val = rewards + \
+                continues * agent.discount_rate * max_next_q_values - agent.get_lambda() * 1
+
+        # print("XXX")
+        # print(y_val.shape)
+        # print(agent.y)
+        # print(fear_val.shape)
+        # print(agent.fear_val)
 
         # Train the online DQN
-        _, loss_val, summary = sess.run([agent.training_op, agent.loss, agent.merged],
-                                        feed_dict={agent.X_state: X_state_val,
-                                                   agent.X_action: X_action_val,
-                                                   agent.y: y_val})
+        _, loss_val, summary = sess.run(
+            [
+                agent.training_op, agent.loss,
+                # agent.fear_training_op, agent.fear_loss,
+                agent.merged
+            ],
+            feed_dict={
+                agent.X_state: X_state_val,
+                agent.X_action: X_action_val,
+                agent.y: y_val,
+                # agent.fear_val: fear_val
+            })
 
         if step % 50 == 0:
             writer.add_summary(summary, step)

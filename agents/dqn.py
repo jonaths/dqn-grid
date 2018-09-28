@@ -57,9 +57,9 @@ class DQNAgent(object):
         self.copy_online_to_target = tf.group(*self.copy_ops)
 
         # Now for the training operations
-        with tf.variable_scope("train"):
+        with tf.variable_scope("q_train"):
             self.X_action = tf.placeholder(tf.int32, shape=[None])
-            self.y = tf.placeholder(tf.float32, shape=[None, 1])
+            self.y = tf.placeholder(tf.float32, shape=[None, 1], name="y_val")
             self.q_value = tf.reduce_sum(
                 self.online_q_values * tf.one_hot(self.X_action, self.num_actions),
                 axis=1, keep_dims=True)
@@ -73,16 +73,14 @@ class DQNAgent(object):
             self.training_op = self.optimizer.minimize(self.loss, global_step=self.global_step)
 
         # agrupa los summaries en el grafo para que no aparezcan por todos lados
-        with tf.name_scope('summaries'):
+        with tf.name_scope('q_summaries'):
             simple_summaries(self.linear_error, 'linear_error')
             simple_summaries(self.loss, 'loss')
             simple_summaries(self.online_q_values, 'online_q_values')
 
-        # evita agregar al grafo los summaries uno por uno
-        self.merged = tf.summary.merge_all()
 
-        self.init = tf.global_variables_initializer()
-        self.saver = tf.train.Saver()
+
+
 
     def append_to_memory(self, state, action, reward, next_state, done):
         # esto solo es para debug

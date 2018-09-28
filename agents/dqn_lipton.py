@@ -1,6 +1,8 @@
 from collections import deque
 import tensorflow as tf
 from agents.dqn import DQNAgent
+from networks.qnetworks import ff_network
+from summaries.summaries import simple_summaries
 import copy
 import sys
 import numpy as np
@@ -43,6 +45,12 @@ class DQNLiptonAgent(DQNAgent):
         self.global_step = tf.Variable(0, trainable=False, name='global_step')
         self.optimizer = None
         self.training_op = None
+        # fear
+        self.fear_val = None
+        self.online_fear = None
+        self.fear_loss = None
+        self.fear_optimizer = None
+        self.fear_training_op = None
         # tensorflow saver and logger
         self.init = None
         self.merged = None
@@ -50,8 +58,28 @@ class DQNLiptonAgent(DQNAgent):
 
         pass
 
+    def get_lambda(self):
+        return 0.
+
     def create_fear_networks(self):
         pass
+        self.online_fear, _ = \
+            ff_network(self.X_state, n_outputs=1, name="fear_networks/online")
+
+        # Now for the training operations
+        with tf.variable_scope("fear_train"):
+            # self.X_state = tf.placeholder(tf.int32, shape=[None])
+            self.fear_val = tf.placeholder(tf.float32, shape=[None, 1], name="fear_val")
+            self.fear_loss = tf.reduce_mean(tf.square(self.online_fear - self.fear_val))
+
+            self.fear_optimizer = tf.train.MomentumOptimizer(
+                self.learning_rate, self.momentum, use_nesterov=True)
+            self.fear_training_op = self.optimizer.minimize(self.loss, global_step=self.global_step)
+
+        # agrupa los summaries en el grafo para que no aparezcan por todos lados
+        with tf.name_scope('fear_summaries'):
+            simple_summaries(self.fear_val, 'fear')
+            simple_summaries(self.fear_loss, 'loss')
 
     def append_to_memory(self, state, action, reward, next_state, done):
 
@@ -81,14 +109,16 @@ class DQNLiptonAgent(DQNAgent):
 
         # la muestra para entrenamiento
         sample = []
+
         safe_indices = np.random.permutation(len(self.safe_memory))[:self.batch_size / 2]
         for i in safe_indices:
             # agrega la muestra de la memoria segura y una etiqueta de 0
             sample.append(self.safe_memory[i] + (0.,))
+
         danger_indices = np.random.permutation(len(self.danger_memory))[:self.batch_size / 2]
-        for i in danger_indices:
+        for j in danger_indices:
             # agrega la muestra de la memoria segura y una etiqueta de 1
-            sample.append(self.safe_memory[i] + (1.,))
+            sample.append(self.danger_memory[j] + (1.,))
 
         # state, action, reward, next_state, continue, fear_prob
         cols = [[], [], [], [], [], []]
@@ -100,4 +130,4 @@ class DQNLiptonAgent(DQNAgent):
 
         # una tupla con batch_sizes muestras de cada campo
         return (cols[0], cols[1], cols[2].reshape(-1, 1), cols[3],
-                cols[4].reshape(-1, 1), cols[5])
+                cols[4].reshape(-1, 1), cols[5].reshape(-1, 1))

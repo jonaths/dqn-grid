@@ -159,11 +159,8 @@ with tf.Session() as sess:
         continues, \
         fear_val = (agent.sample_memories())
 
-        test = fear_val.flatten()
-        for t in test:
-            if t < 0:
-                print(test)
-                sys.exit(0)
+        # fear = agent.online_fear.eval(feed_dict={X_state: X_next_state_val})
+        # print(fear)
 
         next_q_values = agent.target_q_values.eval(feed_dict={X_state: X_next_state_val})
         max_next_q_values = np.max(next_q_values, axis=1, keepdims=True)
@@ -172,7 +169,7 @@ with tf.Session() as sess:
         # y_val = rewards + continues * agent.discount_rate * max_next_q_values
         # lipton dqn
         y_val = rewards + \
-                continues * agent.discount_rate * max_next_q_values - agent.get_lambda() * 1
+                continues * agent.discount_rate * max_next_q_values - agent.get_lambda(step) * 1
 
         # print("XXX")
         # print(y_val.shape)

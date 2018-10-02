@@ -16,7 +16,7 @@ args_struct = namedtuple(
     'number_steps learn_iterations, save_steps copy_steps '
     'render path test verbosity training_start batch_size ')
 args = args_struct(
-    number_steps=25000,
+    number_steps=40000,
     learn_iterations=4,
     training_start=1000,
     save_steps=1000,

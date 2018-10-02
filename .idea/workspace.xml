@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6efc7fa8-cf53-47f1-918a-b13a355d856e" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/output/events.out.tfevents.1538440022.jonathan-5555" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/agents/dqn_lipton.py" afterPath="$PROJECT_DIR$/agents/dqn_lipton.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/networks/qnetworks.py" afterPath="$PROJECT_DIR$/networks/qnetworks.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tiny_dqn.py" afterPath="$PROJECT_DIR$/tiny_dqn.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -22,8 +19,8 @@
           <file leaf-file-name="tiny_dqn.py" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/tiny_dqn.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="809">
-                  <caret line="162" column="0" lean-forward="true" selection-start-line="162" selection-start-column="0" selection-end-line="162" selection-end-column="0" />
+                <state relative-caret-position="15">
+                  <caret line="23" column="17" lean-forward="true" selection-start-line="23" selection-start-column="17" selection-end-line="23" selection-end-column="17" />
                   <folding>
                     <element signature="e#0#65#0" expanded="true" />
                   </folding>
@@ -70,8 +67,8 @@
           <file leaf-file-name="dqn_lipton.py" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/agents/dqn_lipton.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="195">
-                  <caret line="20" column="19" lean-forward="true" selection-start-line="20" selection-start-column="19" selection-end-line="20" selection-end-column="19" />
+                <state relative-caret-position="-120">
+                  <caret line="20" column="19" lean-forward="false" selection-start-line="20" selection-start-column="19" selection-end-line="20" selection-end-column="19" />
                   <folding>
                     <element signature="e#0#29#0" expanded="true" />
                   </folding>
@@ -141,8 +138,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1291" />
-    <option name="y" value="457" />
+    <option name="x" value="1366" />
+    <option name="y" value="-2" />
     <option name="width" value="1920" />
     <option name="height" value="1202" />
   </component>
@@ -605,8 +602,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/agents/dqn_lipton.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="20" column="19" lean-forward="true" selection-start-line="20" selection-start-column="19" selection-end-line="20" selection-end-column="19" />
+        <state relative-caret-position="-120">
+          <caret line="20" column="19" lean-forward="false" selection-start-line="20" selection-start-column="19" selection-end-line="20" selection-end-column="19" />
           <folding>
             <element signature="e#0#29#0" expanded="true" />
           </folding>
@@ -615,8 +612,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/tiny_dqn.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="809">
-          <caret line="162" column="0" lean-forward="true" selection-start-line="162" selection-start-column="0" selection-end-line="162" selection-end-column="0" />
+        <state relative-caret-position="15">
+          <caret line="23" column="17" lean-forward="true" selection-start-line="23" selection-start-column="17" selection-end-line="23" selection-end-column="17" />
           <folding>
             <element signature="e#0#65#0" expanded="true" />
           </folding>

@@ -51,8 +51,7 @@ def ff_network(X_state, n_outputs, name):
         # hidden3 = tf.layers.dense(hidden2, n_outputs,
         #                           kernel_initializer=initializer)
 
-        outputs = tf.layers.dense(hidden1, n_outputs,
-                                  kernel_initializer=initializer)
+        outputs = tf.layers.dense(hidden1, n_outputs, kernel_initializer=initializer)
 
     trainable_vars = tf.get_collection(tf.GraphKeys.TRAINABLE_VARIABLES, scope=scope.name)
 

@@ -18,7 +18,7 @@ class DQNLiptonAgent(DQNAgent):
         self.safe_memory = deque([], maxlen=self.replay_memory_size)
         self.danger_memory = deque([], maxlen=self.replay_memory_size)
         # el numero de pasos al estado peligroso
-        self.nk = 2;
+        self.nk = 2
         # learning and environment
         self.num_actions = num_actions
         self.eps_min = eps_min
@@ -70,11 +70,15 @@ class DQNLiptonAgent(DQNAgent):
         with tf.variable_scope("fear_train"):
             # self.X_state = tf.placeholder(tf.int32, shape=[None])
             self.fear_val = tf.placeholder(tf.float32, shape=[None, 1], name="fear_val")
-            self.fear_loss = tf.reduce_mean(tf.square(self.online_fear - self.fear_val))
+
+            self.fear_error = tf.abs(self.online_fear - self.fear_val)
+            self.fear_clipped_error = tf.clip_by_value(self.fear_error, 0.0, 1.0)
+            self.fear_linear_error = 2 * (self.fear_error - self.fear_clipped_error)
+            self.fear_loss = tf.reduce_mean(tf.square(self.fear_clipped_error) + self.fear_linear_error)
 
             self.fear_optimizer = tf.train.MomentumOptimizer(
                 self.learning_rate, self.momentum, use_nesterov=True)
-            self.fear_training_op = self.optimizer.minimize(self.loss, global_step=self.global_step)
+            self.fear_training_op = self.fear_optimizer.minimize(self.fear_loss, global_step=self.global_step)
 
         # agrupa los summaries en el grafo para que no aparezcan por todos lados
         with tf.name_scope('fear_summaries'):

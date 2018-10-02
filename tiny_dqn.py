@@ -30,6 +30,8 @@ args = args_struct(
     batch_size=90
 )
 
+# correr nuevamente... esta aprendiendo valores negativos para el fear_val
+
 print("Args:")
 print(args)
 
@@ -153,10 +155,11 @@ with tf.Session() as sess:
         continues, \
         fear_val = (agent.sample_memories())
 
+        # fear = agent.online_fear.eval(feed_dict={X_state: X_next_state_val})
+        # print(fear)
+
         next_q_values = agent.target_q_values.eval(feed_dict={X_state: X_next_state_val})
         max_next_q_values = np.max(next_q_values, axis=1, keepdims=True)
-
-
 
         # normal dqn
         # y_val = rewards + continues * agent.discount_rate * max_next_q_values
@@ -176,6 +179,7 @@ with tf.Session() as sess:
         # al incluirlo no aprendio
         # probar incluyendo la red sin su entrenamiento, luego el entrenamiento nuevamente
 
+        # entrenar red q
         _, loss_val = sess.run(
             [
                 agent.training_op, agent.loss
@@ -187,6 +191,7 @@ with tf.Session() as sess:
                 agent.fear_val: fear_val
             })
 
+        # entrenar red fear
         _, fear_loss_val = sess.run(
             [
                 agent.fear_training_op, agent.fear_loss,
@@ -198,6 +203,7 @@ with tf.Session() as sess:
                 agent.fear_val: fear_val
             })
 
+        # correr summaries
         summary, = sess.run(
             [
                 agent.merged

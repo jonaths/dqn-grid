@@ -67,7 +67,7 @@ mspacman_color = np.array([210, 164, 74]).mean()
 
 agent = DQNLiptonAgent(X_state, n_outputs, eps_min, eps_max, eps_decay_steps)
 agent.create_q_networks()
-# agent.create_fear_networks()
+agent.create_fear_networks()
 agent.init = tf.global_variables_initializer()
 agent.saver = tf.train.Saver()
 
@@ -156,6 +156,8 @@ with tf.Session() as sess:
         next_q_values = agent.target_q_values.eval(feed_dict={X_state: X_next_state_val})
         max_next_q_values = np.max(next_q_values, axis=1, keepdims=True)
 
+
+
         # normal dqn
         # y_val = rewards + continues * agent.discount_rate * max_next_q_values
         # lipton dqn
@@ -169,17 +171,42 @@ with tf.Session() as sess:
         # print(agent.fear_val)
 
         # Train the online DQN
-        _, loss_val, summary = sess.run(
+
+        # aqui voy... comente la creacion de la red fear y elimine su entrenamiento
+        # al incluirlo no aprendio
+        # probar incluyendo la red sin su entrenamiento, luego el entrenamiento nuevamente
+
+        _, loss_val = sess.run(
             [
-                agent.training_op, agent.loss,
-                # agent.fear_training_op, agent.fear_loss,
+                agent.training_op, agent.loss
+            ],
+            feed_dict={
+                agent.X_state: X_state_val,
+                agent.X_action: X_action_val,
+                agent.y: y_val,
+                agent.fear_val: fear_val
+            })
+
+        _, fear_loss_val = sess.run(
+            [
+                agent.fear_training_op, agent.fear_loss,
+            ],
+            feed_dict={
+                agent.X_state: X_state_val,
+                agent.X_action: X_action_val,
+                agent.y: y_val,
+                agent.fear_val: fear_val
+            })
+
+        summary, = sess.run(
+            [
                 agent.merged
             ],
             feed_dict={
                 agent.X_state: X_state_val,
                 agent.X_action: X_action_val,
                 agent.y: y_val,
-                # agent.fear_val: fear_val
+                agent.fear_val: fear_val
             })
 
         if step % 50 == 0:

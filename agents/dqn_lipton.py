@@ -76,8 +76,7 @@ class DQNLiptonAgent(DQNAgent):
             self.fear_linear_error = 2 * (self.fear_error - self.fear_clipped_error)
             self.fear_loss = tf.reduce_mean(tf.square(self.fear_clipped_error) + self.fear_linear_error)
 
-            self.fear_optimizer = tf.train.MomentumOptimizer(
-                self.learning_rate, self.momentum, use_nesterov=True)
+            self.fear_optimizer = tf.train.AdamOptimizer(learning_rate=self.learning_rate)
             self.fear_training_op = self.fear_optimizer.minimize(self.fear_loss, global_step=self.global_step)
 
         # agrupa los summaries en el grafo para que no aparezcan por todos lados

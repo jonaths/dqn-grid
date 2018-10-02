@@ -68,8 +68,7 @@ class DQNAgent(object):
             self.linear_error = 2 * (self.error - self.clipped_error)
             self.loss = tf.reduce_mean(tf.square(self.clipped_error) + self.linear_error)
 
-            self.optimizer = tf.train.MomentumOptimizer(
-                self.learning_rate, self.momentum, use_nesterov=True)
+            self.optimizer = tf.train.AdamOptimizer(learning_rate=self.learning_rate)
             self.training_op = self.optimizer.minimize(self.loss, global_step=self.global_step)
 
         # agrupa los summaries en el grafo para que no aparezcan por todos lados

@@ -16,7 +16,7 @@ args_struct = namedtuple(
     'number_steps learn_iterations, save_steps copy_steps '
     'render path test verbosity training_start batch_size ')
 args = args_struct(
-    number_steps=40000,
+    number_steps=50000,
     learn_iterations=4,
     training_start=1000,
     save_steps=1000,
@@ -122,6 +122,10 @@ with tf.Session() as sess:
         q_values = agent.online_q_values.eval(feed_dict={X_state: [state]})
         action = agent.epsilon_greedy(q_values, step)
 
+        # action = input("Action: ")
+        # fear = agent.online_fear.eval(feed_dict={X_state: [state]})
+        # print("fear", fear)
+
         # Online DQN plays
         obs, reward, done, info = env.step(action)
         next_state = agent.preprocess_observation(obs)
@@ -155,8 +159,11 @@ with tf.Session() as sess:
         continues, \
         fear_val = (agent.sample_memories())
 
-        # fear = agent.online_fear.eval(feed_dict={X_state: X_next_state_val})
-        # print(fear)
+        test = fear_val.flatten()
+        for t in test:
+            if t < 0:
+                print(test)
+                sys.exit(0)
 
         next_q_values = agent.target_q_values.eval(feed_dict={X_state: X_next_state_val})
         max_next_q_values = np.max(next_q_values, axis=1, keepdims=True)

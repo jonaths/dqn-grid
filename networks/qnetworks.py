@@ -37,7 +37,7 @@ def conv_network(x_state, n_outputs, name):
 
 def ff_network(X_state, n_outputs, name):
     # First let's build the two DQNs (online & target)
-    n_hidden = 512
+    n_hidden = 128
     hidden_activation = tf.nn.relu
 
     initializer = tf.contrib.layers.variance_scaling_initializer()

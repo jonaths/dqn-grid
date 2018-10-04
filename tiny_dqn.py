@@ -96,7 +96,7 @@ with tf.Session() as sess:
         agent.init.run()
         agent.copy_online_to_target.run()
 
-    writer = tf.summary.FileWriter("outputs/t_50000-m_adam_nk-2_lmb-100_n-2", sess.graph)
+    writer = tf.summary.FileWriter("outputs/t_50000-m_adam_nk-0_lmb-100_n-1", sess.graph)
 
     while True:
         step = agent.global_step.eval()

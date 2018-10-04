@@ -2,25 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6efc7fa8-cf53-47f1-918a-b13a355d856e" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/outputs/t_50000-m_adam_nk-1_lmb-010_n-1/events.out.tfevents.1538583071.jonathan-5555" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/outputs/t_50000-m_adam_nk-1_lmb-010_n-2/events.out.tfevents.1538586290.jonathan-5555" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/outputs/t_50000-m_adam_nk-1_lmb-010_n-3/events.out.tfevents.1538587614.jonathan-5555" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/outputs/t_50000-m_adam_nk-1_lmb-010_n-4/events.out.tfevents.1538588886.jonathan-5555" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/outputs/t_50000-m_adam_nk-1_lmb-100_n-1/events.out.tfevents.1538591009.jonathan-5555" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/outputs/t_50000-m_adam_nk-2_lmb-010_n-2/events.out.tfevents.1538518112.jonathan-5555" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/outputs/t_50000-m_adam_nk-2_lmb-010_n-3/events.out.tfevents.1538586994.jonathan-5555" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/outputs/t_50000-m_adam_nk-2_lmb-010_n-4/events.out.tfevents.1538588243.jonathan-5555" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/outputs/t_50000-m_adam_nk-2_lmb-100_n-1/events.out.tfevents.1538595279.jonathan-5555" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/output-25000-adam/events.out.tfevents.1538512768.jonathan-5555" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/output/events.out.tfevents.1538517283.jonathan-5555" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/output/events.out.tfevents.1538517324.jonathan-5555" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/model/.gitignore" afterPath="$PROJECT_DIR$/models/.gitignore" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/output-50000-adam/events.out.tfevents.1538513566.jonathan-5555" afterPath="$PROJECT_DIR$/outputs/t_50000-m_adam_nk-2_lmb-010_n-1/events.out.tfevents.1538513566.jonathan-5555" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/output-50000-adam/events.out.tfevents.1538513582.jonathan-5555" afterPath="$PROJECT_DIR$/outputs/t_50000-m_adam_nk-2_lmb-010_n-1/events.out.tfevents.1538513582.jonathan-5555" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/output-50000-adam/events.out.tfevents.1538515333.jonathan-5555" afterPath="$PROJECT_DIR$/outputs/t_50000-m_adam_nk-2_lmb-010_n-1/events.out.tfevents.1538515333.jonathan-5555" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/output-50000-adam/events.out.tfevents.1538515365.jonathan-5555" afterPath="$PROJECT_DIR$/outputs/t_50000-m_adam_nk-2_lmb-010_n-1/events.out.tfevents.1538515365.jonathan-5555" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/output/events.out.tfevents.1538517210.jonathan-5555" afterPath="$PROJECT_DIR$/outputs/t_50000-m_adam_nk-1_lmb-010_n-1/events.out.tfevents.1538583025.jonathan-5555" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/agents/dqn_lipton.py" afterPath="$PROJECT_DIR$/agents/dqn_lipton.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tiny_dqn.py" afterPath="$PROJECT_DIR$/tiny_dqn.py" />
     </list>
@@ -38,8 +19,8 @@
           <file leaf-file-name="tiny_dqn.py" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/tiny_dqn.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-690">
-                  <caret line="28" column="16" lean-forward="false" selection-start-line="28" selection-start-column="16" selection-end-line="28" selection-end-column="16" />
+                <state relative-caret-position="15">
+                  <caret line="23" column="17" lean-forward="true" selection-start-line="23" selection-start-column="17" selection-end-line="23" selection-end-column="17" />
                   <folding>
                     <element signature="e#0#65#0" expanded="true" />
                   </folding>
@@ -86,8 +67,8 @@
           <file leaf-file-name="dqn_lipton.py" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/agents/dqn_lipton.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="681">
-                  <caret line="55" column="22" lean-forward="false" selection-start-line="55" selection-start-column="22" selection-end-line="55" selection-end-column="22" />
+                <state relative-caret-position="321">
+                  <caret line="31" column="22" lean-forward="false" selection-start-line="31" selection-start-column="22" selection-end-line="31" selection-end-column="22" />
                   <folding>
                     <element signature="e#0#29#0" expanded="true" />
                   </folding>
@@ -241,17 +222,18 @@
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/models/t_50000-m_adam_nk-2_lmb-100_n-2" />
-      <recent name="$PROJECT_DIR$/models/t_50000-m_adam_nk-2_lmb-100_n-1" />
-      <recent name="$PROJECT_DIR$/models/t_50000-m_adam_nk-1_lmb-100_n-1" />
-      <recent name="$PROJECT_DIR$/summaries" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/models" />
       <recent name="$PROJECT_DIR$/agents" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/networks" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/models/t_50000-m_adam_nk-0_lmb-100_n-2" />
+      <recent name="$PROJECT_DIR$/models/t_50000-m_adam_nk-2_lmb-100_n-2" />
+      <recent name="$PROJECT_DIR$/models/t_50000-m_adam_nk-2_lmb-100_n-1" />
+      <recent name="$PROJECT_DIR$/models/t_50000-m_adam_nk-1_lmb-100_n-1" />
+      <recent name="$PROJECT_DIR$/summaries" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -284,10 +266,11 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="457" width="1920" height="1082" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16755603" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16755603" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32912722" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32959852" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -617,7 +600,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/models/checkpoint">
+    <entry file="file://$PROJECT_DIR$/models/t_50000-m_adam_nk-2_lmb-100_n-2/checkpoint">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -634,8 +617,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/agents/dqn_lipton.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="681">
-          <caret line="55" column="22" lean-forward="false" selection-start-line="55" selection-start-column="22" selection-end-line="55" selection-end-column="22" />
+        <state relative-caret-position="321">
+          <caret line="31" column="22" lean-forward="false" selection-start-line="31" selection-start-column="22" selection-end-line="31" selection-end-column="22" />
           <folding>
             <element signature="e#0#29#0" expanded="true" />
           </folding>
@@ -644,8 +627,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/tiny_dqn.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-690">
-          <caret line="28" column="16" lean-forward="false" selection-start-line="28" selection-start-column="16" selection-end-line="28" selection-end-column="16" />
+        <state relative-caret-position="15">
+          <caret line="23" column="17" lean-forward="true" selection-start-line="23" selection-start-column="17" selection-end-line="23" selection-end-column="17" />
           <folding>
             <element signature="e#0#65#0" expanded="true" />
           </folding>

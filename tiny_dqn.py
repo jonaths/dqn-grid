@@ -23,7 +23,7 @@ args = args_struct(
     copy_steps=500,
     render=False,
     # render=True,
-    path='model/my_dqn.ckpt',
+    path='models/my_dqn.ckpt',
     test=False,
     # test=True,
     verbosity=1,
@@ -96,7 +96,7 @@ with tf.Session() as sess:
         agent.init.run()
         agent.copy_online_to_target.run()
 
-    writer = tf.summary.FileWriter("output", sess.graph)
+    writer = tf.summary.FileWriter("outputs/t_50000-m_adam_nk-2_lmb-100_n-2", sess.graph)
 
     while True:
         step = agent.global_step.eval()
@@ -159,7 +159,7 @@ with tf.Session() as sess:
         continues, \
         fear_val = (agent.sample_memories())
 
-        # fear = agent.online_fear.eval(feed_dict={X_state: X_next_state_val})
+        fear = min(0, agent.online_fear.eval(feed_dict={X_state: X_next_state_val})[0])
         # print(fear)
 
         next_q_values = agent.target_q_values.eval(feed_dict={X_state: X_next_state_val})
@@ -169,7 +169,8 @@ with tf.Session() as sess:
         # y_val = rewards + continues * agent.discount_rate * max_next_q_values
         # lipton dqn
         y_val = rewards + \
-                continues * agent.discount_rate * max_next_q_values - agent.get_lambda(step) * 1
+                continues * agent.discount_rate * max_next_q_values - \
+                agent.get_lambda(step) * fear
 
         # print("XXX")
         # print(y_val.shape)

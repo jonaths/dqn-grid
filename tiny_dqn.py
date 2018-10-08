@@ -22,6 +22,8 @@ args = args_struct(
     save_steps=1000,
     copy_steps=500,
     render=False,
+
+    
     # render=True,
     path='models/my_dqn.ckpt',
     test=False,

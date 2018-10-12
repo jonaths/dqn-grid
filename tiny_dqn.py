@@ -8,26 +8,25 @@ import tensorflow as tf
 from networks.qnetworks import conv_network, ff_network
 from summaries.summaries import variable_summaries, simple_summaries
 from collections import namedtuple
-from agents.dqn_lipton import DQNLiptonAgent
+from agents.dqn_dist_lipton import DQNDistributiveLiptonAgent
 import sys
+import time
 
 args_struct = namedtuple(
     'args',
     'number_steps learn_iterations, save_steps copy_steps '
     'render path test verbosity training_start batch_size ')
 args = args_struct(
-    number_steps=50000,
+    number_steps=100000,
     learn_iterations=4,
     training_start=1000,
     save_steps=1000,
     copy_steps=500,
-    render=False,
-
-    
-    # render=True,
+    # render=False,
+    render=True,
     path='models/my_dqn.ckpt',
-    test=False,
-    # test=True,
+    # test=False,
+    test=True,
     verbosity=1,
     batch_size=90
 )
@@ -69,7 +68,7 @@ eps_decay_steps = args.number_steps // 2
 # We need to preprocess the images to speed up training
 mspacman_color = np.array([210, 164, 74]).mean()
 
-agent = DQNLiptonAgent(X_state, n_outputs, eps_min, eps_max, eps_decay_steps)
+agent = DQNDistributiveLiptonAgent(X_state, n_outputs, eps_min, eps_max, eps_decay_steps)
 agent.create_q_networks()
 agent.create_fear_networks()
 agent.init = tf.global_variables_initializer()
@@ -98,7 +97,8 @@ with tf.Session() as sess:
         agent.init.run()
         agent.copy_online_to_target.run()
 
-    writer = tf.summary.FileWriter("outputs/t_50000-m_adam_nk-0_lmb-100_n-1", sess.graph)
+    log_file = 'outputs/' + str(int(time.time()))
+    writer = tf.summary.FileWriter(log_file, sess.graph)
 
     while True:
         step = agent.global_step.eval()
@@ -124,9 +124,9 @@ with tf.Session() as sess:
         q_values = agent.online_q_values.eval(feed_dict={X_state: [state]})
         action = agent.epsilon_greedy(q_values, step)
 
-        # action = input("Action: ")
-        # fear = agent.online_fear.eval(feed_dict={X_state: [state]})
-        # print("fear", fear)
+        fear = agent.online_fear.eval(feed_dict={X_state: [state]})
+        print("fear", fear)
+        action = input("Action: ")
 
         # Online DQN plays
         obs, reward, done, info = env.step(action)
@@ -161,7 +161,7 @@ with tf.Session() as sess:
         continues, \
         fear_val = (agent.sample_memories())
 
-        fear = min(0, agent.online_fear.eval(feed_dict={X_state: X_next_state_val})[0])
+        fear = agent.online_fear.eval(feed_dict={X_state: X_next_state_val})
         # print(fear)
 
         next_q_values = agent.target_q_values.eval(feed_dict={X_state: X_next_state_val})
@@ -170,9 +170,12 @@ with tf.Session() as sess:
         # normal dqn
         # y_val = rewards + continues * agent.discount_rate * max_next_q_values
         # lipton dqn
+        # y_val = rewards + \
+        #         continues * agent.discount_rate * max_next_q_values - \
+        #         agent.get_lambda(step) * fear
+
         y_val = rewards + \
-                continues * agent.discount_rate * max_next_q_values - \
-                agent.get_lambda(step) * fear
+                continues * agent.discount_rate * max_next_q_values
 
         # print("XXX")
         # print(y_val.shape)
@@ -181,10 +184,6 @@ with tf.Session() as sess:
         # print(agent.fear_val)
 
         # Train the online DQN
-
-        # aqui voy... comente la creacion de la red fear y elimine su entrenamiento
-        # al incluirlo no aprendio
-        # probar incluyendo la red sin su entrenamiento, luego el entrenamiento nuevamente
 
         # entrenar red q
         _, loss_val = sess.run(
@@ -201,7 +200,7 @@ with tf.Session() as sess:
         # entrenar red fear
         _, fear_loss_val = sess.run(
             [
-                agent.fear_training_op, agent.fear_loss,
+                agent.fear_training_op, agent.fear_cost,
             ],
             feed_dict={
                 agent.X_state: X_state_val,

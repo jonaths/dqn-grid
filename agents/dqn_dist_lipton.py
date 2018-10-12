@@ -8,8 +8,7 @@ import sys
 import numpy as np
 
 
-class DQNLiptonAgent(DQNAgent):
-
+class DQNDistributiveLiptonAgent(DQNAgent):
     def __init__(self, X_state, num_actions, eps_min, eps_max, eps_decay_steps):
         self.X_state = X_state
         self.replay_memory_size = 20000
@@ -19,6 +18,11 @@ class DQNLiptonAgent(DQNAgent):
         self.danger_memory = deque([], maxlen=self.replay_memory_size)
         # el numero de pasos al estado peligroso
         self.nk = 2
+        self.k_bins = 3
+        self.k_steps = 1
+        self.k_dict = {}
+        for b in range(self.k_bins + 1):
+            self.k_dict[b] = deque([], maxlen=50)
         # learning and environment
         self.num_actions = num_actions
         self.eps_min = eps_min
@@ -48,7 +52,8 @@ class DQNLiptonAgent(DQNAgent):
         # fear
         self.fear_val = None
         self.online_fear = None
-        self.fear_loss = None
+        self.fear_cross_entropy = None
+        self.fear_cost = None
         self.fear_optimizer = None
         self.fear_training_op = None
         # tensorflow saver and logger
@@ -62,30 +67,34 @@ class DQNLiptonAgent(DQNAgent):
 
     def get_lambda(self, steps):
         lmb = min(self.lmb, 1. * self.lmb * steps / self.lmb_phase_in)
-        return lmb
+        # return lmb
+        return 0
 
     def create_fear_networks(self):
         pass
         self.online_fear, _ = \
-            ff_network(self.X_state, n_outputs=1, name="fear_networks/online")
+            ff_network(self.X_state, n_outputs=4, name="fear_networks/online")
 
         # Now for the training operations
         with tf.variable_scope("fear_train"):
             # self.X_state = tf.placeholder(tf.int32, shape=[None])
-            self.fear_val = tf.placeholder(tf.float32, shape=[None, 1], name="fear_val")
+            self.fear_val = tf.placeholder(tf.float32, shape=[None, self.k_bins + 1], name="fear_val")
 
-            self.fear_error = tf.abs(self.online_fear - self.fear_val)
-            self.fear_clipped_error = tf.clip_by_value(self.fear_error, 0.0, 1.0)
-            self.fear_linear_error = 2 * (self.fear_error - self.fear_clipped_error)
-            self.fear_loss = tf.reduce_mean(tf.square(self.fear_clipped_error) + self.fear_linear_error)
+            self.fear_cross_entropy = tf.nn.softmax_cross_entropy_with_logits(
+                logits=self.online_fear,
+                labels=self.fear_val)
+            self.fear_cost = tf.reduce_mean(self.fear_cross_entropy)
 
-            self.fear_optimizer = tf.train.AdamOptimizer(learning_rate=self.learning_rate)
-            self.fear_training_op = self.fear_optimizer.minimize(self.fear_loss, global_step=self.global_step)
+            self.fear_optimizer = \
+                tf.train.AdamOptimizer(learning_rate=self.learning_rate)
+            self.fear_training_op = \
+                self.fear_optimizer.minimize(self.fear_cost, global_step=self.global_step)
+
+        self.online_fear_
 
         # agrupa los summaries en el grafo para que no aparezcan por todos lados
         with tf.name_scope('fear_summaries'):
-            simple_summaries(self.fear_val, 'fear')
-            simple_summaries(self.fear_loss, 'loss')
+            simple_summaries(self.fear_cost, 'cost')
 
     def append_to_memory(self, state, action, reward, next_state, done):
 
@@ -102,31 +111,41 @@ class DQNLiptonAgent(DQNAgent):
         is_dangerous = reward < -1
 
         if is_dangerous:
-
-            for i in range(self.nk + 1):
-                also_dangerous = self.temp_replay_memory.pop()
-                self.danger_memory.append(also_dangerous)
-
-            self.safe_memory.extend(self.temp_replay_memory)
-
+            # el primer elemento es peligroso y va en el indice 0
+            for b in range(self.k_bins):
+                if b == 0:
+                    self.k_dict[b].append(self.temp_replay_memory.pop())
+                    continue
+                try:
+                    # si el deque se queda sin elementos simplemente sigue
+                    for s in range(self.k_steps):
+                        # guarda los bins
+                        self.k_dict[b].append(self.temp_replay_memory.pop())
+                except IndexError:
+                    continue
+            # lo que quede en el deque va al ultimo indice del dict
+            self.k_dict[b + 1].extend(self.temp_replay_memory)
             self.temp_replay_memory.clear()
 
+    @staticmethod
+    def one_hot(hot_index, arr_len):
+        return [0 if i != hot_index else 1 for i in range(arr_len)]
+
     def sample_memories(self):
+
+        # aqui voy... ahora hacer el sampling desde self.k_dict
 
         # la muestra para entrenamiento
         sample = []
 
-        safe_indices = np.random.permutation(len(self.safe_memory))[:self.batch_size / 2]
-        for i in safe_indices:
-            # agrega la muestra de la memoria segura y una etiqueta de 0
-            sample.append(self.safe_memory[i] + (0.,))
+        for k in self.k_dict:
+            slice_size = self.batch_size / self.k_bins
+            indices = np.random.permutation(len(self.k_dict[k]))[:slice_size]
+            for i in indices:
+                # agrega la muestra de la memoria segura y una etiqueta de 0
+                sample.append(self.k_dict[k][i] + (self.one_hot(k, self.k_bins + 1),))
 
-        danger_indices = np.random.permutation(len(self.danger_memory))[:self.batch_size / 2]
-        for j in danger_indices:
-            # agrega la muestra de la memoria segura y una etiqueta de 1
-            sample.append(self.danger_memory[j] + (1.,))
-
-        # state, action, reward, next_state, continue, fear_prob
+        # state, action, reward, next_state, continue, fear_prob (one_hot)
         cols = [[], [], [], [], [], []]
         for s in sample:
             for col, value in zip(cols, s):
@@ -136,4 +155,4 @@ class DQNLiptonAgent(DQNAgent):
 
         # una tupla con batch_sizes muestras de cada campo
         return (cols[0], cols[1], cols[2].reshape(-1, 1), cols[3],
-                cols[4].reshape(-1, 1), cols[5].reshape(-1, 1))
+                cols[4].reshape(-1, 1), cols[5])

@@ -64,3 +64,40 @@ def ff_network(X_state, n_outputs, name):
         print("Trainable var:", var)
 
     return outputs, trainable_vars_by_name
+
+
+def ff_network_logits(X_state, n_outputs, name):
+    # First let's build the two DQNs (online & target)
+    n_hidden = 128
+    hidden_activation = tf.nn.relu
+
+    initializer = tf.contrib.layers.variance_scaling_initializer()
+
+    with tf.variable_scope(name) as scope:
+        hidden1 = tf.layers.dense(X_state, n_hidden,
+                                  activation=hidden_activation,
+                                  kernel_initializer=initializer)
+        # hidden2 = tf.layers.dense(hidden1, n_hidden,
+        #                           activation=hidden_activation,
+        #                           kernel_initializer=initializer)
+        # hidden3 = tf.layers.dense(hidden2, n_outputs,
+        #                           kernel_initializer=initializer)
+
+        # activacion relu
+        outputs = tf.layers.dense(hidden1, n_outputs,
+                                  kernel_initializer=initializer)
+
+        # softmax
+        # outputs = tf.nn.softmax(outputs)
+
+    trainable_vars = tf.get_collection(tf.GraphKeys.TRAINABLE_VARIABLES, scope=scope.name)
+
+    trainable_vars_by_name = {var.name[len(scope.name):]: var for var in trainable_vars}
+
+    print("Network:")
+    print("Input shape:", X_state.shape)
+    print("Output shape: ", outputs.shape)
+    for var in trainable_vars_by_name:
+        print("Trainable var:", var)
+
+    return outputs, trainable_vars_by_name

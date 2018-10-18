@@ -124,9 +124,11 @@ with tf.Session() as sess:
         q_values = agent.online_q_values.eval(feed_dict={X_state: [state]})
         action = agent.epsilon_greedy(q_values, step)
 
-        fear = agent.online_fear_softmax.eval(feed_dict={X_state: [state]})
-        print("fear", fear)
-        action = input("Action: ")
+        # fear = agent.online_fear_softmax.eval(feed_dict={X_state: [state]})
+        # print("fear", fear)
+        # print("q_values", q_values)
+        # print("action", action)
+        # action = input("Action: ")
 
         # Online DQN plays
         obs, reward, done, info = env.step(action)
@@ -161,21 +163,19 @@ with tf.Session() as sess:
         continues, \
         fear_val = (agent.sample_memories())
 
-        # fear = agent.online_fear_softmax.eval(feed_dict={X_state: X_next_state_val})
-        # print(fear)
-
         next_q_values = agent.target_q_values.eval(feed_dict={X_state: X_next_state_val})
         max_next_q_values = np.max(next_q_values, axis=1, keepdims=True)
 
         # normal dqn
         # y_val = rewards + continues * agent.discount_rate * max_next_q_values
+
         # lipton dqn
         # y_val = rewards + \
         #         continues * agent.discount_rate * max_next_q_values - \
         #         agent.get_lambda(step) * fear
 
         y_val = rewards + \
-                continues * agent.discount_rate * max_next_q_values
+                continues * agent.discount_rate * max_next_q_values 
 
         # print("XXX")
         # print(y_val.shape)

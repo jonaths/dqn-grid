@@ -52,6 +52,7 @@ class DQNDistributiveLiptonAgent(DQNAgent):
         # fear
         self.fear_val = None
         self.online_fear = None
+        self.online_fear_softmax = None
         self.fear_cross_entropy = None
         self.fear_cost = None
         self.fear_optimizer = None
@@ -90,7 +91,7 @@ class DQNDistributiveLiptonAgent(DQNAgent):
             self.fear_training_op = \
                 self.fear_optimizer.minimize(self.fear_cost, global_step=self.global_step)
 
-        self.online_fear_
+        self.online_fear_softmax = tf.nn.softmax(self.online_fear)
 
         # agrupa los summaries en el grafo para que no aparezcan por todos lados
         with tf.name_scope('fear_summaries'):

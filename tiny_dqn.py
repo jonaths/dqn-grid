@@ -124,7 +124,7 @@ with tf.Session() as sess:
         q_values = agent.online_q_values.eval(feed_dict={X_state: [state]})
         action = agent.epsilon_greedy(q_values, step)
 
-        fear = agent.online_fear.eval(feed_dict={X_state: [state]})
+        fear = agent.online_fear_softmax.eval(feed_dict={X_state: [state]})
         print("fear", fear)
         action = input("Action: ")
 
@@ -161,7 +161,7 @@ with tf.Session() as sess:
         continues, \
         fear_val = (agent.sample_memories())
 
-        fear = agent.online_fear.eval(feed_dict={X_state: X_next_state_val})
+        # fear = agent.online_fear_softmax.eval(feed_dict={X_state: X_next_state_val})
         # print(fear)
 
         next_q_values = agent.target_q_values.eval(feed_dict={X_state: X_next_state_val})

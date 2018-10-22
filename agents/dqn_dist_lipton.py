@@ -61,15 +61,15 @@ class DQNDistributiveLiptonAgent(DQNAgent):
         self.init = None
         self.merged = None
         self.saver = None
-        self.lmb = 100
+        self.lmb = 0.2
         self.lmb_phase_in = 10000
 
         pass
 
     def get_lambda(self, steps):
         lmb = min(self.lmb, 1. * self.lmb * steps / self.lmb_phase_in)
-        # return lmb
-        return 0
+        return lmb
+        # return 0
 
     def create_fear_networks(self):
         pass

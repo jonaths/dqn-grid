@@ -17,21 +17,19 @@ args_struct = namedtuple(
     'number_steps learn_iterations, save_steps copy_steps '
     'render path test verbosity training_start batch_size ')
 args = args_struct(
-    number_steps=100000,
+    number_steps=50000,
     learn_iterations=4,
     training_start=1000,
     save_steps=1000,
     copy_steps=500,
-    # render=False,
-    render=True,
+    render=False,
+    # render=True,
     path='models/my_dqn.ckpt',
-    # test=False,
-    test=True,
+    test=False,
+    # test=True,
     verbosity=1,
     batch_size=90
 )
-
-# correr nuevamente... esta aprendiendo valores negativos para el fear_val
 
 print("Args:")
 print(args)
@@ -97,7 +95,7 @@ with tf.Session() as sess:
         agent.init.run()
         agent.copy_online_to_target.run()
 
-    log_file = 'outputs/' + str(int(time.time()))
+    log_file = 'outputs/' + str(int(time.time())) + "_lmb-0.20_n-2"
     writer = tf.summary.FileWriter(log_file, sess.graph)
 
     while True:
@@ -161,10 +159,11 @@ with tf.Session() as sess:
         rewards, \
         X_next_state_val, \
         continues, \
-        fear_val = (agent.sample_memories())
+        fear_labels = (agent.sample_memories())
 
         next_q_values = agent.target_q_values.eval(feed_dict={X_state: X_next_state_val})
         max_next_q_values = np.max(next_q_values, axis=1, keepdims=True)
+        fear = agent.online_fear_softmax.eval(feed_dict={X_state: [state]})
 
         # normal dqn
         # y_val = rewards + continues * agent.discount_rate * max_next_q_values
@@ -175,7 +174,8 @@ with tf.Session() as sess:
         #         agent.get_lambda(step) * fear
 
         y_val = rewards + \
-                continues * agent.discount_rate * max_next_q_values 
+                continues * agent.discount_rate * max_next_q_values - \
+                agent.get_lambda(step) * fear[:, 0].reshape(-1, 1)
 
         # print("XXX")
         # print(y_val.shape)
@@ -194,7 +194,7 @@ with tf.Session() as sess:
                 agent.X_state: X_state_val,
                 agent.X_action: X_action_val,
                 agent.y: y_val,
-                agent.fear_val: fear_val
+                agent.fear_val: fear_labels
             })
 
         # entrenar red fear
@@ -206,7 +206,7 @@ with tf.Session() as sess:
                 agent.X_state: X_state_val,
                 agent.X_action: X_action_val,
                 agent.y: y_val,
-                agent.fear_val: fear_val
+                agent.fear_val: fear_labels
             })
 
         # correr summaries
@@ -218,7 +218,7 @@ with tf.Session() as sess:
                 agent.X_state: X_state_val,
                 agent.X_action: X_action_val,
                 agent.y: y_val,
-                agent.fear_val: fear_val
+                agent.fear_val: fear_labels
             })
 
         if step % 50 == 0:

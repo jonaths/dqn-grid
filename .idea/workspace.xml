@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6efc7fa8-cf53-47f1-918a-b13a355d856e" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/outputs/1539882814/events.out.tfevents.1539882814.jonathan-5555" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/outputs/1539884862/events.out.tfevents.1539884862.jonathan-5555" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/models/1540310808_lmb-0.90_n-1/events.out.tfevents.1540310808.jonathan-5555" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/models/1540312153_lmb-0.90_n-2/events.out.tfevents.1540312153.jonathan-5555" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/models/1540312812_lmb-1.00_n-1/events.out.tfevents.1540312812.jonathan-5555" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/outputs/1539887882/events.out.tfevents.1539887882.jonathan-5555" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/agents/dqn_dist_lipton.py" afterPath="$PROJECT_DIR$/agents/dqn_dist_lipton.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tiny_dqn.py" afterPath="$PROJECT_DIR$/tiny_dqn.py" />
@@ -22,8 +24,8 @@
           <file leaf-file-name="tiny_dqn.py" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/tiny_dqn.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="600">
-                  <caret line="97" column="66" lean-forward="false" selection-start-line="97" selection-start-column="66" selection-end-line="97" selection-end-column="66" />
+                <state relative-caret-position="585">
+                  <caret line="129" column="34" lean-forward="false" selection-start-line="125" selection-start-column="39" selection-end-line="129" selection-end-column="34" />
                   <folding>
                     <element signature="e#0#65#0" expanded="true" />
                   </folding>
@@ -70,8 +72,8 @@
           <file leaf-file-name="dqn_dist_lipton.py" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/agents/dqn_dist_lipton.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="270">
-                  <caret line="62" column="23" lean-forward="false" selection-start-line="62" selection-start-column="23" selection-end-line="62" selection-end-column="23" />
+                <state relative-caret-position="450">
+                  <caret line="50" column="31" lean-forward="false" selection-start-line="50" selection-start-column="31" selection-end-line="50" selection-end-column="31" />
                   <folding>
                     <element signature="e#0#29#0" expanded="true" />
                   </folding>
@@ -130,8 +132,9 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="y" value="457" />
-    <option name="width" value="1366" />
+    <option name="x" value="1666" />
+    <option name="y" value="306" />
+    <option name="width" value="1356" />
     <option name="height" value="311" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
@@ -171,7 +174,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -208,6 +210,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="Scratches" />
     </panes>
   </component>
@@ -217,18 +220,18 @@
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/models/1540312812_lmb-1.00_n-1" />
+      <recent name="$PROJECT_DIR$/models/1540312153_lmb-0.90_n-2" />
+      <recent name="$PROJECT_DIR$/models/1540310808_lmb-0.90_n-1" />
+      <recent name="$PROJECT_DIR$/models/1540255062_lmb-0.80_n-1" />
+      <recent name="$PROJECT_DIR$/models/1540251147_lmb-0.50_n-1" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/models" />
       <recent name="$PROJECT_DIR$/agents" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/networks" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/models/1540239172_lmb-0.20_n-1" />
-      <recent name="$PROJECT_DIR$/models/1540235997_lmb-0.10_n-2" />
-      <recent name="$PROJECT_DIR$/models/1540233821_lmb-0.10_n-1" />
-      <recent name="$PROJECT_DIR$/models/1540232812_lmb-0.05_n-2" />
-      <recent name="$PROJECT_DIR$/models/1540231684_lmb-0.05_n-1" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -260,9 +263,9 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="457" width="1920" height="1082" extended-state="6" />
+    <frame x="1366" y="-2" width="1920" height="1202" extended-state="6" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1782284" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18036287" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32912722" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -599,8 +602,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/agents/dqn_dist_lipton.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="62" column="23" lean-forward="false" selection-start-line="62" selection-start-column="23" selection-end-line="62" selection-end-column="23" />
+        <state relative-caret-position="450">
+          <caret line="50" column="31" lean-forward="false" selection-start-line="50" selection-start-column="31" selection-end-line="50" selection-end-column="31" />
           <folding>
             <element signature="e#0#29#0" expanded="true" />
           </folding>
@@ -609,8 +612,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/tiny_dqn.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="600">
-          <caret line="97" column="66" lean-forward="false" selection-start-line="97" selection-start-column="66" selection-end-line="97" selection-end-column="66" />
+        <state relative-caret-position="585">
+          <caret line="129" column="34" lean-forward="false" selection-start-line="125" selection-start-column="39" selection-end-line="129" selection-end-column="34" />
           <folding>
             <element signature="e#0#65#0" expanded="true" />
           </folding>

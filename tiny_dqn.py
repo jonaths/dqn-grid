@@ -22,11 +22,11 @@ args = args_struct(
     training_start=1000,
     save_steps=1000,
     copy_steps=500,
-    # render=False,
-    render=True,
+    render=False,
+    # render=True,
     path='models/my_dqn.ckpt',
-    # test=False,
-    test=True,
+    test=False,
+    # test=True,
     verbosity=1,
     batch_size=90
 )
@@ -123,11 +123,11 @@ with tf.Session() as sess:
         q_values = agent.online_q_values.eval(feed_dict={X_state: [state]})
         action = agent.epsilon_greedy(q_values, step)
 
-        fear = agent.online_fear_softmax.eval(feed_dict={X_state: [state]})
-        print("fear", fear)
-        print("q_values", q_values)
-        print("action", action)
-        action = input("Action: ")
+        # fear = agent.online_fear_softmax.eval(feed_dict={X_state: [state]})
+        # print("fear", fear)
+        # print("q_values", q_values)
+        # print("action", action)
+        # action = input("Action: ")
 
         # Online DQN plays
         obs, reward, done, info = env.step(action)

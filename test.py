@@ -1,6 +1,7 @@
 import gym
 import gym_windy
 from collections import deque
+import numpy as np
 
 # env = gym.make("wall-v0")
 # env.set_state_type('onehot')
@@ -11,7 +12,18 @@ from collections import deque
 #     print(action)
 #     print(env.step(action))
 
+print("first_term")
+first_term = np.random.randint(0, 3, size=(5, 1))
+print(first_term)
 
-def one_hot(hot_index, arr_len):
-    return [0 if i != hot_index else 1 for i in range(arr_len)]
+print("second_term")
+second_term = np.random.randint(0, 2, size=(1, 4))
+print(second_term)
 
+print("test")
+test = first_term - second_term
+print(test)
+
+print("average")
+average = np.average(test, axis=1)
+print(average)

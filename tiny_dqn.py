@@ -174,15 +174,23 @@ with tf.Session() as sess:
         #         continues * agent.discount_rate * max_next_q_values - \
         #         agent.get_lambda(step) * fear
 
+        # lipton distributive dqn (only distributive fear)
         y_val = rewards + \
                 continues * agent.discount_rate * max_next_q_values - \
                 agent.get_lambda(step) * fear[:, 0].reshape(-1, 1)
 
+        # la idea para restar que al parecer no funciona
+        # y_val = np.average(rewards + \
+        #         continues * agent.discount_rate * max_next_q_values - \
+        #         agent.get_lambda(step) * fear, axis=1)
+
         # print("XXX")
         # print(y_val.shape)
-        # print(agent.y)
-        # print(fear_val.shape)
-        # print(agent.fear_val)
+        # print(continues.shape)
+        # print(max_next_q_values.shape)
+        # print(fear.shape)
+        # sys.exit(0)
+
 
         # Train the online DQN
 

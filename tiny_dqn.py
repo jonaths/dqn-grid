@@ -22,11 +22,11 @@ args = args_struct(
     training_start=1000,
     save_steps=1000,
     copy_steps=500,
-    render=False,
-    # render=True,
+    # render=False,
+    render=True,
     path='models/my_dqn.ckpt',
-    test=False,
-    # test=True,
+    # test=False,
+    test=True,
     verbosity=1,
     batch_size=90
 )

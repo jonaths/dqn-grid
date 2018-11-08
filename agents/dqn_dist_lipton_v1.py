@@ -9,8 +9,9 @@ import numpy as np
 
 
 class DQNDistributiveLiptonAgent(DQNAgent):
-    def __init__(self, X_state, num_actions, eps_min, eps_max, eps_decay_steps):
+    def __init__(self, X_state, X_state_action, num_actions, eps_min, eps_max, eps_decay_steps):
         self.X_state = X_state
+        self.X_state_action = X_state_action
         self.replay_memory_size = 20000
         self.replay_memory = deque([], maxlen=self.replay_memory_size)
         self.temp_replay_memory = deque([], maxlen=self.replay_memory_size)
@@ -153,13 +154,20 @@ class DQNDistributiveLiptonAgent(DQNAgent):
             for i in indices:
                 # agrega la muestra de la memoria segura y una etiqueta de 0
                 current_sample = self.k_dict[k][i]
-                k_bins_one_hot = self.one_hot(k, self.k_bins + 1)
+                # la tupla es <s, a, s'>, si lo pongo en k=0 quiere decir que s' es peligroso
+                # le sumo 1 a la k actual porque si k' es peligroso quiere decir que s esta a k + 1
+                # pasos del estado peligroso
+                # lo que quiero es que le meta s y a al modelo y me de una distribucion de s'
+                k_bins_one_hot = \
+                    self.one_hot(k + 1 if k < self.k_bins + 1 else self.k_bins + 1, self.k_bins + 1)
+                action_one_hot = self.one_hot(self.k_dict[k][i][1], self.num_actions)
                 new_sample = current_sample \
-                             + (k_bins_one_hot,)
+                             + (k_bins_one_hot,) \
+                             + (np.append(action_one_hot, current_sample[0]),)
                 sample.append(new_sample)
 
         # state, action, reward, next_state, continue, fear_prob (one_hot), action + state (one hot)
-        cols = [[], [], [], [], [], []]
+        cols = [[], [], [], [], [], [], []]
         for s in sample:
             for col, value in zip(cols, s):
                 col.append(value)
@@ -168,4 +176,11 @@ class DQNDistributiveLiptonAgent(DQNAgent):
 
         # una tupla con batch_sizes muestras de cada campo
         return (cols[0], cols[1], cols[2].reshape(-1, 1), cols[3],
-                cols[4].reshape(-1, 1), cols[5])
+                cols[4].reshape(-1, 1), cols[5], cols[6])
+
+    def get_state_actions(self, num_actions, state):
+        state_actions = [np.append(self.one_hot(a, num_actions), state) for a in range(num_actions)]
+        fear_array = np.array(
+            self.online_fear_softmax.eval(feed_dict={self.X_state_action: state_actions})
+        )
+        return fear_array

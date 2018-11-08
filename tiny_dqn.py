@@ -8,7 +8,7 @@ import tensorflow as tf
 from networks.qnetworks import conv_network, ff_network
 from summaries.summaries import variable_summaries, simple_summaries
 from collections import namedtuple
-from agents.dqn_dist_lipton import DQNDistributiveLiptonAgent
+from agents.dqn_dist_lipton_v1 import DQNDistributiveLiptonAgent
 import sys
 import time
 
@@ -55,8 +55,16 @@ input_channels = 1
 
 n_outputs = env.action_space.n  # 9 discrete actions are available
 
+# el dqn original
 # X_state = tf.placeholder(tf.float32, shape=[None, input_height, input_width, input_channels])
+
+# la idea distributiva donde la fear network solo depende del estado
+# X_state = tf.placeholder(tf.float32, shape=[None, input_height * input_width])
+
+
 X_state = tf.placeholder(tf.float32, shape=[None, input_height * input_width])
+X_state_action = tf.placeholder(tf.float32, shape=[None, input_height * input_width + n_outputs])
+
 
 # And on to the epsilon-greedy policy with decaying epsilon
 eps_min = 0.1
@@ -66,7 +74,7 @@ eps_decay_steps = args.number_steps // 2
 # We need to preprocess the images to speed up training
 mspacman_color = np.array([210, 164, 74]).mean()
 
-agent = DQNDistributiveLiptonAgent(X_state, n_outputs, eps_min, eps_max, eps_decay_steps)
+agent = DQNDistributiveLiptonAgent(X_state, X_state_action, n_outputs, eps_min, eps_max, eps_decay_steps)
 agent.create_q_networks()
 agent.create_fear_networks()
 agent.init = tf.global_variables_initializer()
@@ -123,11 +131,12 @@ with tf.Session() as sess:
         q_values = agent.online_q_values.eval(feed_dict={X_state: [state]})
         action = agent.epsilon_greedy(q_values, step)
 
-        fear = agent.online_fear_softmax.eval(feed_dict={X_state: [state]})
-        print("fear", fear)
-        print("q_values", q_values)
-        print("action", action)
-        action = input("Action: ")
+        # fear = agent.get_state_actions(n_outputs, state)
+        # print("fear", fear)
+        # print("q_values", q_values)
+        # print("action", action)
+        # action = input("Action: ")
+
 
         # Online DQN plays
         obs, reward, done, info = env.step(action)
@@ -160,11 +169,15 @@ with tf.Session() as sess:
         rewards, \
         X_next_state_val, \
         continues, \
-        fear_labels = (agent.sample_memories())
+        fear_labels,\
+        X_state_action_val = (agent.sample_memories())
 
         next_q_values = agent.target_q_values.eval(feed_dict={X_state: X_next_state_val})
         max_next_q_values = np.max(next_q_values, axis=1, keepdims=True)
-        fear = agent.online_fear_softmax.eval(feed_dict={X_state: [state]})
+
+        # fear = agent.online_fear_softmax.eval(feed_dict={X_state: [state]})
+        action_state = np.append(agent.one_hot(action, n_outputs), state)
+        fear = agent.online_fear_softmax.eval(feed_dict={X_state_action: [action_state]})
 
         # normal dqn
         # y_val = rewards + continues * agent.discount_rate * max_next_q_values
@@ -213,6 +226,7 @@ with tf.Session() as sess:
             ],
             feed_dict={
                 agent.X_state: X_next_state_val,
+                agent.X_state_action: X_state_action_val,
                 agent.X_action: X_action_val,
                 agent.y: y_val,
                 agent.fear_val: fear_labels
@@ -225,6 +239,7 @@ with tf.Session() as sess:
             ],
             feed_dict={
                 agent.X_state: X_state_val,
+                agent.X_state_action: X_state_action_val,
                 agent.X_action: X_action_val,
                 agent.y: y_val,
                 agent.fear_val: fear_labels

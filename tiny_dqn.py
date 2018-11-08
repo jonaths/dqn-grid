@@ -137,6 +137,9 @@ with tf.Session() as sess:
         # print("action", action)
         # action = input("Action: ")
 
+        aqui voy... al parecer aprende bien el fear model con action y state
+        ahora falta restarlo a la q y ver si aprende todo completo
+
 
         # Online DQN plays
         obs, reward, done, info = env.step(action)

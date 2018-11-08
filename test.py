@@ -12,18 +12,18 @@ import numpy as np
 #     print(action)
 #     print(env.step(action))
 
-print("first_term")
-first_term = np.random.randint(0, 3, size=(5, 1))
+first_term = np.random.randint(0, 3, size=(4, 1))
+print("first_term", first_term.shape)
 print(first_term)
 
-print("second_term")
-second_term = np.random.randint(0, 2, size=(1, 4))
+second_term = np.random.randint(0, 2, size=(1, 4, 3))
+print("second_term", second_term.shape)
 print(second_term)
 
-print("test")
-test = first_term - second_term
+test = np.expand_dims(first_term, axis=0) - second_term
+print("test", test.shape)
 print(test)
 
-print("average")
-average = np.average(test, axis=1)
+average = np.average(test, axis=2).reshape(4, -1)
+print("average", average.shape)
 print(average)

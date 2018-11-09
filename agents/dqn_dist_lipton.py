@@ -169,3 +169,18 @@ class DQNDistributiveLiptonAgent(DQNAgent):
         # una tupla con batch_sizes muestras de cada campo
         return (cols[0], cols[1], cols[2].reshape(-1, 1), cols[3],
                 cols[4].reshape(-1, 1), cols[5])
+
+    # def epsilon_greedy(self, q_values, step):
+    #     epsilon = max(self.eps_min,
+    #                   self.eps_max - (self.eps_max - self.eps_min) * step / self.eps_decay_steps)
+    #     if np.random.rand() < epsilon:
+    #         return np.random.randint(self.num_actions)  # random action
+    #     else:
+    #         # q_values se ve asi:
+    #         # [[[0 2 1 0 2]
+    #         #   [3 0 1 2 1]
+    #         #  [0 1 3 1 3]
+    #         # [1 1 3 2 0]]]
+    #         # la suma se ve asi
+    #         # [[5 7 8 7]]
+    #         return np.argmax(np.sum(q_values, axis=2))  # optimal action

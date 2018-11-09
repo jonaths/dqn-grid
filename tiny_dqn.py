@@ -131,14 +131,14 @@ with tf.Session() as sess:
         q_values = agent.online_q_values.eval(feed_dict={X_state: [state]})
         action = agent.epsilon_greedy(q_values, step)
 
-        # fear = agent.get_state_actions(n_outputs, state)
-        # print("fear", fear)
-        # print("q_values", q_values)
-        # print("action", action)
-        # action = input("Action: ")
+        fear = agent.get_state_actions(n_outputs, state)
+        print("fear", fear)
+        print("q_values", q_values)
+        print("action", action)
+        action = input("Action: ")
 
-        aqui voy... al parecer aprende bien el fear model con action y state
-        ahora falta restarlo a la q y ver si aprende todo completo
+        # aqui voy... al parecer aprende bien el fear model con action y state
+        # ahora falta restarlo a la q y ver si aprende todo completo
 
 
         # Online DQN plays

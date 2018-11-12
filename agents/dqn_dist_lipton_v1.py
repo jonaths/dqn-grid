@@ -58,6 +58,7 @@ class DQNDistributiveLiptonAgent(DQNAgent):
         self.fear_cost = None
         self.fear_optimizer = None
         self.fear_training_op = None
+        self.penalized_q = None
         # tensorflow saver and logger
         self.init = None
         self.merged = None
@@ -178,9 +179,59 @@ class DQNDistributiveLiptonAgent(DQNAgent):
         return (cols[0], cols[1], cols[2].reshape(-1, 1), cols[3],
                 cols[4].reshape(-1, 1), cols[5], cols[6])
 
-    def get_state_actions(self, num_actions, state):
-        state_actions = [np.append(self.one_hot(a, num_actions), state) for a in range(num_actions)]
+    def get_state_actions(self, state):
+        state_actions = \
+            [np.append(self.one_hot(a, self.num_actions), state) for a in range(self.num_actions)]
         fear_array = np.array(
             self.online_fear_softmax.eval(feed_dict={self.X_state_action: state_actions})
         )
         return fear_array
+
+    def get_online_q_values(self, state):
+        """
+        Usa el modelo aprendido y recupera los valores q para un estado
+        :param state:
+        :return:
+        """
+        return self.online_q_values.eval(feed_dict={self.X_state: [state]})
+
+    def calculate_fear_penalized_online_q_values(self, state, lmb=1.):
+        """
+        Convierte cada valor q en un valor penalizado por el fear model de acuerdo a la lambda
+        elegida.
+        :param state:
+        :param lmb:
+        :return:
+        """
+        original_q_values = self.online_q_values.eval(feed_dict={self.X_state: [state]})
+        fear = np.array(self.get_state_actions(state))
+
+        penalized_q = np.array(original_q_values.reshape(self.num_actions, -1) - lmb * fear)
+        self.penalized_q = penalized_q
+
+        # print()
+        # print("lmb", lmb)
+        # print("original_q_values", original_q_values)
+        # print("fear", fear)
+        # print("penalized_q", penalized_q)
+
+        return penalized_q
+
+    def process_penalized_online_q_values(self, op='average'):
+        """
+        Realiza alguna operacion sobre el tensor de q penalizadas.
+        :param op:
+        :return:
+        """
+        if op == 'average':
+            return np.average(self.penalized_q, axis=1).reshape(-1, self.num_actions)
+        else:
+            raise ValueError('Invalid op. ')
+
+    # def epsilon_greedy(self, q_values, step):
+    #     epsilon = max(self.eps_min,
+    #                   self.eps_max - (self.eps_max - self.eps_min) * step / self.eps_decay_steps)
+    #     if np.random.rand() < epsilon:
+    #         return np.random.randint(self.num_actions)  # random action
+    #     else:
+    #         return np.argmax(q_values)  # optimal action

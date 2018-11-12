@@ -22,11 +22,11 @@ args = args_struct(
     training_start=1000,
     save_steps=1000,
     copy_steps=500,
-    # render=False,
-    render=True,
+    render=False,
+    # render=True,
     path='models/my_dqn.ckpt',
-    # test=False,
-    test=True,
+    test=False,
+    # test=True,
     verbosity=1,
     batch_size=90
 )
@@ -65,7 +65,6 @@ n_outputs = env.action_space.n  # 9 discrete actions are available
 X_state = tf.placeholder(tf.float32, shape=[None, input_height * input_width])
 X_state_action = tf.placeholder(tf.float32, shape=[None, input_height * input_width + n_outputs])
 
-
 # And on to the epsilon-greedy policy with decaying epsilon
 eps_min = 0.1
 eps_max = 1.0 if not args.test else eps_min
@@ -74,7 +73,8 @@ eps_decay_steps = args.number_steps // 2
 # We need to preprocess the images to speed up training
 mspacman_color = np.array([210, 164, 74]).mean()
 
-agent = DQNDistributiveLiptonAgent(X_state, X_state_action, n_outputs, eps_min, eps_max, eps_decay_steps)
+agent = DQNDistributiveLiptonAgent(X_state, X_state_action, n_outputs, eps_min, eps_max,
+                                   eps_decay_steps)
 agent.create_q_networks()
 agent.create_fear_networks()
 agent.init = tf.global_variables_initializer()
@@ -103,7 +103,7 @@ with tf.Session() as sess:
         agent.init.run()
         agent.copy_online_to_target.run()
 
-    log_file = 'outputs/' + str(int(time.time())) + "_lmb-1.00_n-3"
+    log_file = 'outputs/' + str(int(time.time())) + "_lmb-1.00_n-7"
 
     writer = tf.summary.FileWriter(log_file, sess.graph)
 
@@ -127,19 +127,21 @@ with tf.Session() as sess:
         if args.render:
             env.render()
 
+        curr_lmb = agent.get_lambda(step)
+
         # Online DQN evaluates what to do
-        q_values = agent.online_q_values.eval(feed_dict={X_state: [state]})
+        q_values = agent.get_online_q_values(state)
         action = agent.epsilon_greedy(q_values, step)
 
-        fear = agent.get_state_actions(n_outputs, state)
-        print("fear", fear)
-        print("q_values", q_values)
-        print("action", action)
-        action = input("Action: ")
+        # fear = agent.get_state_actions(state)
+        # print()
+        # print("fear", fear)
+        # print("q_values ", q_values)
+        # print("action", action)
+        # action = input("Action: ")
 
         # aqui voy... al parecer aprende bien el fear model con action y state
-        # ahora falta restarlo a la q y ver si aprende todo completo
-
+        # ahora falta restarlo a la q y ver si aprende completo
 
         # Online DQN plays
         obs, reward, done, info = env.step(action)
@@ -172,7 +174,7 @@ with tf.Session() as sess:
         rewards, \
         X_next_state_val, \
         continues, \
-        fear_labels,\
+        fear_labels, \
         X_state_action_val = (agent.sample_memories())
 
         next_q_values = agent.target_q_values.eval(feed_dict={X_state: X_next_state_val})
@@ -181,6 +183,9 @@ with tf.Session() as sess:
         # fear = agent.online_fear_softmax.eval(feed_dict={X_state: [state]})
         action_state = np.append(agent.one_hot(action, n_outputs), state)
         fear = agent.online_fear_softmax.eval(feed_dict={X_state_action: [action_state]})
+
+        aqui voy... acabo de entrenar el modelo. Ahora debo checar si se generan politi
+        cas diferentes en funcion del maxarg que escojo: average o algun bin
 
         # normal dqn
         # y_val = rewards + continues * agent.discount_rate * max_next_q_values
@@ -191,14 +196,14 @@ with tf.Session() as sess:
         #         agent.get_lambda(step) * fear
 
         # lipton distributive dqn (only distributive fear)
-        y_val = rewards + \
-                continues * agent.discount_rate * max_next_q_values - \
-                agent.get_lambda(step) * fear[:, 0].reshape(-1, 1)
+        # y_val = rewards + \
+        #         continues * agent.discount_rate * max_next_q_values - \
+        #         curr_lmb * fear[:, 0].reshape(-1, 1)
 
         # la idea para restar que al parecer no funciona
-        # y_val = np.average(rewards + \
-        #         continues * agent.discount_rate * max_next_q_values - \
-        #         agent.get_lambda(step) * fear, axis=1)
+        y_val = np.average(rewards +
+                           continues * agent.discount_rate * max_next_q_values -
+                           agent.get_lambda(step) * fear, axis=1).reshape(-1, 1)
 
         # print("XXX")
         # print(y_val.shape)

@@ -2,12 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6efc7fa8-cf53-47f1-918a-b13a355d856e" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/models/1542046242_lmb-2.00_n-1/events.out.tfevents.1542046242.jonathan-5555" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/agents/dqn_dist_lipton_v1.py" beforeDir="false" afterPath="$PROJECT_DIR$/agents/dqn_dist_lipton_v1.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/outputs/1541632141_lmb-1.00_n-3/events.out.tfevents.1541632141.jonathan-5555" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/outputs/1541632577_lmb-1.00_n-3/events.out.tfevents.1541632577.jonathan-5555" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/outputs/1541786233_lmb-1.00_n-3/events.out.tfevents.1541786233.jonathan-5555" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tiny_dqn.py" beforeDir="false" afterPath="$PROJECT_DIR$/tiny_dqn.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -24,6 +21,28 @@
           <entry key="project.opened" value="1" />
         </counts>
       </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="py" value="391" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="Python" value="391" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.js.language.service.starts" />
+      <usages-collector id="statistics.vcs.git.usages" />
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="Python" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="py" value="1" />
+        </counts>
+      </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
@@ -33,8 +52,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/tiny_dqn.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1260">
-                  <caret line="186" column="55" lean-forward="true" selection-start-line="186" selection-start-column="55" selection-end-line="186" selection-end-column="55" />
+                <state relative-caret-position="465">
+                  <caret line="124" column="53" lean-forward="true" selection-end-line="265" />
                   <folding>
                     <element signature="e#0#65#0" expanded="true" />
                   </folding>
@@ -61,8 +80,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/agents/dqn_dist_lipton_v1.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="749">
-                  <caret line="215" column="43" selection-start-line="211" selection-start-column="10" selection-end-line="215" selection-end-column="43" />
+                <state relative-caret-position="945">
+                  <caret line="210" selection-start-line="210" selection-end-line="210" />
                 </state>
               </provider>
             </entry>
@@ -196,19 +215,19 @@
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/models/1541984718_lmb-1.00_n-7" />
-      <recent name="$PROJECT_DIR$/models/1541525899_lmb-1.00_n-5" />
-      <recent name="$PROJECT_DIR$/models/1541464048_lmb-1.00_n-1" />
-      <recent name="$PROJECT_DIR$/models/1540312812_lmb-1.00_n-1" />
-      <recent name="$PROJECT_DIR$/models/1540312153_lmb-0.90_n-2" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/models" />
       <recent name="$PROJECT_DIR$/agents" />
       <recent name="$PROJECT_DIR$/models/1541466097_lmb-1.00_n-2" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/networks" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/models/1542046242_lmb-2.00_n-1" />
+      <recent name="$PROJECT_DIR$/models/1541984840_lmb-1.00_n-7" />
+      <recent name="$PROJECT_DIR$/models/1541984718_lmb-1.00_n-7" />
+      <recent name="$PROJECT_DIR$/models/1541525899_lmb-1.00_n-5" />
+      <recent name="$PROJECT_DIR$/models/1541464048_lmb-1.00_n-1" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -240,20 +259,21 @@
     <frame x="1366" y="-2" width="1920" height="1202" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16915688" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16915688" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32959852" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32929105" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="7" weight="0.32959852" />
-      <window_info anchor="bottom" id="Terminal" order="8" />
-      <window_info anchor="bottom" id="Python Console" order="9" />
+      <window_info anchor="bottom" id="Version Control" order="7" weight="0.32929105" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.32929105" />
+      <window_info anchor="bottom" id="Python Console" order="9" weight="0.32929105" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" weight="0.32912722" />
       <window_info anchor="right" id="SciView" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
@@ -346,13 +366,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/agents/dqn.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1560">
-          <caret line="108" column="56" selection-start-line="102" selection-start-column="4" selection-end-line="108" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/networks/qnetworks.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="675">
@@ -367,17 +380,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/agents/dqn.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="795">
+          <caret line="108" column="56" selection-start-line="102" selection-start-column="4" selection-end-line="108" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/agents/dqn_dist_lipton_v1.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="749">
-          <caret line="215" column="43" selection-start-line="211" selection-start-column="10" selection-end-line="215" selection-end-column="43" />
+        <state relative-caret-position="945">
+          <caret line="210" selection-start-line="210" selection-end-line="210" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tiny_dqn.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1260">
-          <caret line="186" column="55" lean-forward="true" selection-start-line="186" selection-start-column="55" selection-end-line="186" selection-end-column="55" />
+        <state relative-caret-position="465">
+          <caret line="124" column="53" lean-forward="true" selection-end-line="265" />
           <folding>
             <element signature="e#0#65#0" expanded="true" />
           </folding>

@@ -63,7 +63,7 @@ class DQNDistributiveLiptonAgent(DQNAgent):
         self.init = None
         self.merged = None
         self.saver = None
-        self.lmb = 2.0
+        self.lmb = 0.0
         self.lmb_phase_in = 10000
 
         pass

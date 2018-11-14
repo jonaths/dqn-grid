@@ -130,7 +130,7 @@ with tf.Session() as sess:
         curr_lmb = agent.get_lambda()
 
         # Online DQN evaluates what to do
-        q_values = agent.get_online_q_values(state, 1)
+        q_values = agent.get_online_q_values(state, 'normal')
         action = agent.epsilon_greedy(q_values, step)
 
         fear = agent.get_state_actions(state)

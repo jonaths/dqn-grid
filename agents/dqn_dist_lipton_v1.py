@@ -85,7 +85,7 @@ class DQNDistributiveLiptonAgent(DQNAgent):
         # como carajos concateno un tensor de state one hot con action one hot???
 
         self.online_fear, _ = \
-            ff_network(self.X_state_action, n_outputs=4, name="fear_networks/online")
+            ff_network(self.X_state_action, n_outputs=self.k_bins + 1, name="fear_networks/online")
 
         # Now for the training operations
         with tf.variable_scope("fear_train"):
@@ -143,6 +143,7 @@ class DQNDistributiveLiptonAgent(DQNAgent):
     def one_hot(hot_index, arr_len):
         return [0 if i != hot_index else 1 for i in range(arr_len)]
 
+    @property
     def sample_memories(self):
 
         # aqui voy... ahora hacer el sampling desde self.k_dict
@@ -161,7 +162,7 @@ class DQNDistributiveLiptonAgent(DQNAgent):
                 # pasos del estado peligroso
                 # lo que quiero es que le meta s y a al modelo y me de una distribucion de s'
                 k_bins_one_hot = \
-                    self.one_hot(k + 1 if k < self.k_bins + 1 else self.k_bins + 1, self.k_bins + 1)
+                    self.one_hot(k + 1 if k < self.k_bins else self.k_bins, self.k_bins + 1)
                 action_one_hot = self.one_hot(self.k_dict[k][i][1], self.num_actions)
                 new_sample = current_sample \
                              + (k_bins_one_hot,) \
@@ -176,9 +177,21 @@ class DQNDistributiveLiptonAgent(DQNAgent):
 
         cols = [np.array(col) for col in cols]
 
+        debug = np.hstack((np.argmax(cols[0], axis=1).reshape(-1, 1), cols[1].reshape(-1, 1)))
+        debug = np.hstack((debug, np.argmax(cols[3], axis=1).reshape(-1, 1)))
+        debug = np.hstack((debug, np.argmax(cols[5], axis=1).reshape(-1, 1)))
+
         # una tupla con batch_sizes muestras de cada campo
         return (cols[0], cols[1], cols[2].reshape(-1, 1), cols[3],
-                cols[4].reshape(-1, 1), cols[5], cols[6])
+                cols[4].reshape(-1, 1), cols[5], cols[6], debug
+                )
+
+        # # s como entero
+        # np.argmax(cols[0], axis=1).reshape(-1, 1),
+        # # la accion como entero
+        # cols[1].reshape(-1, 1),
+        # # s' como entero
+        # np.argmax(cols[3], axis=1).reshape(-1, 1),
 
     def get_state_actions(self, state):
         state_actions = \

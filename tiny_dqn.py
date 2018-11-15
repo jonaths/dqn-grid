@@ -136,6 +136,7 @@ with tf.Session() as sess:
         fear = agent.get_state_actions(state)
         print()
         print("lambda", curr_lmb)
+        print("state", np.argmax(state))
         print("fear\n", fear)
         print("q_values\n ", q_values)
         print("action", action)
@@ -176,7 +177,13 @@ with tf.Session() as sess:
         X_next_state_val, \
         continues, \
         fear_labels, \
-        X_state_action_val = (agent.sample_memories())
+        X_state_action_val,\
+        debug = (agent.sample_memories)
+
+        # index = np.random.randint(len(continues) - 1)
+        # print(debug)
+        # print(fear_labels)
+        # sys.exit(0)
 
         next_q_values = agent.target_q_values.eval(feed_dict={X_state: X_next_state_val})
         max_next_q_values = np.max(next_q_values, axis=1, keepdims=True)

@@ -103,7 +103,7 @@ with tf.Session() as sess:
         agent.init.run()
         agent.copy_online_to_target.run()
 
-    log_file = 'outputs/' + str(int(time.time())) + "_lmb-2.00_n-2"
+    log_file = 'outputs/' + str(int(time.time())) + "_lmb-5.00_n-3"
 
     writer = tf.summary.FileWriter(log_file, sess.graph)
 
@@ -130,17 +130,18 @@ with tf.Session() as sess:
         curr_lmb = agent.get_lambda()
 
         # Online DQN evaluates what to do
-        q_values = agent.get_online_q_values(state, 'normal')
+        q_values = agent.get_online_q_values(state, 2)
         action = agent.epsilon_greedy(q_values, step)
 
-        fear = agent.get_state_actions(state)
-        print()
-        print("lambda", curr_lmb)
-        print("state", np.argmax(state))
-        print("fear\n", fear)
-        print("q_values\n ", q_values)
-        print("action", action)
-        action = input('action: ')
+        # fear = agent.get_state_actions(state)
+        # print()
+        # print("lambda", curr_lmb, step)
+        # print("state", np.argmax(state))
+        # print("fear\n", fear)
+        # print("q_values \n ", agent.get_online_q_values(state, 'normal'))
+        # print("q_values' \n ", agent.get_online_q_values(state, 3))
+        # print("action", action)
+        # action = input('action: ')
 
         # aqui voy... al parecer aprende bien el fear model con action y state
         # ahora falta restarlo a la q y ver si aprende completo

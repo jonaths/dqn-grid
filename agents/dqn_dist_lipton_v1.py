@@ -19,7 +19,7 @@ class DQNDistributiveLiptonAgent(DQNAgent):
         self.danger_memory = deque([], maxlen=self.replay_memory_size)
         # el numero de pasos al estado peligroso
         self.nk = 2
-        self.k_bins = 3
+        self.k_bins = 4
         self.k_steps = 1
         self.k_dict = {}
         for b in range(self.k_bins + 1):
@@ -63,7 +63,7 @@ class DQNDistributiveLiptonAgent(DQNAgent):
         self.init = None
         self.merged = None
         self.saver = None
-        self.lmb = 0.0
+        self.lmb = 5.0
         self.lmb_phase_in = 10000
 
         pass
@@ -72,17 +72,9 @@ class DQNDistributiveLiptonAgent(DQNAgent):
         steps = self.global_step.eval()
         lmb = min(self.lmb, 1. * self.lmb * steps / self.lmb_phase_in)
         return lmb
-        # return 0
 
     def create_fear_networks(self):
         pass
-
-        # print(self.X_state.shape)
-        # sys.exit(0)
-
-        # self.state_action =
-        #
-        # como carajos concateno un tensor de state one hot con action one hot???
 
         self.online_fear, _ = \
             ff_network(self.X_state_action, n_outputs=self.k_bins + 1, name="fear_networks/online")
@@ -213,8 +205,15 @@ class DQNDistributiveLiptonAgent(DQNAgent):
             return original_q_values
         else:
             fear = np.array(self.get_state_actions(state))
+            cummulative_fear = np.cumsum(fear, axis=1)
+            # print("cummulative_fear")
+            # print(cummulative_fear)
+            # print("original_q_values")
+            # print(original_q_values)
             penalized_q = np.array(
-                original_q_values.reshape(self.num_actions, -1) - self.get_lambda() * fear)
+                original_q_values.reshape(self.num_actions, -1) - self.get_lambda() * cummulative_fear)
+            # print("penalized_q")
+            # print(penalized_q)
             if mode == 'average':
                 return np.average(penalized_q, axis=1).reshape(-1, self.num_actions)
             elif type(mode) == int:

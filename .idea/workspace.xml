@@ -2,8 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6efc7fa8-cf53-47f1-918a-b13a355d856e" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/models/1542399206_lmb-5.00_n-1/events.out.tfevents.1542399206.jonathan-5555" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/models/1542401687_lmb-5.00_n-2/events.out.tfevents.1542401687.jonathan-5555" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/models/1542754029_lmb-5.00_n-3/events.out.tfevents.1542754029.jonathan-5555" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/agents/dqn_dist_lipton_v1.py" beforeDir="false" afterPath="$PROJECT_DIR$/agents/dqn_dist_lipton_v1.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/outputs/1542242581_lmb-2.00_n-2/events.out.tfevents.1542242581.jonathan-5555" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/outputs/1542242625_lmb-2.00_n-2/events.out.tfevents.1542242625.jonathan-5555" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/outputs/1542243775_lmb-2.00_n-2/events.out.tfevents.1542243775.jonathan-5555" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/outputs/1542243800_lmb-2.00_n-2/events.out.tfevents.1542243800.jonathan-5555" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tiny_dqn.py" beforeDir="false" afterPath="$PROJECT_DIR$/tiny_dqn.py" afterDir="false" />
     </list>
@@ -17,43 +24,49 @@
     <session id="-625129523">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
+          <entry key="project.closed" value="2" />
+          <entry key="project.open.time.23" value="1" />
+          <entry key="project.open.time.30" value="1" />
+          <entry key="project.open.time.34" value="1" />
           <entry key="project.open.time.7" value="1" />
-          <entry key="project.opened" value="1" />
+          <entry key="project.opened" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="py" value="1503" />
+          <entry key="py" value="1882" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Python" value="1503" />
+          <entry key="Python" value="1882" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.js.language.service.starts" />
       <usages-collector id="statistics.vcs.git.usages" />
       <usages-collector id="statistics.file.types.open">
         <counts>
+          <entry key="PLAIN_TEXT" value="1" />
           <entry key="Python" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
+          <entry key="checkpoint" value="1" />
           <entry key="py" value="1" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.46875">
+    <splitter split-orientation="horizontal" split-proportion="0.5105215">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/tiny_dqn.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="645">
-                  <caret line="142" column="34" lean-forward="true" selection-start-line="135" selection-start-column="21" selection-end-line="142" selection-end-column="34" />
+                <state relative-caret-position="390">
+                  <caret line="143" column="36" lean-forward="true" selection-start-line="135" selection-start-column="26" selection-end-line="143" selection-end-column="36" />
                   <folding>
                     <element signature="e#0#65#0" expanded="true" />
                   </folding>
@@ -64,8 +77,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/test.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="510">
-                  <caret line="34" column="32" selection-start-line="34" selection-start-column="7" selection-end-line="34" selection-end-column="32" />
+                <state relative-caret-position="735">
+                  <caret line="52" column="42" selection-start-line="52" selection-start-column="15" selection-end-line="52" selection-end-column="42" />
                   <folding>
                     <element signature="e#0#10#0" expanded="true" />
                   </folding>
@@ -80,8 +93,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/agents/dqn_dist_lipton_v1.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="120">
-                  <caret line="87" column="69" selection-start-line="87" selection-start-column="69" selection-end-line="87" selection-end-column="69" />
+                <state relative-caret-position="133">
+                  <caret line="21" column="23" selection-start-line="21" selection-start-column="23" selection-end-line="21" selection-end-column="23" />
                   <folding>
                     <element signature="e#0#29#0" expanded="true" />
                   </folding>
@@ -92,7 +105,7 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/networks/qnetworks.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="570">
+                <state relative-caret-position="1005">
                   <caret line="67" selection-start-line="67" selection-end-line="67" />
                 </state>
               </provider>
@@ -150,8 +163,9 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="y" value="457" />
-    <option name="width" value="1366" />
+    <option name="x" value="1482" />
+    <option name="y" value="312" />
+    <option name="width" value="1356" />
     <option name="height" value="311" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
@@ -227,18 +241,18 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/models/1542401687_lmb-5.00_n-2" />
+      <recent name="$PROJECT_DIR$/models/1542399206_lmb-5.00_n-1" />
       <recent name="$PROJECT_DIR$/models/1542223047_lmb-2.00_n-2" />
       <recent name="$PROJECT_DIR$/models/1542046242_lmb-2.00_n-1" />
       <recent name="$PROJECT_DIR$/models/1541984840_lmb-1.00_n-7" />
-      <recent name="$PROJECT_DIR$/models/1541984718_lmb-1.00_n-7" />
-      <recent name="$PROJECT_DIR$/models/1541525899_lmb-1.00_n-5" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/models/1542754029_lmb-5.00_n-3" />
       <recent name="$PROJECT_DIR$/models" />
       <recent name="$PROJECT_DIR$/agents" />
       <recent name="$PROJECT_DIR$/models/1541466097_lmb-1.00_n-2" />
       <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/networks" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -267,10 +281,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="-2" width="1920" height="1082" extended-state="6" />
+    <frame x="1366" y="-2" width="1366" height="770" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16275346" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22121212" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -381,17 +395,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/networks/qnetworks.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="67" selection-start-line="67" selection-end-line="67" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="34" column="32" selection-start-line="34" selection-start-column="7" selection-end-line="34" selection-end-column="32" />
+        <state relative-caret-position="735">
+          <caret line="52" column="42" selection-start-line="52" selection-start-column="15" selection-end-line="52" selection-end-column="42" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
           </folding>
@@ -400,18 +407,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/agents/dqn_dist_lipton_v1.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="87" column="69" selection-start-line="87" selection-start-column="69" selection-end-line="87" selection-end-column="69" />
+        <state relative-caret-position="133">
+          <caret line="21" column="23" selection-start-line="21" selection-start-column="23" selection-end-line="21" selection-end-column="23" />
           <folding>
             <element signature="e#0#29#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/networks/qnetworks.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1005">
+          <caret line="67" selection-start-line="67" selection-end-line="67" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/1542754029_lmb-5.00_n-3/checkpoint">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/tiny_dqn.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="645">
-          <caret line="142" column="34" lean-forward="true" selection-start-line="135" selection-start-column="21" selection-end-line="142" selection-end-column="34" />
+        <state relative-caret-position="390">
+          <caret line="143" column="36" lean-forward="true" selection-start-line="135" selection-start-column="26" selection-end-line="143" selection-end-column="36" />
           <folding>
             <element signature="e#0#65#0" expanded="true" />
           </folding>

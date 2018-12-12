@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6efc7fa8-cf53-47f1-918a-b13a355d856e" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/markdown-navigator.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/markdown-navigator/profiles_settings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tiny_dqn.py" beforeDir="false" afterPath="$PROJECT_DIR$/tiny_dqn.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -19,7 +21,7 @@
             <entry file="file://$PROJECT_DIR$/tiny_dqn.py">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="525">
-                  <caret line="143" column="34" lean-forward="true" selection-start-line="135" selection-start-column="9" selection-end-line="143" selection-end-column="34" />
+                  <caret line="143" column="34" selection-start-line="135" selection-start-column="9" selection-end-line="143" selection-end-column="34" />
                   <folding>
                     <element signature="e#0#65#0" expanded="true" />
                   </folding>
@@ -214,18 +216,19 @@
       <updated>1536082531819</updated>
       <workItem from="1544572482423" duration="6088000" />
       <workItem from="1544629432553" duration="513000" />
-      <workItem from="1544638576605" duration="1396000" />
+      <workItem from="1544638576605" duration="1644000" />
+      <workItem from="1544641440174" duration="291000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="9087000" />
+    <option name="totallyTimeSpent" value="9626000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1366" y="-2" width="1920" height="1202" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15421557" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15581644" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -322,9 +325,6 @@
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/rrequirements.txt" />
-    <entry file="file://$PROJECT_DIR$/requirements.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/networks/__init__.py" />
     <entry file="file://$PROJECT_DIR$/networks/conv_q_network.py" />
     <entry file="file://$PROJECT_DIR$/update.py" />
@@ -332,7 +332,6 @@
     <entry file="file://$PROJECT_DIR$/models/.gitignore">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md" />
     <entry file="file://$PROJECT_DIR$/models/t_50000-m_adam_nk-2_lmb-100_n-2/checkpoint" />
     <entry file="file://$PROJECT_DIR$/agents/dqn_lipton.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -398,10 +397,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
+        <state split_layout="SPLIT">
+          <first_editor />
+          <second_editor>
+            <markdownNavigatorState />
+          </second_editor>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/requirements.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/tiny_dqn.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="525">
-          <caret line="143" column="34" lean-forward="true" selection-start-line="135" selection-start-column="9" selection-end-line="143" selection-end-column="34" />
+          <caret line="143" column="34" selection-start-line="135" selection-start-column="9" selection-end-line="143" selection-end-column="34" />
           <folding>
             <element signature="e#0#65#0" expanded="true" />
           </folding>

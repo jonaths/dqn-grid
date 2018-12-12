@@ -8,7 +8,7 @@ import tensorflow as tf
 from networks.qnetworks import conv_network, ff_network
 from summaries.summaries import variable_summaries, simple_summaries
 from collections import namedtuple
-from agents.dqn_dist_lipton_v1 import DQNDistributiveLiptonAgent
+from agents.dqn_dist_lipton_v4 import DQNDistributiveLiptonAgent
 import sys
 import time
 
@@ -22,11 +22,11 @@ args = args_struct(
     training_start=1000,
     save_steps=1000,
     copy_steps=500,
-    # render=False,
-    render=True,
+    render=False,
+    # render=True,
     path='models/my_dqn.ckpt',
-    # test=False,
-    test=True,
+    test=False,
+    # test=True,
     verbosity=1,
     batch_size=90
 )
@@ -103,7 +103,7 @@ with tf.Session() as sess:
         agent.init.run()
         agent.copy_online_to_target.run()
 
-    log_file = 'outputs/' + str(int(time.time())) + "_lmb-0.00_n-2"
+    log_file = 'outputs/' + str(int(time.time())) + "_lmb-0.00_n-4"
 
     writer = tf.summary.FileWriter(log_file, sess.graph)
 
@@ -133,15 +133,15 @@ with tf.Session() as sess:
         q_values = agent.get_online_q_values(state, 2)
         action = agent.epsilon_greedy(q_values, step)
 
-        fear = agent.get_state_actions(state)
-        print()
-        print("lambda", curr_lmb, step)
-        print("state", np.argmax(state))
-        print("fear\n", fear)
-        print("q_values \n ", agent.get_online_q_values(state, 'normal'))
-        print("q_values' \n ", agent.get_online_q_values(state, 3))
-        print("action", action)
-        action = input('action: ')
+        # fear = agent.get_state_actions(state)
+        # print()
+        # print("lambda", curr_lmb, step)
+        # print("state", np.argmax(state))
+        # print("fear\n", fear)
+        # print("q_values \n ", agent.get_online_q_values(state, 'normal'))
+        # print("q_values' \n ", agent.get_online_q_values(state, 2))
+        # print("action", action)
+        # action = input('action: ')
 
         # aqui voy... al parecer aprende bien el fear model con action y state
         # ahora falta restarlo a la q y ver si aprende completo

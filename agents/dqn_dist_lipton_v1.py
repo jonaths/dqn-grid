@@ -71,7 +71,8 @@ class DQNDistributiveLiptonAgent(DQNAgent):
     def get_lambda(self):
         steps = self.global_step.eval()
         lmb = min(self.lmb, 1. * self.lmb * steps / self.lmb_phase_in)
-        return lmb
+        # return lmb
+        return 0.
 
     def create_fear_networks(self):
         pass

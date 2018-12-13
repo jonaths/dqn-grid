@@ -103,7 +103,7 @@ with tf.Session() as sess:
         agent.init.run()
         agent.copy_online_to_target.run()
 
-    log_file = 'outputs/' + str(int(time.time())) + "_lmb-0.00_n-5"
+    log_file = 'outputs/' + str(int(time.time())) + "_lmb-0.00_n-6"
 
     writer = tf.summary.FileWriter(log_file, sess.graph)
 

@@ -103,7 +103,7 @@ with tf.Session() as sess:
         agent.init.run()
         agent.copy_online_to_target.run()
 
-    log_file = 'outputs/' + str(int(time.time())) + "_lmb-0.00_n-4"
+    log_file = 'outputs/' + str(int(time.time())) + "_lmb-0.00_n-5"
 
     writer = tf.summary.FileWriter(log_file, sess.graph)
 
@@ -130,7 +130,7 @@ with tf.Session() as sess:
         curr_lmb = agent.get_lambda()
 
         # Online DQN evaluates what to do
-        q_values = agent.get_online_q_values(state, 2)
+        q_values = agent.online_q_values.eval(feed_dict={agent.X_state: [state]})
         action = agent.epsilon_greedy(q_values, step)
 
         # fear = agent.get_state_actions(state)

@@ -6,7 +6,6 @@ from summaries.summaries import simple_summaries
 import copy
 import sys
 import numpy as np
-from helpers.calc_fear_penalized import calc_fear_penalized_q
 
 
 class DQNDistributiveLiptonAgent(DQNAgent):
@@ -202,12 +201,10 @@ class DQNDistributiveLiptonAgent(DQNAgent):
         :param state:
         :return:
         """
-        # (?, num_actions)
         original_q_values = self.online_q_values.eval(feed_dict={self.X_state: [state]})
         if mode == 'normal':
             return original_q_values
         else:
-            # (num_actions, num_bins)
             fear = np.array(self.get_state_actions(state))
             cummulative_fear = np.cumsum(fear, axis=1)
             # print("cummulative_fear")
@@ -224,5 +221,3 @@ class DQNDistributiveLiptonAgent(DQNAgent):
                 return penalized_q[:, mode]
             else:
                 raise Exception('Not Implemented')
-
-    #       

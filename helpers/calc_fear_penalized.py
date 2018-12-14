@@ -1,7 +1,7 @@
 import numpy as np
 
 
-def calc_fear_penalized_q(q_values, fear_prob, gamma=0.9, lmb=1., k_bins=5, k_steps=1):
+def calc_fear_value(fear_prob, gamma=0.9, lmb=1., k_bins=5, k_steps=1):
     """
     Calcula una penalizacion en funcion de la probabilidad de fallo.
     :param q_values: (?, num_actions)
@@ -21,4 +21,4 @@ def calc_fear_penalized_q(q_values, fear_prob, gamma=0.9, lmb=1., k_bins=5, k_st
     gamma_exp = np.power(base, exp)
     # calcula la penalizacion para cada accion considerando lambda
     fear_val_sum = np.sum(lmb * fear_prob * gamma_exp, axis=1)
-    return q_values - fear_val_sum
+    return fear_val_sum

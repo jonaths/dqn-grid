@@ -2,7 +2,7 @@ import gym
 import gym_windy
 from collections import deque
 import numpy as np
-from helpers.calc_fear_penalized import calc_fear_penalized_q
+from helpers.calc_fear_penalized import calc_fear_value
 
 
 def softmax(X, theta=1.0, axis=None):
@@ -57,41 +57,7 @@ def softmax(X, theta=1.0, axis=None):
 #     print(action)
 #     print(env.step(action))
 
-# first_term = np.random.randint(0, 3, size=(1, 4))
-# print("first_term", first_term.shape)
-# print(first_term)
-#
-# second_term = np.random.randint(0, 2, size=(4, 5))
-# print("second_term", second_term.shape)
-# print(second_term)
-#
-# test = first_term.reshape(4, -1) - second_term
-# print("test", test.shape)
-# print(test)
-#
-# average = np.average(test, axis=1).reshape(-1, 4)
-# print("average", average.shape)
-# print(average)
-
-# test1 = np.random.randint(0, 100, size=(10, 1))
-# test2= np.random.randint(0, 100, size=(10, 1))
-# test3= np.random.randint(0, 100, size=(10, 1))
-# test4= np.random.randint(0, 100, size=(10, 1))
-# test = np.hstack((test1, test2))
-# test = np.hstack((test, test3))
-# test = np.hstack((test, test4))
-# print("1")
-# print(test1)
-# print("2")
-# print(test2)
-# print("3")
-# print(test3)
-# print("t")
-# print(test)
-# # print(np.argmax(test))
-
-
-q_values = np.random.randint(0, 3, size=(3, 4))
+q_values = np.random.randint(0, 3, size=(4, ))
 print("q_values")
 print(q_values)
 
@@ -135,7 +101,7 @@ penalized_q = q_values - fear_val_sum
 print(penalized_q)
 
 print("XXX")
-print(calc_fear_penalized_q(q_values, fear_prob))
+print(q_values - calc_fear_value(fear_prob))
 
 # print(np.sum(res))
 #

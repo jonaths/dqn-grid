@@ -11,6 +11,7 @@ from collections import namedtuple
 from agents.dqn_dist_lipton_v4 import DQNDistributiveLiptonAgent
 import sys
 import time
+from  helpers.calc_fear_penalized import calc_fear_value
 
 args_struct = namedtuple(
     'args',
@@ -22,11 +23,11 @@ args = args_struct(
     training_start=1000,
     save_steps=1000,
     copy_steps=500,
-    render=False,
-    # render=True,
+    # render=False,
+    render=True,
     path='models/my_dqn.ckpt',
-    test=False,
-    # test=True,
+    # test=False,
+    test=True,
     verbosity=1,
     batch_size=90
 )
@@ -103,7 +104,7 @@ with tf.Session() as sess:
         agent.init.run()
         agent.copy_online_to_target.run()
 
-    log_file = 'outputs/' + str(int(time.time())) + "_lmb-0.00_n-6"
+    log_file = 'outputs/' + str(int(time.time())) + "_lmb-0.00_n-8"
 
     writer = tf.summary.FileWriter(log_file, sess.graph)
 
@@ -190,11 +191,8 @@ with tf.Session() as sess:
         max_next_q_values = np.max(next_q_values, axis=1, keepdims=True)
 
         # fear = agent.online_fear_softmax.eval(feed_dict={X_state: [state]})
-        action_state = np.append(agent.one_hot(action, n_outputs), state)
-        fear = agent.online_fear_softmax.eval(feed_dict={X_state_action: [action_state]})
-
-        # aqui voy... acabo de entrenar el modelo. Ahora debo checar si se generan politi
-        # cas diferentes en funcion del maxarg que escojo: average o algun bin
+        # action_state = np.append(agent.one_hot(action, n_outputs), state)
+        # fear = agent.online_fear_softmax.eval(feed_dict={X_state_action: [action_state]})
 
         # normal dqn
         # y_val = rewards + continues * agent.discount_rate * max_next_q_values
@@ -210,16 +208,16 @@ with tf.Session() as sess:
         #         curr_lmb * fear[:, 0].reshape(-1, 1)
 
         # la idea para restar que al parecer no funciona
-        y_val = np.average(rewards +
-                           continues * agent.discount_rate * max_next_q_values -
-                           agent.get_lambda() * fear, axis=1).reshape(-1, 1)
+        # action_state = np.append(agent.one_hot(action, n_outputs), state)
+        # fear = agent.online_fear_softmax.eval(feed_dict={X_state_action: [action_state]})
+        # y_val = np.average(rewards +
+        #                    continues * agent.discount_rate * max_next_q_values -
+        #                    agent.get_lambda() * fear, axis=1).reshape(-1, 1)
 
-        # print("XXX")
-        # print(y_val.shape)
-        # print(continues.shape)
-        # print(max_next_q_values.shape)
-        # print(fear.shape)
-        # sys.exit(0)
+        # nueva idea con fear descontado
+        fear_probs = agent.online_fear_softmax.eval(feed_dict={X_state_action: X_state_action_val})
+        y_val = rewards + continues * agent.discount_rate * max_next_q_values \
+                - calc_fear_value(fear_probs, lmb=agent.get_lambda()).reshape(-1, 1)
 
         # Train the online DQN
 

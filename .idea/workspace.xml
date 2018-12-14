@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6efc7fa8-cf53-47f1-918a-b13a355d856e" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/models/1544807757_lmb-0.00_n-8/events.out.tfevents.1544807758.jonathan-5555" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/agents/dqn_dist_lipton_v4.py" beforeDir="false" afterPath="$PROJECT_DIR$/agents/dqn_dist_lipton_v4.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/helpers/calc_fear_penalized.py" beforeDir="false" afterPath="$PROJECT_DIR$/helpers/calc_fear_penalized.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/outputs/1544736641_lmb-0.00_n-5/events.out.tfevents.1544736641.jonathan-5555" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tiny_dqn.py" beforeDir="false" afterPath="$PROJECT_DIR$/tiny_dqn.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -22,7 +20,7 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/tiny_dqn.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="450">
+                <state relative-caret-position="229">
                   <caret line="30" column="14" lean-forward="true" selection-start-line="30" selection-start-column="14" selection-end-line="30" selection-end-column="14" />
                   <folding>
                     <element signature="e#0#65#0" expanded="true" />
@@ -60,8 +58,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/agents/dqn_dist_lipton_v4.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="576">
-                  <caret line="75" selection-start-line="75" selection-end-line="75" />
+                <state relative-caret-position="441">
+                  <caret line="66" column="29" selection-start-line="66" selection-start-column="29" selection-end-line="66" selection-end-column="29" />
                   <folding>
                     <element signature="e#0#29#0" expanded="true" />
                   </folding>
@@ -196,19 +194,19 @@
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/models/1544642747_lmb-0.00_n-4" />
-      <recent name="$PROJECT_DIR$/models/1544577570_lmb-0.00_n-2" />
-      <recent name="$PROJECT_DIR$/models/1544576201_lmb-0.00_n-3" />
-      <recent name="$PROJECT_DIR$/models/1542401687_lmb-5.00_n-2" />
-      <recent name="$PROJECT_DIR$/models/1542399206_lmb-5.00_n-1" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/models" />
       <recent name="$PROJECT_DIR$/agents" />
       <recent name="$PROJECT_DIR$/models/1544572668_lmb-5.00_n-3_ok" />
       <recent name="$PROJECT_DIR$/models/1542754029_lmb-5.00_n-3" />
       <recent name="$PROJECT_DIR$/models/1541466097_lmb-1.00_n-2" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/models/1544807757_lmb-0.00_n-8" />
+      <recent name="$PROJECT_DIR$/models/1544642747_lmb-0.00_n-4" />
+      <recent name="$PROJECT_DIR$/models/1544577570_lmb-0.00_n-2" />
+      <recent name="$PROJECT_DIR$/models/1544576201_lmb-0.00_n-3" />
+      <recent name="$PROJECT_DIR$/models/1542401687_lmb-5.00_n-2" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -244,7 +242,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="30039000" />
+    <option name="totallyTimeSpent" value="31083000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1366" y="25" width="1920" height="1055" extended-state="6" />
@@ -437,10 +435,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/models/checkpoint">
+    <entry file="file://$PROJECT_DIR$/models/1544807757_lmb-0.00_n-8/checkpoint">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/models/my_dqn.ckpt.index">
+    <entry file="file://$PROJECT_DIR$/models/1544807757_lmb-0.00_n-8/my_dqn.ckpt.index">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/helpers/calc_fear_penalized.py">
@@ -452,8 +450,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/agents/dqn_dist_lipton_v4.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="576">
-          <caret line="75" selection-start-line="75" selection-end-line="75" />
+        <state relative-caret-position="441">
+          <caret line="66" column="29" selection-start-line="66" selection-start-column="29" selection-end-line="66" selection-end-column="29" />
           <folding>
             <element signature="e#0#29#0" expanded="true" />
           </folding>
@@ -462,7 +460,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/tiny_dqn.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
+        <state relative-caret-position="229">
           <caret line="30" column="14" lean-forward="true" selection-start-line="30" selection-start-column="14" selection-end-line="30" selection-end-column="14" />
           <folding>
             <element signature="e#0#65#0" expanded="true" />

@@ -23,11 +23,11 @@ args = args_struct(
     training_start=1000,
     save_steps=1000,
     copy_steps=500,
-    # render=False,
-    render=True,
+    render=False,
+    # render=True,
     path='models/my_dqn.ckpt',
-    # test=False,
-    test=True,
+    test=False,
+    # test=True,
     verbosity=1,
     batch_size=90
 )
@@ -104,7 +104,7 @@ with tf.Session() as sess:
         agent.init.run()
         agent.copy_online_to_target.run()
 
-    log_file = 'outputs/' + str(int(time.time())) + "_lmb-0.50_n-1"
+    log_file = 'outputs/' + str(int(time.time())) + "_lmb-1.50_n-3"
 
     writer = tf.summary.FileWriter(log_file, sess.graph)
 
@@ -217,7 +217,7 @@ with tf.Session() as sess:
         # nueva idea con fear descontado
         fear_probs = agent.online_fear_softmax.eval(feed_dict={X_state_action: X_state_action_val})
         y_val = rewards + continues * agent.discount_rate * max_next_q_values \
-                - calc_fear_value(fear_probs, lmb=agent.get_lambda()).reshape(-1, 1)
+                - calc_fear_value(fear_probs, game_length=0.5, lmb=agent.get_lambda()).reshape(-1, 1)
 
         # Train the online DQN
 

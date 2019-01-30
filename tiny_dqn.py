@@ -11,7 +11,7 @@ from collections import namedtuple
 from agents.dqn_dist_lipton_v4 import DQNDistributiveLiptonAgent
 import sys
 import time
-from  helpers.calc_fear_penalized import calc_fear_value
+from helpers.calc_fear_penalized import calc_fear_value
 from helpers.policy_plotter import *
 
 args_struct = namedtuple(
@@ -19,7 +19,7 @@ args_struct = namedtuple(
     'number_steps learn_iterations, save_steps copy_steps '
     'render path test verbosity training_start batch_size save_policy')
 args = args_struct(
-    number_steps=50000,
+    number_steps=100000,
     learn_iterations=4,
     training_start=1000,
     save_steps=1000,
@@ -107,7 +107,7 @@ with tf.Session() as sess:
         agent.init.run()
         agent.copy_online_to_target.run()
 
-    log_file = 'outputs/' + str(int(time.time())) + "_lmb-0.00_n-9"
+    log_file = 'outputs/' + str(int(time.time())) + "_lmb-0.00_n-10"
 
     writer = tf.summary.FileWriter(log_file, sess.graph)
 
@@ -139,16 +139,18 @@ with tf.Session() as sess:
             # q_table = prepare_q_table(env.rows, env.cols, n_outputs, agent)
             # # genera grafica de politica
             # plot_policy(q_table, env.rows, env.cols, labels)
+            #
+            # fear_model_per_bin = prepare_fear_model(env.rows, env.cols, n_outputs, agent)
+            # for b in range(fear_model_per_bin.shape[0]):
+            #     plot_fear_models_per_bin(
+            #         fear_model_per_bin[b],
+            #         env.rows,
+            #         env.cols,
+            #         labels,
+            #         'fear_model_' + str(b))
 
-            fear_model_per_bin = prepare_fear_model(env.rows, env.cols, n_outputs, agent)
-            for b in range(fear_model_per_bin.shape[0]):
-                plot_fear_models_per_bin(
-                    fear_model_per_bin[b],
-                    env.rows,
-                    env.cols,
-                    labels,
-                   'fear_model_'+str(b))
-
+            discounted_fear_model = prepare_discounted_fear_model(env.rows, env.cols, n_outputs, agent)
+            print(discounted_fear_model)
             sys.exit(0)
 
         curr_lmb = agent.get_lambda()
@@ -157,15 +159,15 @@ with tf.Session() as sess:
         q_values = agent.online_q_values.eval(feed_dict={agent.X_state: [state]})
         action = agent.epsilon_greedy(q_values, step)
 
-        fear = agent.get_state_actions(state)
-        print()
-        print("lambda", curr_lmb, step)
-        print("state", np.argmax(state))
-        print("fear\n", fear)
-        print("q_values \n ", q_values)
-        print("q_values' \n ", agent.get_online_q_values(state, 2))
-        print("action", action)
-        action = input('action: ')
+        # fear = agent.get_state_actions(state)
+        # print()
+        # print("lambda", curr_lmb, step)
+        # print("state", np.argmax(state))
+        # print("fear\n", fear)
+        # print("q_values \n ", q_values)
+        # print("q_values' \n ", agent.get_online_q_values(state, 2))
+        # print("action", action)
+        # action = input('action: ')
 
         # aqui voy... al parecer aprende bien el fear model con action y state
         # ahora falta restarlo a la q y ver si aprende completo
@@ -202,7 +204,7 @@ with tf.Session() as sess:
         X_next_state_val, \
         continues, \
         fear_labels, \
-        X_state_action_val,\
+        X_state_action_val, \
         debug = (agent.sample_memories)
 
         # index = np.random.randint(len(continues) - 1)
@@ -237,8 +239,6 @@ with tf.Session() as sess:
         #                    continues * agent.discount_rate * max_next_q_values -
         #                    agent.get_lambda() * fear, axis=1).reshape(-1, 1)
 
-        print(X_state_action_val)
-        sys.exit(0)
 
         # nueva idea con fear descontado
         fear_probs = agent.online_fear_softmax.eval(feed_dict={X_state_action: X_state_action_val})

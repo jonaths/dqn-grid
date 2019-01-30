@@ -3,6 +3,126 @@
   <component name="ChangeListManager">
     <list default="true" id="6efc7fa8-cf53-47f1-918a-b13a355d856e" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/helpers/policy_plotter.py" beforeDir="false" afterPath="$PROJECT_DIR$/helpers/policy_plotter.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/outputs/1544808637_lmb-0.50_n-1/events.out.tfevents.1544808637.jonathan-5555" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/outputs/1545088080_lmb-0.50_n-2/events.out.tfevents.1545088081.jonathan-5555" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/outputs/1545088996_lmb-0.70_n-1/events.out.tfevents.1545088996.jonathan-5555" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/outputs/1545090785_lmb-0.70_n-2/events.out.tfevents.1545090785.jonathan-5555" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/outputs/1545091932_lmb-1.00_n-1/events.out.tfevents.1545091932.jonathan-5555" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/outputs/1545094222_lmb-1.00_n-2/events.out.tfevents.1545094223.jonathan-5555" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/outputs/1545108950_lmb-1.50_n-2/events.out.tfevents.1545108950.jonathan-5555" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/outputs/1545161188_lmb-1.50_n-3/events.out.tfevents.1545161188.jonathan-5555" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/outputs/1545163840_lmb-1.50_gamma-0.5_n-1/events.out.tfevents.1545163840.jonathan-5555" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/outputs/1545166864_lmb-1.50_gamma-0.1_n-1/events.out.tfevents.1545166864.jonathan-5555" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/outputs/1545262612_lmb-9.00_gamma-0.5_n-1/events.out.tfevents.1545262613.jonathan-5555" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/outputs/1545266474_lmb-9.00_gamma-0.3_n-1/events.out.tfevents.1545266474.jonathan-5555" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/outputs/1545421825_lmb-9.00_gamma-0.4_n-1/events.out.tfevents.1545421826.jonathan-5555" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/outputs/1548785083_lmb-0.00_n-9/events.out.tfevents.1548785083.jonathan-5555" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/outputs/1548785159_lmb-0.00_n-9/events.out.tfevents.1548785159.jonathan-5555" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/outputs/1548786029_lmb-0.00_n-9/events.out.tfevents.1548786029.jonathan-5555" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/outputs/1548786046_lmb-0.00_n-9/events.out.tfevents.1548786047.jonathan-5555" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/outputs/1548786117_lmb-0.00_n-9/events.out.tfevents.1548786117.jonathan-5555" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/outputs/1548786425_lmb-0.00_n-9/events.out.tfevents.1548786425.jonathan-5555" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/outputs/1548786486_lmb-0.00_n-9/events.out.tfevents.1548786486.jonathan-5555" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/outputs/1548786541_lmb-0.00_n-9/events.out.tfevents.1548786541.jonathan-5555" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/outputs/1548786621_lmb-0.00_n-9/events.out.tfevents.1548786621.jonathan-5555" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/outputs/1548786669_lmb-0.00_n-9/events.out.tfevents.1548786670.jonathan-5555" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/outputs/1548786770_lmb-0.00_n-9/events.out.tfevents.1548786770.jonathan-5555" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/outputs/1548786787_lmb-0.00_n-9/events.out.tfevents.1548786787.jonathan-5555" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/outputs/1548786820_lmb-0.00_n-9/events.out.tfevents.1548786820.jonathan-5555" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/outputs/1548787020_lmb-0.00_n-9/events.out.tfevents.1548787020.jonathan-5555" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/outputs/1548787063_lmb-0.00_n-9/events.out.tfevents.1548787063.jonathan-5555" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/outputs/1548787285_lmb-0.00_n-9/events.out.tfevents.1548787286.jonathan-5555" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/outputs/1548787326_lmb-0.00_n-9/events.out.tfevents.1548787326.jonathan-5555" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/outputs/1548787360_lmb-0.00_n-9/events.out.tfevents.1548787360.jonathan-5555" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/outputs/1548787570_lmb-0.00_n-9/events.out.tfevents.1548787570.jonathan-5555" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/outputs/1548787589_lmb-0.00_n-9/events.out.tfevents.1548787590.jonathan-5555" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/outputs/1548787789_lmb-0.00_n-9/events.out.tfevents.1548787789.jonathan-5555" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/outputs/1548788452_lmb-0.00_n-9/events.out.tfevents.1548788452.jonathan-5555" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/outputs/1548788471_lmb-0.00_n-9/events.out.tfevents.1548788471.jonathan-5555" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/outputs/1548788541_lmb-0.00_n-9/events.out.tfevents.1548788542.jonathan-5555" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/outputs/1548788609_lmb-0.00_n-9/events.out.tfevents.1548788609.jonathan-5555" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/outputs/1548788689_lmb-0.00_n-9/events.out.tfevents.1548788689.jonathan-5555" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/outputs/1548788710_lmb-0.00_n-9/events.out.tfevents.1548788710.jonathan-5555" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/outputs/1548788739_lmb-0.00_n-9/events.out.tfevents.1548788739.jonathan-5555" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/outputs/1548789154_lmb-0.00_n-9/events.out.tfevents.1548789154.jonathan-5555" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/outputs/1548789217_lmb-0.00_n-9/events.out.tfevents.1548789217.jonathan-5555" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/outputs/1548791389_lmb-0.00_n-9/events.out.tfevents.1548791389.jonathan-5555" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/outputs/1548791409_lmb-0.00_n-9/events.out.tfevents.1548791409.jonathan-5555" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/outputs/1548791514_lmb-0.00_n-9/events.out.tfevents.1548791514.jonathan-5555" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/outputs/1548791551_lmb-0.00_n-9/events.out.tfevents.1548791551.jonathan-5555" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/outputs/1548791762_lmb-0.00_n-9/events.out.tfevents.1548791762.jonathan-5555" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/outputs/1548791799_lmb-0.00_n-9/events.out.tfevents.1548791799.jonathan-5555" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/outputs/1548799345_lmb-0.00_n-9/events.out.tfevents.1548799345.jonathan-5555" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/outputs/1548799638_lmb-0.00_n-9/events.out.tfevents.1548799638.jonathan-5555" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/outputs/1548799694_lmb-0.00_n-9/events.out.tfevents.1548799694.jonathan-5555" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/outputs/1548799727_lmb-0.00_n-9/events.out.tfevents.1548799727.jonathan-5555" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/outputs/1548799813_lmb-0.00_n-9/events.out.tfevents.1548799813.jonathan-5555" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/outputs/1548799949_lmb-0.00_n-9/events.out.tfevents.1548799949.jonathan-5555" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/outputs/1548799966_lmb-0.00_n-9/events.out.tfevents.1548799966.jonathan-5555" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/outputs/1548800049_lmb-0.00_n-9/events.out.tfevents.1548800050.jonathan-5555" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/outputs/1548800068_lmb-0.00_n-9/events.out.tfevents.1548800068.jonathan-5555" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/outputs/1548800102_lmb-0.00_n-9/events.out.tfevents.1548800102.jonathan-5555" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/outputs/1548800125_lmb-0.00_n-9/events.out.tfevents.1548800125.jonathan-5555" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/outputs/1548800177_lmb-0.00_n-9/events.out.tfevents.1548800178.jonathan-5555" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/outputs/1548800241_lmb-0.00_n-9/events.out.tfevents.1548800241.jonathan-5555" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/outputs/1548800266_lmb-0.00_n-9/events.out.tfevents.1548800267.jonathan-5555" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/outputs/1548800377_lmb-0.00_n-9/events.out.tfevents.1548800377.jonathan-5555" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/outputs/1548800405_lmb-0.00_n-9/events.out.tfevents.1548800405.jonathan-5555" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/outputs/1548800489_lmb-0.00_n-9/events.out.tfevents.1548800489.jonathan-5555" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/outputs/1548800552_lmb-0.00_n-9/events.out.tfevents.1548800552.jonathan-5555" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/outputs/1548800655_lmb-0.00_n-9/events.out.tfevents.1548800655.jonathan-5555" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/outputs/1548800764_lmb-0.00_n-9/events.out.tfevents.1548800764.jonathan-5555" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/outputs/1548808718_lmb-0.00_n-9/events.out.tfevents.1548808719.jonathan-5555" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/outputs/1548808818_lmb-0.00_n-9/events.out.tfevents.1548808818.jonathan-5555" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/outputs/1548808850_lmb-0.00_n-9/events.out.tfevents.1548808850.jonathan-5555" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/outputs/1548808913_lmb-0.00_n-9/events.out.tfevents.1548808913.jonathan-5555" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/outputs/1548809007_lmb-0.00_n-9/events.out.tfevents.1548809007.jonathan-5555" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/outputs/1548809037_lmb-0.00_n-9/events.out.tfevents.1548809038.jonathan-5555" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/outputs/1548809168_lmb-0.00_n-9/events.out.tfevents.1548809168.jonathan-5555" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/outputs/1548809286_lmb-0.00_n-9/events.out.tfevents.1548809286.jonathan-5555" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/outputs/1548809394_lmb-0.00_n-9/events.out.tfevents.1548809394.jonathan-5555" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/outputs/1548814460_lmb-0.00_n-9/events.out.tfevents.1548814460.jonathan-5555" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/outputs/1548814511_lmb-0.00_n-9/events.out.tfevents.1548814511.jonathan-5555" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/outputs/1548816000_lmb-0.00_n-9/events.out.tfevents.1548816001.jonathan-5555" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/outputs/1548816023_lmb-0.00_n-9/events.out.tfevents.1548816023.jonathan-5555" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/outputs/1548816179_lmb-0.00_n-9/events.out.tfevents.1548816180.jonathan-5555" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/outputs/1548816397_lmb-0.00_n-9/events.out.tfevents.1548816397.jonathan-5555" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/outputs/1548816551_lmb-0.00_n-9/events.out.tfevents.1548816551.jonathan-5555" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/outputs/1548816585_lmb-0.00_n-9/events.out.tfevents.1548816586.jonathan-5555" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/outputs/1548816623_lmb-0.00_n-9/events.out.tfevents.1548816623.jonathan-5555" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/outputs/1548816737_lmb-0.00_n-9/events.out.tfevents.1548816737.jonathan-5555" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/outputs/1548817034_lmb-0.00_n-9/events.out.tfevents.1548817034.jonathan-5555" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/outputs/1548817067_lmb-0.00_n-9/events.out.tfevents.1548817068.jonathan-5555" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/outputs/1548817430_lmb-0.00_n-9/events.out.tfevents.1548817430.jonathan-5555" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/outputs/1548817488_lmb-0.00_n-9/events.out.tfevents.1548817488.jonathan-5555" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/outputs/1548817966_lmb-0.00_n-9/events.out.tfevents.1548817967.jonathan-5555" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/outputs/1548818009_lmb-0.00_n-9/events.out.tfevents.1548818010.jonathan-5555" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/outputs/1548818056_lmb-0.00_n-9/events.out.tfevents.1548818056.jonathan-5555" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/outputs/1548818254_lmb-0.00_n-9/events.out.tfevents.1548818254.jonathan-5555" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/outputs/1548818320_lmb-0.00_n-9/events.out.tfevents.1548818320.jonathan-5555" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/outputs/1548818652_lmb-0.00_n-9/events.out.tfevents.1548818652.jonathan-5555" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/outputs/1548818672_lmb-0.00_n-9/events.out.tfevents.1548818672.jonathan-5555" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/outputs/1548819452_lmb-0.00_n-9/events.out.tfevents.1548819452.jonathan-5555" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/outputs/1548819647_lmb-0.00_n-9/events.out.tfevents.1548819647.jonathan-5555" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/outputs/1548820073_lmb-0.00_n-9/events.out.tfevents.1548820073.jonathan-5555" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/outputs/1548820150_lmb-0.00_n-9/events.out.tfevents.1548820151.jonathan-5555" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/outputs/1548820277_lmb-0.00_n-9/events.out.tfevents.1548820277.jonathan-5555" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/outputs/1548820303_lmb-0.00_n-9/events.out.tfevents.1548820303.jonathan-5555" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/outputs/1548820366_lmb-0.00_n-9/events.out.tfevents.1548820366.jonathan-5555" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/outputs/1548820625_lmb-0.00_n-9/events.out.tfevents.1548820626.jonathan-5555" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/outputs/1548820643_lmb-0.00_n-9/events.out.tfevents.1548820644.jonathan-5555" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/outputs/1548820786_lmb-0.00_n-9/events.out.tfevents.1548820786.jonathan-5555" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/outputs/1548820808_lmb-0.00_n-9/events.out.tfevents.1548820809.jonathan-5555" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/outputs/1548821297_lmb-0.00_n-9/events.out.tfevents.1548821298.jonathan-5555" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/outputs/1548821608_lmb-0.00_n-9/events.out.tfevents.1548821608.jonathan-5555" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/outputs/1548822008_lmb-0.00_n-9/events.out.tfevents.1548822009.jonathan-5555" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/fear_model_0.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/fear_model_0.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/fear_model_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/fear_model_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/fear_model_2.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/fear_model_2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/fear_model_3.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/fear_model_3.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/fear_model_4.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/fear_model_4.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/policy.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/policy.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tiny_dqn.py" beforeDir="false" afterPath="$PROJECT_DIR$/tiny_dqn.py" afterDir="false" />
     </list>
@@ -19,11 +139,20 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/tiny_dqn.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="427">
-                  <caret line="130" column="23" selection-start-line="130" selection-start-column="23" selection-end-line="130" selection-end-column="23" />
+                <state relative-caret-position="560">
+                  <caret line="245" column="34" selection-start-line="245" selection-start-column="18" selection-end-line="245" selection-end-column="34" />
                   <folding>
                     <element signature="e#0#65#0" expanded="true" />
                   </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/helpers/calc_fear_penalized.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="45">
+                  <caret line="3" column="24" selection-start-line="3" selection-start-column="24" selection-end-line="3" selection-end-column="24" />
                 </state>
               </provider>
             </entry>
@@ -35,8 +164,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/test.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="180">
-                  <caret line="12" selection-start-line="12" selection-end-line="12" />
+                <state relative-caret-position="495">
+                  <caret line="33" column="22" selection-start-line="33" selection-start-column="22" selection-end-line="33" selection-end-column="22" />
                   <folding>
                     <element signature="e#0#18#0" expanded="true" />
                   </folding>
@@ -59,8 +188,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/helpers/policy_plotter.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="604">
-                  <caret line="93" selection-start-line="93" selection-end-line="93" />
+                <state relative-caret-position="679">
+                  <caret line="107" column="43" selection-start-line="107" selection-start-column="43" selection-end-line="107" selection-end-column="43" />
                   <folding>
                     <element signature="e#0#18#0" expanded="true" />
                   </folding>
@@ -111,8 +240,8 @@
         <option value="$PROJECT_DIR$/helpers/calc_fear_penalized.py" />
         <option value="$PROJECT_DIR$/agents/dqn_dist_lipton_v4.py" />
         <option value="$PROJECT_DIR$/test.py" />
-        <option value="$PROJECT_DIR$/helpers/policy_plotter.py" />
         <option value="$PROJECT_DIR$/tiny_dqn.py" />
+        <option value="$PROJECT_DIR$/helpers/policy_plotter.py" />
       </list>
     </option>
   </component>
@@ -165,6 +294,16 @@
               <item name="tiny-dqn" type="b2602c69:ProjectViewProjectNode" />
               <item name="tiny-dqn" type="462c0819:PsiDirectoryNode" />
               <item name="helpers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tiny-dqn" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tiny-dqn" type="462c0819:PsiDirectoryNode" />
+              <item name="models" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tiny-dqn" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tiny-dqn" type="462c0819:PsiDirectoryNode" />
+              <item name="outputs" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="tiny-dqn" type="b2602c69:ProjectViewProjectNode" />
@@ -241,18 +380,18 @@
       <workItem from="1548227882671" duration="168000" />
       <workItem from="1548291727509" duration="49000" />
       <workItem from="1548711712301" duration="598000" />
-      <workItem from="1548782484395" duration="23745000" />
+      <workItem from="1548782484395" duration="29706000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="76762000" />
+    <option name="totallyTimeSpent" value="82723000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1366" y="25" width="1920" height="1055" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15314835" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21558164" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -435,23 +574,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/helpers/calc_fear_penalized.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="4" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" selection-start-line="12" selection-end-line="12" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/agents/dqn_dist_lipton_v4.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="48">
@@ -468,22 +590,39 @@
     <entry file="file://$PROJECT_DIR$/plots/policy.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/helpers/policy_plotter.py">
+    <entry file="file://$PROJECT_DIR$/test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="604">
-          <caret line="93" selection-start-line="93" selection-end-line="93" />
+        <state relative-caret-position="495">
+          <caret line="33" column="22" selection-start-line="33" selection-start-column="22" selection-end-line="33" selection-end-column="22" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/helpers/calc_fear_penalized.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="24" selection-start-line="3" selection-start-column="24" selection-end-line="3" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/tiny_dqn.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="427">
-          <caret line="130" column="23" selection-start-line="130" selection-start-column="23" selection-end-line="130" selection-end-column="23" />
+        <state relative-caret-position="560">
+          <caret line="245" column="34" selection-start-line="245" selection-start-column="18" selection-end-line="245" selection-end-column="34" />
           <folding>
             <element signature="e#0#65#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/helpers/policy_plotter.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="679">
+          <caret line="107" column="43" selection-start-line="107" selection-start-column="43" selection-end-line="107" selection-end-column="43" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
           </folding>
         </state>
       </provider>

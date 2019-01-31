@@ -4,45 +4,32 @@
     <list default="true" id="6efc7fa8-cf53-47f1-918a-b13a355d856e" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/agents/dqn_dist_lipton_v4.py" beforeDir="false" afterPath="$PROJECT_DIR$/agents/dqn_dist_lipton_v4.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/outputs/1548824559_lmb-0.00_n-10/events.out.tfevents.1548824559.jonathan-5555" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/outputs/1548825188_lmb-0.00_n-10/events.out.tfevents.1548825188.jonathan-5555" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/outputs/1548825336_lmb-0.00_n-10/events.out.tfevents.1548825336.jonathan-5555" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/outputs/1548826039_lmb-0.00_n-10/events.out.tfevents.1548826039.jonathan-5555" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/outputs/1548826071_lmb-0.00_n-10/events.out.tfevents.1548826071.jonathan-5555" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/outputs/1548826462_lmb-0.00_n-10/events.out.tfevents.1548826463.jonathan-5555" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/outputs/1548826620_lmb-0.00_n-10/events.out.tfevents.1548826620.jonathan-5555" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/outputs/1548826808_lmb-0.00_n-10/events.out.tfevents.1548826808.jonathan-5555" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/outputs/1548827449_lmb-0.00_n-10/events.out.tfevents.1548827449.jonathan-5555" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/outputs/1548828050_lmb-0.00_n-10/events.out.tfevents.1548828050.jonathan-5555" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/outputs/1548828105_lmb-0.00_n-10/events.out.tfevents.1548828105.jonathan-5555" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/outputs/1548828154_lmb-0.00_n-10/events.out.tfevents.1548828155.jonathan-5555" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/outputs/1548829145_lmb-0.00_n-10/events.out.tfevents.1548829145.jonathan-5555" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/outputs/1548829260_lmb-0.00_n-10/events.out.tfevents.1548829260.jonathan-5555" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/outputs/1548829372_lmb-0.00_n-10/events.out.tfevents.1548829373.jonathan-5555" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/outputs/1548829562_lmb-0.00_n-10/events.out.tfevents.1548829562.jonathan-5555" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/outputs/1548829598_lmb-0.00_n-10/events.out.tfevents.1548829598.jonathan-5555" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/outputs/1548890619_lmb-0.00_n-10/events.out.tfevents.1548890619.jonathan-5555" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/outputs/1548890663_lmb-0.00_n-10/events.out.tfevents.1548890663.jonathan-5555" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/outputs/1548890782_lmb-0.00_n-10/events.out.tfevents.1548890782.jonathan-5555" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/outputs/1548890840_lmb-0.00_n-10/events.out.tfevents.1548890841.jonathan-5555" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/outputs/1548890948_lmb-0.00_n-10/events.out.tfevents.1548890949.jonathan-5555" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/outputs/1548891019_lmb-0.00_n-10/events.out.tfevents.1548891019.jonathan-5555" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/outputs/1548891101_lmb-0.00_n-10/events.out.tfevents.1548891101.jonathan-5555" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/outputs/1548891434_lmb-0.00_n-10/events.out.tfevents.1548891434.jonathan-5555" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/outputs/1548891959_lmb-0.00_n-10/events.out.tfevents.1548891960.jonathan-5555" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/outputs/1548891982_lmb-0.00_n-10/events.out.tfevents.1548891982.jonathan-5555" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/outputs/1548892467_lmb-0.00_n-10/events.out.tfevents.1548892467.jonathan-5555" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/outputs/1548892488_lmb-0.00_n-10/events.out.tfevents.1548892488.jonathan-5555" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/outputs/1548892631_lmb-0.00_n-10/events.out.tfevents.1548892632.jonathan-5555" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/outputs/1548892701_lmb-0.00_n-10/events.out.tfevents.1548892701.jonathan-5555" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/outputs/1548892751_lmb-0.00_n-10/events.out.tfevents.1548892751.jonathan-5555" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/outputs/1548892851_lmb-0.00_n-10/events.out.tfevents.1548892851.jonathan-5555" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/outputs/1548892913_lmb-0.00_n-10/events.out.tfevents.1548892914.jonathan-5555" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/outputs/1548894705_lmb-0.00_n-10/events.out.tfevents.1548894705.jonathan-5555" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/outputs/1548895109_lmb-0.00_n-10/events.out.tfevents.1548895109.jonathan-5555" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/fig_discounted_policy_gamma_0.5.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/fig_discounted_policy_gamma_0.5.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/fig_discounted_policy_gamma_0.7.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/fig_discounted_policy_gamma_0.7.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/fig_discounted_policy_gamma_0.9.png" beforeDir="false" afterPath="$PROJECT_DIR$/plots/fig_discounted_policy_gamma_0.9.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/helpers/policy_plotter.py" beforeDir="false" afterPath="$PROJECT_DIR$/helpers/policy_plotter.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/outputs/1548897106_lmb-9.00_gamma-0.50_n-01/events.out.tfevents.1548897106.jonathan-5555" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/backup/fear_model_0.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/backup/fear_model_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/backup/fear_model_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/backup/fear_model_3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/backup/fear_model_4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/backup/policy.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/fear_model_0.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/fear_model_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/fear_model_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/fear_model_3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/fear_model_4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/fig_discounted_policy_gamma_0.1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/fig_discounted_policy_gamma_0.3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/fig_discounted_policy_gamma_0.5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/fig_discounted_policy_gamma_0.7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/fig_discounted_policy_gamma_0.9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/fig_fear_model_0_nonumbers.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/fig_fear_model_1_nonumbers.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/fig_fear_model_2_nonumbers.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/fig_fear_model_3_nonumbers.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/fig_fear_model_4_nonumbers.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/fig_policy_nonumbers.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/plots/policy.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tiny_dqn.py" beforeDir="false" afterPath="$PROJECT_DIR$/tiny_dqn.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -58,11 +45,10 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/tiny_dqn.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="598">
-                  <caret line="109" column="74" selection-start-line="109" selection-start-column="74" selection-end-line="109" selection-end-column="74" />
+                <state relative-caret-position="863">
+                  <caret line="173" column="40" selection-start-line="173" selection-start-column="40" selection-end-line="173" selection-end-column="40" />
                   <folding>
                     <element signature="e#0#65#0" expanded="true" />
-                    <element signature="e#4113#5283#0" />
                   </folding>
                 </state>
               </provider>
@@ -84,8 +70,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/test.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="465">
-                  <caret line="33" column="22" selection-start-line="33" selection-start-column="22" selection-end-line="33" selection-end-column="22" />
+                <state relative-caret-position="60">
+                  <caret line="4" selection-start-line="4" selection-end-line="4" />
                   <folding>
                     <element signature="e#0#18#0" expanded="true" />
                   </folding>
@@ -93,11 +79,11 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/agents/dqn_dist_lipton_v4.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="390">
-                  <caret line="75" selection-start-line="75" selection-end-line="75" />
+                <state relative-caret-position="-660">
+                  <caret line="88" column="40" selection-start-line="88" selection-start-column="40" selection-end-line="88" selection-end-column="40" />
                   <folding>
                     <element signature="e#0#29#0" expanded="true" />
                   </folding>
@@ -105,11 +91,11 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="false">
+          <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/helpers/policy_plotter.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1549">
-                  <caret line="106" column="14" selection-start-line="106" selection-start-column="14" selection-end-line="106" selection-end-column="14" />
+                <state relative-caret-position="826">
+                  <caret line="102" column="24" selection-start-line="102" selection-start-column="24" selection-end-line="102" selection-end-column="24" />
                   <folding>
                     <element signature="e#0#18#0" expanded="true" />
                     <element signature="e#3422#4009#0" />
@@ -167,11 +153,11 @@
         <option value="$PROJECT_DIR$/networks/qnetworks.py" />
         <option value="$PROJECT_DIR$/agents/dqn_dist_lipton.py" />
         <option value="$PROJECT_DIR$/agents/dqn_dist_lipton_v1.py" />
-        <option value="$PROJECT_DIR$/test.py" />
         <option value="$PROJECT_DIR$/helpers/calc_fear_penalized.py" />
-        <option value="$PROJECT_DIR$/helpers/policy_plotter.py" />
         <option value="$PROJECT_DIR$/agents/dqn_dist_lipton_v4.py" />
+        <option value="$PROJECT_DIR$/test.py" />
         <option value="$PROJECT_DIR$/tiny_dqn.py" />
+        <option value="$PROJECT_DIR$/helpers/policy_plotter.py" />
       </list>
     </option>
   </component>
@@ -223,11 +209,6 @@
             <path>
               <item name="tiny-dqn" type="b2602c69:ProjectViewProjectNode" />
               <item name="tiny-dqn" type="462c0819:PsiDirectoryNode" />
-              <item name="helpers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="tiny-dqn" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tiny-dqn" type="462c0819:PsiDirectoryNode" />
               <item name="models" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -239,11 +220,6 @@
               <item name="tiny-dqn" type="b2602c69:ProjectViewProjectNode" />
               <item name="tiny-dqn" type="462c0819:PsiDirectoryNode" />
               <item name="outputs" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="tiny-dqn" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tiny-dqn" type="462c0819:PsiDirectoryNode" />
-              <item name="plots" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="tiny-dqn" type="b2602c69:ProjectViewProjectNode" />
@@ -317,18 +293,18 @@
       <workItem from="1548711712301" duration="598000" />
       <workItem from="1548782484395" duration="29782000" />
       <workItem from="1548884390322" duration="7253000" />
-      <workItem from="1548896712220" duration="2112000" />
+      <workItem from="1548896712220" duration="2531000" />
+      <workItem from="1548952573508" duration="5373000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="92164000" />
+    <option name="totallyTimeSpent" value="97956000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1366" y="25" width="1920" height="1055" extended-state="6" />
-    <editor active="true" />
+    <frame x="1366" y="-2" width="1920" height="1202" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19637139" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18463181" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -515,16 +491,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="33" column="22" selection-start-line="33" selection-start-column="22" selection-end-line="33" selection-end-column="22" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/networks/qnetworks.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1290">
@@ -532,21 +498,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/helpers/policy_plotter.py">
+    <entry file="file://$PROJECT_DIR$/test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1549">
-          <caret line="106" column="14" selection-start-line="106" selection-start-column="14" selection-end-line="106" selection-end-column="14" />
+        <state relative-caret-position="60">
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
-            <element signature="e#3422#4009#0" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/agents/dqn_dist_lipton_v4.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="75" selection-start-line="75" selection-end-line="75" />
+        <state relative-caret-position="-660">
+          <caret line="88" column="40" selection-start-line="88" selection-start-column="40" selection-end-line="88" selection-end-column="40" />
           <folding>
             <element signature="e#0#29#0" expanded="true" />
           </folding>
@@ -555,11 +520,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/tiny_dqn.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="598">
-          <caret line="109" column="74" selection-start-line="109" selection-start-column="74" selection-end-line="109" selection-end-column="74" />
+        <state relative-caret-position="863">
+          <caret line="173" column="40" selection-start-line="173" selection-start-column="40" selection-end-line="173" selection-end-column="40" />
           <folding>
             <element signature="e#0#65#0" expanded="true" />
-            <element signature="e#4113#5283#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/helpers/policy_plotter.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="826">
+          <caret line="102" column="24" selection-start-line="102" selection-start-column="24" selection-end-line="102" selection-end-column="24" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+            <element signature="e#3422#4009#0" />
           </folding>
         </state>
       </provider>

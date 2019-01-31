@@ -149,8 +149,13 @@ with tf.Session() as sess:
             #         labels,
             #         'fear_model_' + str(b))
 
-            discounted_fear_model = prepare_discounted_fear_model(env.rows, env.cols, n_outputs, agent)
-            print(discounted_fear_model)
+            for gamma in [0.9, 0.7, 0.5, 0.3, 0.1]:
+                discounted_fear_model = prepare_discounted_fear_model(
+                    env.rows, env.cols, n_outputs, agent,
+                    gamma=gamma, lmb=1., k_bins=5, k_steps=1)
+                plot_policy(
+                    discounted_fear_model, env.rows, env.cols,
+                    labels, 'fig_discounted_policy_gamma_'+str(gamma)+'.png')
             sys.exit(0)
 
         curr_lmb = agent.get_lambda()
@@ -159,15 +164,15 @@ with tf.Session() as sess:
         q_values = agent.online_q_values.eval(feed_dict={agent.X_state: [state]})
         action = agent.epsilon_greedy(q_values, step)
 
-        # fear = agent.get_state_actions(state)
-        # print()
-        # print("lambda", curr_lmb, step)
-        # print("state", np.argmax(state))
-        # print("fear\n", fear)
-        # print("q_values \n ", q_values)
-        # print("q_values' \n ", agent.get_online_q_values(state, 2))
-        # print("action", action)
-        # action = input('action: ')
+        fear = agent.get_state_actions(state)
+        print()
+        print("lambda", curr_lmb, step)
+        print("state", np.argmax(state))
+        print("fear\n", fear)
+        print("q_values \n ", q_values)
+        print("q_values' \n ", agent.get_online_q_values(state, 2))
+        print("action", action)
+        action = input('action: ')
 
         # aqui voy... al parecer aprende bien el fear model con action y state
         # ahora falta restarlo a la q y ver si aprende completo

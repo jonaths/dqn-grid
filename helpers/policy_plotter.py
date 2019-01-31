@@ -2,6 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from plotters.plotter import PolicyPlotter
 from helpers.calc_fear_penalized import calc_fear_value
+import sys
 
 import matplotlib.pylab as pylab
 params = {'legend.fontsize': 'large',
@@ -49,9 +50,10 @@ def prepare_q_table(num_rows, num_cols, num_actions, agent):
     return q_table
 
 
-def plot_policy(q_table, num_rows, num_cols, labels):
+def plot_policy(q_table, num_rows, num_cols, labels, file_name='policy.png'):
     """
     Genera un heatmap indicando la politica
+    :param file_name:
     :param q_table:
     :param num_rows:
     :param num_cols:
@@ -71,7 +73,7 @@ def plot_policy(q_table, num_rows, num_cols, labels):
     fig.set_size_inches(10, 5)
     im, cbar, texts = plotter.build_policy(labels=labels, show_numbers=False)
     fig.tight_layout()
-    fig.savefig('plots/fig_policy_nonumbers.png', dpi=100)
+    fig.savefig('plots/'+file_name, dpi=100)
     # plt.show()
 
 
@@ -101,22 +103,26 @@ def plot_fear_models_per_bin(fear_model, num_rows, num_cols, labels, file_name='
     fig.savefig('plots/fig_'+file_name+'_nonumbers.png', dpi=100)
 
 
-def prepare_discounted_fear_model(num_rows, num_cols, num_actions, agent):
-    num_states = num_rows * num_cols
-    fear_model = np.zeros(shape=(num_states, num_actions, agent.k_bins + 1))
+def prepare_discounted_fear_model(
+        num_rows, num_cols, num_actions, agent, gamma=0.9, lmb=1., k_bins=5, k_steps=1):
 
-    aqui voy... crear fear model descontado
+    num_states = num_rows * num_cols
+    fear_model = np.zeros(shape=(num_states, num_actions))
+
+    print("XXXXXXXXXXXXXXXXXXXXX")
+    print("s")
+    print(gamma, lmb, k_bins, k_steps)
 
     # genera lista de estados
     for s in range(num_states):
+        print(s)
         state_one_hot = np.eye(num_states)[s]
-        fear_model[s] = agent.get_state_actions(state_one_hot)
-        for a in range(len(fear_model[s])):
-            fear_model[a][s] = 1
-
-        print(fear_model)
-        sys.exit(0)
-
+        print("full")
+        actions_x_bins = agent.get_state_actions(state_one_hot)
+        print(actions_x_bins)
+        print("discounted")
+        fear_model[s] = calc_fear_value(actions_x_bins, gamma, lmb, k_bins, k_steps)
+        print(fear_model[s])
     return fear_model
 
 

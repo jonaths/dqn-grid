@@ -4,7 +4,6 @@ import numpy as np
 def calc_fear_value(fear_prob, gamma=0.9, lmb=1., k_bins=5, k_steps=1):
     """
     Calcula una penalizacion en funcion de la probabilidad de fallo.
-    :param q_values: (?, num_actions)
     :param fear_prob: (?, num_actions, num_bins)
     :param gamma: tasa de descuento
     :param lmb: penalizacion por fallo

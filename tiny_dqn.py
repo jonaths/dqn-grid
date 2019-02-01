@@ -107,7 +107,7 @@ with tf.Session() as sess:
         agent.init.run()
         agent.copy_online_to_target.run()
 
-    log_file = 'outputs/' + str(int(time.time())) + "_lmb-9.00_gamma-0.25_n-01"
+    log_file = 'outputs/' + str(int(time.time())) + "_lmb-9.00_gamma-0.65_n-01"
 
     writer = tf.summary.FileWriter(log_file, sess.graph)
 
@@ -131,25 +131,43 @@ with tf.Session() as sess:
         if args.render:
             env.render()
 
-        if args.save_policy and step in [5000, 20000, 50000, 98000]:
+        if args.save_policy and step in [5000, 20000, 50000, 75000, 98000]:
+        # if args.save_policy:
             step_prefix = '{:05d}'.format(step)+'-'
             # las etiquetas en el orden de la tabla q
             labels = ['^', '>', 'v', '<']
 
             # genera el espacio de estados y recupera los valores q
             q_table = prepare_q_table(env.rows, env.cols, n_outputs, agent)
+
             # genera grafica de politica
             plot_policy(
                 q_table, env.rows, env.cols, labels, step_prefix+'policy.png')
 
+            for action in range(n_outputs):
+                # genera heatmaps de valores q por accion
+                plot_heatmap(
+                    q_table, env.rows, env.cols, action,
+                    'q_actions/'+step_prefix+'_a-'+str(action)+'_heatmap.png')
+
             fear_model_per_bin = prepare_fear_model(env.rows, env.cols, n_outputs, agent)
             for b in range(fear_model_per_bin.shape[0]):
+                # genera heatmaps de fearmodel
                 plot_fear_models_per_bin(
                     fear_model_per_bin[b],
                     env.rows,
                     env.cols,
                     labels,
                     step_prefix+'fearmodel-' + str(b)+'.png')
+                for action in range(n_outputs):
+                    # genera heatmaps de fearmodel por accion
+                    plot_heatmap(
+                        fear_model_per_bin[b], env.rows, env.cols, action,
+                        'fear_actions/'
+                        + step_prefix
+                        + '_a-' + str(action)
+                        + '_b-' + str(b)
+                        + '_fearmodel.png')
 
             # for gamma in [0.9, 0.7, 0.5, 0.3, 0.1]:
             #     discounted_fear_model = prepare_discounted_fear_model(
@@ -250,7 +268,7 @@ with tf.Session() as sess:
         # nueva idea con fear descontado
         fear_probs = agent.online_fear_softmax.eval(feed_dict={X_state_action: X_state_action_val})
         y_val = rewards + continues * agent.discount_rate * max_next_q_values \
-                - calc_fear_value(fear_probs, gamma=0.25, lmb=agent.get_lambda()).reshape(-1, 1)
+                - calc_fear_value(fear_probs, gamma=0.65, lmb=agent.get_lambda()).reshape(-1, 1)
 
         # Train the online DQN
 

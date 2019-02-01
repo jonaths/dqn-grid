@@ -73,8 +73,17 @@ def plot_policy(q_table, num_rows, num_cols, labels, file_name='policy.png'):
     fig.set_size_inches(10, 5)
     im, cbar, texts = plotter.build_policy(labels=labels, show_numbers=False)
     fig.tight_layout()
-    fig.savefig('heatmaps/'+file_name, dpi=100)
+    fig.savefig('heatmap/'+file_name, dpi=100)
     # plt.show()
+
+
+def plot_heatmap(q_table, num_rows, num_cols, index, file_name='heatmap.png'):
+    fig, ax = plt.subplots()
+    fig.set_size_inches(10, 5)
+    plotter = PolicyPlotter(q_table, num_rows=num_rows, num_cols=num_cols)
+    im, cbar = plotter.build_heatmap(index=index)
+    fig.tight_layout()
+    fig.savefig('heatmap/' + file_name, dpi=100)
 
 
 def prepare_fear_model(num_rows, num_cols, num_actions, agent):
@@ -100,7 +109,7 @@ def plot_fear_models_per_bin(fear_model, num_rows, num_cols, labels, file_name='
     fig.set_size_inches(10, 5)
     im, cbar, texts = plotter.build_policy(labels=labels, cmap='Reds', show_numbers=False)
     fig.tight_layout()
-    fig.savefig('heatmap/'+file_name+'_nonumbers.png', dpi=100)
+    fig.savefig('heatmap/'+file_name, dpi=100)
 
 
 def prepare_discounted_fear_model(

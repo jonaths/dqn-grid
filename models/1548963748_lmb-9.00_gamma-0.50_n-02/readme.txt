@@ -1,0 +1,1 @@
+En este baje los bins a 4. Parece que funciona mejor.

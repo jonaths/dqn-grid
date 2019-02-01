@@ -19,7 +19,7 @@ class DQNDistributiveLiptonAgent(DQNAgent):
         self.danger_memory = deque([], maxlen=self.replay_memory_size)
         # el numero de pasos al estado peligroso
         self.nk = 2
-        self.k_bins = 4
+        self.k_bins = 3
         self.k_steps = 1
         self.k_dict = {}
         for b in range(self.k_bins + 1):

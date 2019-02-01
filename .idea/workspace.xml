@@ -4,32 +4,9 @@
     <list default="true" id="6efc7fa8-cf53-47f1-918a-b13a355d856e" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/agents/dqn_dist_lipton_v4.py" beforeDir="false" afterPath="$PROJECT_DIR$/agents/dqn_dist_lipton_v4.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/helpers/calc_fear_penalized.py" beforeDir="false" afterPath="$PROJECT_DIR$/helpers/calc_fear_penalized.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/helpers/policy_plotter.py" beforeDir="false" afterPath="$PROJECT_DIR$/helpers/policy_plotter.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/outputs/1548897106_lmb-9.00_gamma-0.50_n-01/events.out.tfevents.1548897106.jonathan-5555" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/backup/fear_model_0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/backup/fear_model_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/backup/fear_model_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/backup/fear_model_3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/backup/fear_model_4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/backup/policy.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/fear_model_0.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/fear_model_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/fear_model_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/fear_model_3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/fear_model_4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/fig_discounted_policy_gamma_0.1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/fig_discounted_policy_gamma_0.3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/fig_discounted_policy_gamma_0.5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/fig_discounted_policy_gamma_0.7.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/fig_discounted_policy_gamma_0.9.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/fig_fear_model_0_nonumbers.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/fig_fear_model_1_nonumbers.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/fig_fear_model_2_nonumbers.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/fig_fear_model_3_nonumbers.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/fig_fear_model_4_nonumbers.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/fig_policy_nonumbers.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/plots/policy.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/outputs/1548957627_lmb-9.00_gamma-0.25_n-01/events.out.tfevents.1548957627.jonathan-5555" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/tiny_dqn.py" beforeDir="false" afterPath="$PROJECT_DIR$/tiny_dqn.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -39,14 +16,14 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.4527429">
+    <splitter split-orientation="horizontal" split-proportion="0.4507138">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/tiny_dqn.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="863">
-                  <caret line="173" column="40" selection-start-line="173" selection-start-column="40" selection-end-line="173" selection-end-column="40" />
+                <state relative-caret-position="437">
+                  <caret line="143" column="24" selection-start-line="143" selection-start-column="24" selection-end-line="143" selection-end-column="24" />
                   <folding>
                     <element signature="e#0#65#0" expanded="true" />
                   </folding>
@@ -57,8 +34,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/helpers/calc_fear_penalized.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="45">
-                  <caret line="3" column="69" selection-start-line="3" selection-start-column="31" selection-end-line="3" selection-end-column="69" />
+                <state relative-caret-position="345">
+                  <caret line="23" selection-start-line="23" selection-end-line="23" />
                 </state>
               </provider>
             </entry>
@@ -70,7 +47,7 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/test.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="60">
+                <state relative-caret-position="30">
                   <caret line="4" selection-start-line="4" selection-end-line="4" />
                   <folding>
                     <element signature="e#0#18#0" expanded="true" />
@@ -82,8 +59,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/agents/dqn_dist_lipton_v4.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-660">
-                  <caret line="88" column="40" selection-start-line="88" selection-start-column="40" selection-end-line="88" selection-end-column="40" />
+                <state relative-caret-position="1485">
+                  <caret line="106" column="42" selection-start-line="106" selection-start-column="42" selection-end-line="106" selection-end-column="42" />
                   <folding>
                     <element signature="e#0#29#0" expanded="true" />
                   </folding>
@@ -94,11 +71,10 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/helpers/policy_plotter.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="826">
-                  <caret line="102" column="24" selection-start-line="102" selection-start-column="24" selection-end-line="102" selection-end-column="24" />
+                <state relative-caret-position="679">
+                  <caret line="94" column="45" selection-start-line="94" selection-start-column="45" selection-end-line="94" selection-end-column="45" />
                   <folding>
                     <element signature="e#0#18#0" expanded="true" />
-                    <element signature="e#3422#4009#0" />
                   </folding>
                 </state>
               </provider>
@@ -153,11 +129,12 @@
         <option value="$PROJECT_DIR$/networks/qnetworks.py" />
         <option value="$PROJECT_DIR$/agents/dqn_dist_lipton.py" />
         <option value="$PROJECT_DIR$/agents/dqn_dist_lipton_v1.py" />
-        <option value="$PROJECT_DIR$/helpers/calc_fear_penalized.py" />
-        <option value="$PROJECT_DIR$/agents/dqn_dist_lipton_v4.py" />
         <option value="$PROJECT_DIR$/test.py" />
-        <option value="$PROJECT_DIR$/tiny_dqn.py" />
+        <option value="$PROJECT_DIR$/agents/dqn_dist_lipton_v4.py" />
+        <option value="$PROJECT_DIR$/helpers/calc_fear_penalized.py" />
+        <option value="$PROJECT_DIR$/models/1548963748_lmb-9.00_gamma-0.50_n-02/readme.txt" />
         <option value="$PROJECT_DIR$/helpers/policy_plotter.py" />
+        <option value="$PROJECT_DIR$/tiny_dqn.py" />
       </list>
     </option>
   </component>
@@ -165,7 +142,7 @@
     <option name="x" value="1366" />
     <option name="y" value="-2" />
     <option name="width" value="1920" />
-    <option name="height" value="1082" />
+    <option name="height" value="1202" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -221,11 +198,6 @@
               <item name="tiny-dqn" type="462c0819:PsiDirectoryNode" />
               <item name="outputs" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="tiny-dqn" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tiny-dqn" type="462c0819:PsiDirectoryNode" />
-              <item name="summaries" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -240,18 +212,18 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/models/1548822504_lmb-0.00_n-10" />
-      <recent name="$PROJECT_DIR$/models/1545163840_lmb-1.50_gamma-0.5_n-1" />
-      <recent name="$PROJECT_DIR$/models/1545108950_lmb-1.50_n-2" />
-      <recent name="$PROJECT_DIR$/models/1545095544_lmb-1.50_n-1" />
-      <recent name="$PROJECT_DIR$/models/1545091932_lmb-1.00_n-1" />
+      <recent name="$PROJECT_DIR$/models/1548990594_lmb-9.00_gamma-0.65_n-01" />
+      <recent name="$PROJECT_DIR$/models/1548963748_lmb-9.00_gamma-0.50_n-02" />
+      <recent name="$PROJECT_DIR$/models/1548961348_lmb-9.00_gamma-0.50_n-01" />
+      <recent name="$PROJECT_DIR$/models/1548959720_lmb-9.00_gamma-0.40_n-01" />
+      <recent name="$PROJECT_DIR$/models" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/models/1548990594_lmb-9.00_gamma-0.65_n-01" />
       <recent name="$PROJECT_DIR$/models" />
       <recent name="$PROJECT_DIR$/models/1548784032_lmb-0.00_n-9" />
       <recent name="$PROJECT_DIR$/agents" />
       <recent name="$PROJECT_DIR$/models/1544572668_lmb-5.00_n-3_ok" />
-      <recent name="$PROJECT_DIR$/models/1542754029_lmb-5.00_n-3" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -294,21 +266,23 @@
       <workItem from="1548782484395" duration="29782000" />
       <workItem from="1548884390322" duration="7253000" />
       <workItem from="1548896712220" duration="2531000" />
-      <workItem from="1548952573508" duration="5373000" />
+      <workItem from="1548952573508" duration="10062000" />
+      <workItem from="1548985278518" duration="5048000" />
+      <workItem from="1549041499672" duration="322000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="97956000" />
+    <option name="totallyTimeSpent" value="108015000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1366" y="-2" width="1920" height="1202" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18463181" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20651014" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32929105" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32898417" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
@@ -481,13 +455,48 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/plots/fear_model.png" />
-    <entry file="file://$PROJECT_DIR$/plots/policy.png">
-      <provider selected="true" editor-type-id="images" />
+    <entry file="file://$PROJECT_DIR$/plots/policy.png" />
+    <entry file="file://$PROJECT_DIR$/models/1548963748_lmb-9.00_gamma-0.50_n-02/readme.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="54" selection-start-column="54" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tiny_dqn.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="437">
+          <caret line="143" column="24" selection-start-line="143" selection-start-column="24" selection-end-line="143" selection-end-column="24" />
+          <folding>
+            <element signature="e#0#65#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/helpers/calc_fear_penalized.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="69" selection-start-line="3" selection-start-column="31" selection-end-line="3" selection-end-column="69" />
+        <state relative-caret-position="345">
+          <caret line="23" selection-start-line="23" selection-end-line="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/agents/dqn_dist_lipton_v4.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1485">
+          <caret line="106" column="42" selection-start-line="106" selection-start-column="42" selection-end-line="106" selection-end-column="42" />
+          <folding>
+            <element signature="e#0#29#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -498,43 +507,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" selection-start-line="4" selection-end-line="4" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/agents/dqn_dist_lipton_v4.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-660">
-          <caret line="88" column="40" selection-start-line="88" selection-start-column="40" selection-end-line="88" selection-end-column="40" />
-          <folding>
-            <element signature="e#0#29#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tiny_dqn.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="863">
-          <caret line="173" column="40" selection-start-line="173" selection-start-column="40" selection-end-line="173" selection-end-column="40" />
-          <folding>
-            <element signature="e#0#65#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/helpers/policy_plotter.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="826">
-          <caret line="102" column="24" selection-start-line="102" selection-start-column="24" selection-end-line="102" selection-end-column="24" />
+        <state relative-caret-position="679">
+          <caret line="94" column="45" selection-start-line="94" selection-start-column="45" selection-end-line="94" selection-end-column="45" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
-            <element signature="e#3422#4009#0" />
           </folding>
         </state>
       </provider>

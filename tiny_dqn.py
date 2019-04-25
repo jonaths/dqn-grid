@@ -10,6 +10,15 @@ from summaries.summaries import variable_summaries, simple_summaries
 from collections import namedtuple
 from agents.dqn_lipton import DQNLiptonAgent
 import sys
+import time
+
+from plotters.plotter import PolicyPlotter
+from plotters.line_plotter import LinesPlotter
+from plotters.history import History
+
+exp_time = str(time.time())
+print(exp_time)
+
 
 args_struct = namedtuple(
     'args',
@@ -23,7 +32,7 @@ args = args_struct(
     copy_steps=500,
     render=False,
     # render=True,
-    path='models/my_dqn.ckpt',
+    path='results/' + exp_time + '/' + 'models/my_dqn.ckpt',
     test=False,
     # test=True,
     verbosity=1,
@@ -41,8 +50,6 @@ print(args)
 
 env = gym.make("border-v0")
 env.set_state_type('onehot')
-
-done = True  # env needs to be reset
 
 # atari ----------------------
 # input_height = 88
@@ -81,13 +88,22 @@ training_start = args.training_start
 skip_start = 0  # Skip the start of every game (it's just waiting time).
 # skip_start = 90  # Skip the start of every game (it's just waiting time).
 iteration = 0  # game iterations
-done = True  # env needs to be reset
+
 
 # We will keep track of the max Q-Value over time and compute the mean per game
 loss_val = np.infty
 game_length = 0
 total_max_q = 0
 mean_max_q = 0.0
+
+plotter = LinesPlotter(['reward', 'steps', 'end_state'], 1, 1000)
+history = History()
+episode_count = 0
+
+# game over, start again
+obs = env.reset()
+state = agent.preprocess_observation(obs)
+done = False
 
 with tf.Session() as sess:
     if os.path.isfile(args.path + ".index"):
@@ -96,23 +112,36 @@ with tf.Session() as sess:
         agent.init.run()
         agent.copy_online_to_target.run()
 
-    writer = tf.summary.FileWriter("output", sess.graph)
+    writer = tf.summary.FileWriter('results/' + exp_time + '/' + "outputs", sess.graph)
 
     while True:
+
         step = agent.global_step.eval()
+
         if step >= args.number_steps:
             break
+
         iteration += 1
+
         if args.verbosity > 0:
             print("\rIteration {}   Training step {}/{} ({:.1f})%   "
                   "Loss {:5f}    Mean Max-Q {:5f}   ".format(
                 iteration, step, args.number_steps, step * 100 / args.number_steps,
                 loss_val, mean_max_q), end="")
+
         if done:
+
+            plotter.add_episode_to_experiment(0, episode_count,
+                                              [
+                                                  history.get_total_reward(),
+                                                  history.get_steps_count(),
+                                                  history.get_state_sequence()[-1]
+                                              ])
+            history.clear()
+            episode_count += 1
+
             # game over, start again
             obs = env.reset()
-            for skip in range(skip_start):  # skip the start of each game
-                obs, reward, done, info = env.step(0)
             state = agent.preprocess_observation(obs)
 
         if args.render:
@@ -129,6 +158,11 @@ with tf.Session() as sess:
         # Online DQN plays
         obs, reward, done, info = env.step(action)
         next_state = agent.preprocess_observation(obs)
+
+        # se asegura que los estados sean enteros
+        state_ind = np.argmax(state)
+        next_state_ind = np.argmax(next_state)
+        history.insert((state_ind, action, reward, next_state_ind))
 
         # Let's memorize what happened
         agent.append_to_memory(state, action, reward, next_state, done)
@@ -229,3 +263,5 @@ with tf.Session() as sess:
         # And save regularly
         if step % args.save_steps == 0:
             agent.saver.save(sess, args.path)
+
+    plotter.save_data('results/' + exp_time + '/' + 'data')

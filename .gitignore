@@ -1,4 +1,5 @@
 # tiny-dqn specific ignores
+results/
 checkpoint
 my_*
 

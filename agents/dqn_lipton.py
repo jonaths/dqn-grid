@@ -62,7 +62,6 @@ class DQNLiptonAgent(DQNAgent):
 
     def get_lambda(self, steps):
         lmb = min(self.lmb, 1. * self.lmb * steps / self.lmb_phase_in)
-        print(steps, lmb)
         return 0
 
     def create_fear_networks(self):

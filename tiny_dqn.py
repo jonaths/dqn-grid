@@ -16,8 +16,15 @@ from plotters.plotter import PolicyPlotter
 from plotters.line_plotter import LinesPlotter
 from plotters.history import History
 
-exp_time = str(time.time())
-print(exp_time)
+from helpers.policy_plotter import prepare_q_table, plot_policy, plot_heatmap
+
+# crea la carpeta del experimento
+exp_time = str(int(time.time()))
+path = os.getcwd()
+exp_path = path + '/' + 'results/' + exp_time
+os.mkdir(exp_path)
+os.mkdir(exp_path + '/' + 'plots')
+
 
 
 args_struct = namedtuple(
@@ -39,10 +46,9 @@ args = args_struct(
     batch_size=90
 )
 
-# correr nuevamente... esta aprendiendo valores negativos para el fear_val
-
 print("Args:")
 print(args)
+
 
 # atari -----------------------
 # env = gym.make("MsPacman-v0")
@@ -96,7 +102,7 @@ game_length = 0
 total_max_q = 0
 mean_max_q = 0.0
 
-plotter = LinesPlotter(['reward', 'steps', 'end_state'], 1, 1000)
+plotter = LinesPlotter(['reward', 'steps', 'end_state'], 1, 3000)
 history = History()
 episode_count = 0
 
@@ -124,10 +130,10 @@ with tf.Session() as sess:
         iteration += 1
 
         if args.verbosity > 0:
-            print("\rIteration {}   Training step {}/{} ({:.1f})%   "
-                  "Loss {:5f}    Mean Max-Q {:5f}   ".format(
+            print('\rIteration {}   Training step {}/{} ({:.1f})%   '
+                  'Loss {:5f}    Mean Max-Q {:5f}   Episode {}   '.format(
                 iteration, step, args.number_steps, step * 100 / args.number_steps,
-                loss_val, mean_max_q), end="")
+                loss_val, mean_max_q, episode_count), end="")
 
         if done:
 
@@ -146,6 +152,30 @@ with tf.Session() as sess:
 
         if args.render:
             env.render()
+
+        if episode_count in [1000, 3000]:
+
+            # if args.save_policy:
+            step_prefix = '{:05d}'.format(episode_count) + '-'
+            # las etiquetas en el orden de la tabla q
+            labels = ['^', '>', 'v', '<']
+
+            # genera el espacio de estados y recupera los valores q
+            q_table = prepare_q_table(env.rows, env.cols, n_outputs, agent)
+
+            # genera grafica de politica
+            plot_policy(
+                q_table, env.rows, env.cols, labels,
+                file_name='results/' + exp_time + '/' + 'plots/' + step_prefix + 'policy.png')
+
+            risk_map = []
+            num_states = env.rows * env.cols
+            for s in range(num_states):
+                state_one_hot = np.eye(num_states)[s]
+                fear = agent.online_fear.eval(feed_dict={X_state: [state_one_hot]})
+                risk_map.append(fear)
+            plot_heatmap(np.array(risk_map), env.rows, env.cols, index=None,
+                         file_name='results/' + exp_time + '/' + 'plots/' + step_prefix + 'riskmap.png')
 
         # Online DQN evaluates what to do
         q_values = agent.online_q_values.eval(feed_dict={X_state: [state]})

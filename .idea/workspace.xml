@@ -2,13 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6efc7fa8-cf53-47f1-918a-b13a355d856e" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/helpers/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/helpers/policy_plotter.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/agents/dqn_lipton.py" beforeDir="false" afterPath="$PROJECT_DIR$/agents/dqn_lipton.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/1556152602.26/data.npy" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/1556152602.26/outputs/events.out.tfevents.1556152605.jonathan-5555" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/tiny_dqn.py" beforeDir="false" afterPath="$PROJECT_DIR$/tiny_dqn.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -24,10 +19,11 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/tiny_dqn.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="233">
-                  <caret line="104" column="61" selection-start-line="104" selection-start-column="61" selection-end-line="104" selection-end-column="61" />
+                <state relative-caret-position="758">
+                  <caret line="55" selection-start-line="55" selection-end-line="55" />
                   <folding>
                     <element signature="e#0#65#0" expanded="true" />
+                    <element signature="e#4343#5294#0" />
                   </folding>
                 </state>
               </provider>
@@ -85,8 +81,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/agents/dqn_lipton.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-130">
-                  <caret line="75" lean-forward="true" selection-start-line="75" selection-end-line="75" />
+                <state relative-caret-position="185">
+                  <caret line="57" column="20" selection-start-line="57" selection-start-column="20" selection-end-line="57" selection-end-column="20" />
                   <folding>
                     <element signature="e#0#29#0" expanded="true" />
                   </folding>
@@ -158,6 +154,7 @@
         <option value="$PROJECT_DIR$/helpers/policy_plotter.py" />
         <option value="$PROJECT_DIR$/agents/dqn_lipton.py" />
         <option value="$PROJECT_DIR$/tiny_dqn.py" />
+        <option value="$PROJECT_DIR$/results/1556235501/readme.txt" />
       </list>
     </option>
   </component>
@@ -207,6 +204,19 @@
               <item name="tiny-dqn" type="b2602c69:ProjectViewProjectNode" />
               <item name="tiny-dqn" type="462c0819:PsiDirectoryNode" />
               <item name="results" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tiny-dqn" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tiny-dqn" type="462c0819:PsiDirectoryNode" />
+              <item name="results" type="462c0819:PsiDirectoryNode" />
+              <item name="1556235531" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tiny-dqn" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tiny-dqn" type="462c0819:PsiDirectoryNode" />
+              <item name="results" type="462c0819:PsiDirectoryNode" />
+              <item name="1556235531" type="462c0819:PsiDirectoryNode" />
+              <item name="plots" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -263,15 +273,16 @@
       <updated>1536082531819</updated>
       <workItem from="1556120753689" duration="3760000" />
       <workItem from="1556136433929" duration="4926000" />
-      <workItem from="1556228026308" duration="4190000" />
+      <workItem from="1556228026308" duration="7558000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12876000" />
+    <option name="totallyTimeSpent" value="16244000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1366" y="25" width="1920" height="1055" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.13767342" />
       <window_info id="Structure" order="1" weight="0.25" />
@@ -423,22 +434,48 @@
     <entry file="file://$PROJECT_DIR$/results/1556230983/plots/03000-riskmap.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/results/1556233285/plots/01000-policy.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/results/1556233285/plots/01000-riskmap.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/results/1556233758/plots/03000-riskmap.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/results/1556233758/plots/03000-policy.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/agents/dqn_lipton.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-130">
-          <caret line="75" lean-forward="true" selection-start-line="75" selection-end-line="75" />
+        <state relative-caret-position="185">
+          <caret line="57" column="20" selection-start-line="57" selection-start-column="20" selection-end-line="57" selection-end-column="20" />
           <folding>
             <element signature="e#0#29#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/results/1556235501/readme.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="10" selection-start-column="10" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/results/1556235531/plots/03000-policy.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/results/1556235531/plots/03000-riskmap.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/tiny_dqn.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="233">
-          <caret line="104" column="61" selection-start-line="104" selection-start-column="61" selection-end-line="104" selection-end-column="61" />
+        <state relative-caret-position="758">
+          <caret line="55" selection-start-line="55" selection-end-line="55" />
           <folding>
             <element signature="e#0#65#0" expanded="true" />
+            <element signature="e#4343#5294#0" />
           </folding>
         </state>
       </provider>

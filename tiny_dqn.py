@@ -25,8 +25,6 @@ exp_path = path + '/' + 'results/' + exp_time
 os.mkdir(exp_path)
 os.mkdir(exp_path + '/' + 'plots')
 
-
-
 args_struct = namedtuple(
     'args',
     'number_steps learn_iterations, save_steps copy_steps '
@@ -235,7 +233,8 @@ with tf.Session() as sess:
 
         fear = agent.online_fear.eval(feed_dict={X_state: [state]})
         risk_penalization = agent.get_lambda(step) * fear
-        print(risk_penalization)
+
+
         y_val = rewards + agent.discount_rate * max_next_q_values - risk_penalization
 
         # print("XXX")

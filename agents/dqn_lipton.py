@@ -55,7 +55,7 @@ class DQNLiptonAgent(DQNAgent):
         self.init = None
         self.merged = None
         self.saver = None
-        self.lmb = 1
+        self.lmb = 5
         self.lmb_phase_in = 10000
 
         pass

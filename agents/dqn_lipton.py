@@ -102,14 +102,24 @@ class DQNLiptonAgent(DQNAgent):
         # esto se puede cambiar
         is_dangerous = reward < -1
 
-        if is_dangerous:
+        # el episodio termino
+        if done:
 
-            for i in range(self.nk + 1):
-                also_dangerous = self.temp_replay_memory.pop()
-                self.danger_memory.append(also_dangerous)
+            # una transicion artificial
+            # para asegurarse que los estados finales son entrenados
+            final_tuple = (next_state, action, reward, next_state, 1.0 - done)
+            self.temp_replay_memory.append(final_tuple)
 
+            # el episodio termino en un estado peligroso
+            if is_dangerous:
+
+                # guarda las ultimas k transiciones en la cola peligrosa
+                for i in range(self.nk + 1):
+                    also_dangerous = self.temp_replay_memory.pop()
+                    self.danger_memory.append(also_dangerous)
+
+            # guarda las transiciones restantes en la cola segura y haz clear
             self.safe_memory.extend(self.temp_replay_memory)
-
             self.temp_replay_memory.clear()
 
     def sample_memories(self):

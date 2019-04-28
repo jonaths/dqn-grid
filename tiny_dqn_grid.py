@@ -221,8 +221,6 @@ with tf.Session() as sess:
         continues, \
         fear_val = (agent.sample_memories())
 
-        no sigue la politica... solo cambiar a cartpole y hacer que funicone!!!!!!!!!!!
-
         next_q_values = agent.target_q_values.eval(feed_dict={X_state: X_next_state_val})
         max_next_q_values = np.max(next_q_values, axis=1, keepdims=True)
 

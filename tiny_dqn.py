@@ -36,8 +36,8 @@ args = args_struct(
     save_steps=1000,
     copy_steps=500,
 
-    render=False,
-    # render=True,
+    # render=False,
+    render=True,
 
     path='results/' + exp_time + '/' + 'models/my_dqn.ckpt',
 
@@ -45,7 +45,7 @@ args = args_struct(
     # test=True,
 
     load=False,
-    # load='results/' + '1556493818' + '/' + 'models/my_dqn.ckpt',
+    # load='results/' + '1556640642_lmb-0_k-10' + '/' + 'models/my_dqn.ckpt',
 
     verbosity=1,
     batch_size=90
@@ -72,7 +72,9 @@ process_params = {
     'num_states': input_height * input_width
 }
 
-danger_states = [1, 70]
+# danger_states = [1, 70]
+danger_states = [0, 1, 2, 3, 4, 5, 66, 67, 68, 69, 70, 71]
+
 
 
 n_outputs = env.action_space.n
@@ -83,7 +85,7 @@ X_state = tf.placeholder(tf.float32, shape=[None, input_height * input_width])
 # And on to the epsilon-greedy policy with decaying epsilon
 eps_min = 0.1
 eps_max = 1.0 if not args.test else eps_min
-eps_decay_steps = args.number_steps // 2
+eps_decay_steps = int(args.number_steps * 0.75)
 
 # We need to preprocess the images to speed up training
 mspacman_color = np.array([210, 164, 74]).mean()
@@ -145,6 +147,9 @@ with tf.Session() as sess:
                 loss_val, mean_max_q, episode_count), end="")
 
         if done:
+            # print(history.get_state_sequence())
+            # print(history.get_steps_count(), history.get_state_sequence()[-1])
+            # input()
             plotter.add_episode_to_experiment(0, episode_count,
                                               [
                                                   history.get_total_reward(),
@@ -168,7 +173,7 @@ with tf.Session() as sess:
         if args.render:
             env.render()
 
-        if episode_count in [1000, 3000]:
+        if episode_count in [1000, 3000, 5000]:
 
             # if args.save_policy:
             step_prefix = '{:05d}'.format(episode_count) + '-'

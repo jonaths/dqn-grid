@@ -18,7 +18,7 @@ class DQNLiptonAgent(DQNAgent):
         self.safe_memory = deque([], maxlen=self.replay_memory_size)
         self.danger_memory = deque([], maxlen=self.replay_memory_size)
         # el numero de pasos al estado peligroso
-        self.nk = 20
+        self.nk = 5
         # learning and environment
         self.num_actions = num_actions
         self.eps_min = eps_min

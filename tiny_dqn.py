@@ -1,18 +1,14 @@
 from __future__ import division, print_function, unicode_literals
-from collections import deque
 import gym
-import gym_windy
 import numpy as np
 import os
 import tensorflow as tf
-from networks.qnetworks import conv_network, ff_network
-from summaries.summaries import variable_summaries, simple_summaries
 from collections import namedtuple
 from agents.dqn_lipton import DQNLiptonAgent
 import sys
 import time
+from helpers import tools
 
-from plotters.plotter import PolicyPlotter
 from plotters.line_plotter import LinesPlotter
 from plotters.history import History
 
@@ -20,6 +16,8 @@ from helpers.policy_plotter import prepare_q_table, plot_policy, plot_heatmap
 
 # crea la carpeta del experimento
 exp_time = str(int(time.time()))
+# exp_time = '1556490978'
+
 path = os.getcwd()
 exp_path = path + '/' + 'results/' + exp_time
 os.mkdir(exp_path)
@@ -27,19 +25,28 @@ os.mkdir(exp_path + '/' + 'plots')
 
 args_struct = namedtuple(
     'args',
-    'number_steps learn_iterations, save_steps copy_steps '
-    'render path test verbosity training_start batch_size ')
+    'env_name buckets number_steps learn_iterations, save_steps copy_steps '
+    'render path test load verbosity training_start batch_size ')
 args = args_struct(
+    env_name='CartPole-v0',
+    buckets=(1, 1, 6, 12),
     number_steps=50000,
     learn_iterations=4,
     training_start=1000,
     save_steps=1000,
     copy_steps=500,
+
     render=False,
     # render=True,
+
     path='results/' + exp_time + '/' + 'models/my_dqn.ckpt',
+
     test=False,
     # test=True,
+
+    # load=False,
+    load='results/' + '1556493818' + '/' + 'models/my_dqn.ckpt',
+
     verbosity=1,
     batch_size=90
 )
@@ -47,13 +54,7 @@ args = args_struct(
 print("Args:")
 print(args)
 
-
-# atari -----------------------
-# env = gym.make("MsPacman-v0")
-# -----------------------------
-
-env = gym.make("border-v0")
-env.set_state_type('onehot')
+env = gym.make('CartPole-v0')
 
 # atari ----------------------
 # input_height = 88
@@ -61,11 +62,17 @@ env.set_state_type('onehot')
 # input_channels = 1
 # ----------------------------
 
-input_height = env.rows
-input_width = env.cols
+input_height = 6
+input_width = 12
 input_channels = 1
 
-n_outputs = env.action_space.n  # 9 discrete actions are available
+process_params = {
+    'env': env,
+    'buckets': args.buckets,
+    'num_states': input_height * input_width
+}
+
+n_outputs = env.action_space.n
 
 # X_state = tf.placeholder(tf.float32, shape=[None, input_height, input_width, input_channels])
 X_state = tf.placeholder(tf.float32, shape=[None, input_height * input_width])
@@ -93,7 +100,6 @@ skip_start = 0  # Skip the start of every game (it's just waiting time).
 # skip_start = 90  # Skip the start of every game (it's just waiting time).
 iteration = 0  # game iterations
 
-
 # We will keep track of the max Q-Value over time and compute the mean per game
 loss_val = np.infty
 game_length = 0
@@ -106,12 +112,14 @@ episode_count = 0
 
 # game over, start again
 obs = env.reset()
-state = agent.preprocess_observation(obs)
+state = tools.process_obs(obs,
+                          name='buckets',
+                          params=process_params)
 done = False
 
 with tf.Session() as sess:
-    if os.path.isfile(args.path + ".index"):
-        agent.saver.restore(sess, args.path)
+    if args.load and os.path.isfile(args.load + ".index"):
+        agent.saver.restore(sess, args.load)
     else:
         agent.init.run()
         agent.copy_online_to_target.run()
@@ -134,7 +142,6 @@ with tf.Session() as sess:
                 loss_val, mean_max_q, episode_count), end="")
 
         if done:
-
             plotter.add_episode_to_experiment(0, episode_count,
                                               [
                                                   history.get_total_reward(),
@@ -146,7 +153,14 @@ with tf.Session() as sess:
 
             # game over, start again
             obs = env.reset()
-            state = agent.preprocess_observation(obs)
+            state = tools.process_obs(obs,
+                                      name='buckets',
+                                      params=process_params)
+
+        # aqui voy... necesito:
+        #     checar la lngitud de los episodios para saber
+        #     que longitud dar a k
+        #     graficar la recompensa en 1556493818
 
         if args.render:
             env.render()
@@ -156,23 +170,23 @@ with tf.Session() as sess:
             # if args.save_policy:
             step_prefix = '{:05d}'.format(episode_count) + '-'
             # las etiquetas en el orden de la tabla q
-            labels = ['^', '>', 'v', '<']
+            labels = ['<', '>']
 
             # genera el espacio de estados y recupera los valores q
-            q_table = prepare_q_table(env.rows, env.cols, n_outputs, agent)
+            q_table = prepare_q_table(input_height, input_width, n_outputs, agent)
 
             # genera grafica de politica
             plot_policy(
-                q_table, env.rows, env.cols, labels,
+                q_table, input_height, input_width, labels,
                 file_name='results/' + exp_time + '/' + 'plots/' + step_prefix + 'policy.png')
 
             risk_map = []
-            num_states = env.rows * env.cols
+            num_states = input_height * input_width
             for s in range(num_states):
                 state_one_hot = np.eye(num_states)[s]
                 fear = agent.online_fear.eval(feed_dict={X_state: [state_one_hot]})
                 risk_map.append(fear)
-            plot_heatmap(np.array(risk_map), env.rows, env.cols, index=None,
+            plot_heatmap(np.array(risk_map), input_height, input_width, index=None,
                          file_name='results/' + exp_time + '/' + 'plots/' + step_prefix + 'riskmap.png')
 
         # Online DQN evaluates what to do
@@ -185,7 +199,9 @@ with tf.Session() as sess:
 
         # Online DQN plays
         obs, reward, done, info = env.step(action)
-        next_state = agent.preprocess_observation(obs)
+        next_state = tools.process_obs(obs,
+                                       name='buckets',
+                                       params=process_params)
 
         # se asegura que los estados sean enteros
         state_ind = np.argmax(state)
@@ -220,8 +236,6 @@ with tf.Session() as sess:
         X_next_state_val, \
         continues, \
         fear_val = (agent.sample_memories())
-
-        no sigue la politica... solo cambiar a cartpole y hacer que funicone!!!!!!!!!!!
 
         next_q_values = agent.target_q_values.eval(feed_dict={X_state: X_next_state_val})
         max_next_q_values = np.max(next_q_values, axis=1, keepdims=True)

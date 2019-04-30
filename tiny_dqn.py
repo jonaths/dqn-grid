@@ -44,8 +44,8 @@ args = args_struct(
     test=False,
     # test=True,
 
-    # load=False,
-    load='results/' + '1556493818' + '/' + 'models/my_dqn.ckpt',
+    load=False,
+    # load='results/' + '1556493818' + '/' + 'models/my_dqn.ckpt',
 
     verbosity=1,
     batch_size=90
@@ -71,6 +71,9 @@ process_params = {
     'buckets': args.buckets,
     'num_states': input_height * input_width
 }
+
+danger_states = [1, 70]
+
 
 n_outputs = env.action_space.n
 
@@ -208,8 +211,10 @@ with tf.Session() as sess:
         next_state_ind = np.argmax(next_state)
         history.insert((state_ind, action, reward, next_state_ind))
 
+        is_dangerous = True if next_state_ind in danger_states else False
+
         # Let's memorize what happened
-        agent.append_to_memory(state, action, reward, next_state, done)
+        agent.append_to_memory(state, action, reward, next_state, done, is_dangerous)
         state = next_state
 
         if args.test:

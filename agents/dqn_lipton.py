@@ -88,7 +88,7 @@ class DQNLiptonAgent(DQNAgent):
             simple_summaries(self.fear_val, 'fear')
             simple_summaries(self.fear_loss, 'loss')
 
-    def append_to_memory(self, state, action, reward, next_state, done):
+    def append_to_memory(self, state, action, reward, next_state, done, is_dangerous=None):
 
         # esto solo es para debug
         # state = np.argmax(state, axis=0)
@@ -100,7 +100,8 @@ class DQNLiptonAgent(DQNAgent):
 
         # determinar si el estado es peligroso
         # esto se puede cambiar
-        is_dangerous = reward < -1
+        if is_dangerous is None:
+            is_dangerous = reward < -1
 
         # el episodio termino
         if done:
@@ -114,7 +115,7 @@ class DQNLiptonAgent(DQNAgent):
             if is_dangerous:
 
                 # guarda las ultimas k transiciones en la cola peligrosa
-                for i in range(self.nk + 1):
+                for i in range(min(self.nk + 1, len(self.temp_replay_memory))):
                     also_dangerous = self.temp_replay_memory.pop()
                     self.danger_memory.append(also_dangerous)
 

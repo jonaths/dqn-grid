@@ -36,8 +36,8 @@ args = args_struct(
     save_steps=1000,
     copy_steps=500,
 
-    # render=False,
-    render=True,
+    render=False,
+    # render=True,
 
     path='results/' + exp_time + '/' + 'models/my_dqn.ckpt',
 
@@ -194,7 +194,7 @@ with tf.Session() as sess:
                 state_one_hot = np.eye(num_states)[s]
                 fear = agent.online_fear.eval(feed_dict={X_state: [state_one_hot]})
                 risk_map.append(fear)
-            plot_heatmap(np.array(risk_map), input_height, input_width, index=None,
+            plot_heatmap(1-np.array(risk_map), input_height, input_width, index=None,
                          file_name='results/' + exp_time + '/' + 'plots/' + step_prefix + 'riskmap.png')
 
         # Online DQN evaluates what to do

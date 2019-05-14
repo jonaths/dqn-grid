@@ -2,19 +2,19 @@
 
 import matplotlib.pyplot as plt
 from plotters.line_plotter import LinesPlotter
-from collections import Counter
-
+import numpy as np
 output_folder = 'plots/'
 exp_name = 'exp_name'
-danger_states = [0, 70]
 
-# experiments_list = [
-#     'rev01/cartpole/04-no-rms', 'rev01/cartpole/05-rms-in2',
-#     'rev01/cartpole/06-rms-in4', 'rev02/06-sarsa'
-
+# para varios experimentos en un solo data.npy
 experiments_list = [
-    '1556642255_lmb-0_k-05'
+    '1556826137-01',
+    '1556829021-02',
+    '1556831512-03'
 ]
+
+merged = np.zeros(shape=(len(experiments_list), 3000, 3))
+
 labels = ['No RMS']
 lines = ['-', '--', ':', '-.']
 
@@ -23,9 +23,10 @@ fig, ax = plt.subplots()
 for i in range(len(experiments_list)):
     plotter = LinesPlotter.load_data('results/' + experiments_list[i] + '/data.npy',
                                      ['reward', 'steps', 'end_state'])
+    print(merged[i].shape, plotter.data.shape)
+    merged[i] = plotter.data[0]
 
-    print(plotter.data.shape)
-    end_states = plotter.data[0, :, 2]
-    print(Counter(end_states).keys())
-    print(Counter(end_states).values())
 
+print(merged.shape)
+
+np.save('data.npy', merged)

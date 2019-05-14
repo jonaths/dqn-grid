@@ -8,6 +8,8 @@ from agents.dqn_lipton import DQNLiptonAgent
 import sys
 import time
 from helpers import tools
+import matplotlib.pyplot as plt
+
 
 from plotters.line_plotter import LinesPlotter
 from plotters.history import History
@@ -23,6 +25,8 @@ exp_path = path + '/' + 'results/' + exp_time
 os.mkdir(exp_path)
 os.mkdir(exp_path + '/' + 'plots')
 
+# al parecer no aprende. la grafica de recompen sa no convrge
+
 args_struct = namedtuple(
     'args',
     'env_name buckets number_steps learn_iterations, save_steps copy_steps '
@@ -30,7 +34,7 @@ args_struct = namedtuple(
 args = args_struct(
     env_name='CartPole-v0',
     buckets=(1, 1, 6, 12),
-    number_steps=50000,
+    number_steps=100000,
     learn_iterations=4,
     training_start=1000,
     save_steps=1000,
@@ -45,7 +49,7 @@ args = args_struct(
     # test=True,
 
     load=False,
-    # load='results/' + '1556640642_lmb-0_k-10' + '/' + 'models/my_dqn.ckpt',
+    # load='results/' + '1556820556' + '/' + 'models/my_dqn.ckpt',
 
     verbosity=1,
     batch_size=90
@@ -74,8 +78,9 @@ process_params = {
 
 # danger_states = [1, 70]
 danger_states = [0, 1, 2, 3, 4, 5, 66, 67, 68, 69, 70, 71]
-
-
+#
+# aqui voy... juntar en un data.npy los ultimos 3 experimentos y graficar
+# luego ver si puedo mejorar la grafica de aprendizaje y fallo variando parametros de la red
 
 n_outputs = env.action_space.n
 
@@ -83,9 +88,9 @@ n_outputs = env.action_space.n
 X_state = tf.placeholder(tf.float32, shape=[None, input_height * input_width])
 
 # And on to the epsilon-greedy policy with decaying epsilon
-eps_min = 0.1
+eps_min = 0.05
 eps_max = 1.0 if not args.test else eps_min
-eps_decay_steps = int(args.number_steps * 0.75)
+eps_decay_steps = int(args.number_steps * 0.50)
 
 # We need to preprocess the images to speed up training
 mspacman_color = np.array([210, 164, 74]).mean()
@@ -173,12 +178,12 @@ with tf.Session() as sess:
         if args.render:
             env.render()
 
-        if episode_count in [1000, 3000, 5000]:
+        if episode_count in [1000, 3000, 5000, 7000]:
 
             # if args.save_policy:
             step_prefix = '{:05d}'.format(episode_count) + '-'
             # las etiquetas en el orden de la tabla q
-            labels = ['<', '>']
+            labels = ['^', 'v']
 
             # genera el espacio de estados y recupera los valores q
             q_table = prepare_q_table(input_height, input_width, n_outputs, agent)
@@ -194,12 +199,17 @@ with tf.Session() as sess:
                 state_one_hot = np.eye(num_states)[s]
                 fear = agent.online_fear.eval(feed_dict={X_state: [state_one_hot]})
                 risk_map.append(fear)
+            # el 1 - es para que lo oscuro sea lo seguro
             plot_heatmap(1-np.array(risk_map), input_height, input_width, index=None,
                          file_name='results/' + exp_time + '/' + 'plots/' + step_prefix + 'riskmap.png')
 
         # Online DQN evaluates what to do
         q_values = agent.online_q_values.eval(feed_dict={X_state: [state]})
         action = agent.epsilon_greedy(q_values, step)
+
+        # print(q_values)
+        # print(action)
+        # input('')
 
         # action = input("Action: ")
         # fear = agent.online_fear.eval(feed_dict={X_state: [state]})
@@ -259,7 +269,9 @@ with tf.Session() as sess:
 
         fear = agent.online_fear.eval(feed_dict={X_state: [state]})
         risk_penalization = abs(agent.get_lambda(step) * fear)
-        y_val = rewards + agent.discount_rate * max_next_q_values - risk_penalization
+        y_val = rewards + continues * agent.discount_rate * max_next_q_values - risk_penalization
+
+
 
         # print("XXX")
         # print(y_val.shape)
@@ -321,3 +333,5 @@ with tf.Session() as sess:
             agent.saver.save(sess, args.path)
 
     plotter.save_data('results/' + exp_time + '/' + 'data')
+
+

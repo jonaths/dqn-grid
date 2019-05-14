@@ -2,6 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6efc7fa8-cf53-47f1-918a-b13a355d856e" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/tiny-dqn.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/tiny-dqn.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/agents/dqn_lipton.py" beforeDir="false" afterPath="$PROJECT_DIR$/agents/dqn_lipton.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/end-cummulative-exp_name.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/make_plots.py" beforeDir="false" afterPath="$PROJECT_DIR$/make_plots.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tiny_dqn.py" beforeDir="false" afterPath="$PROJECT_DIR$/tiny_dqn.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -17,8 +25,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/tiny_dqn.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="650">
-                  <caret line="207" column="26" selection-start-line="207" selection-start-column="26" selection-end-line="207" selection-end-column="26" />
+                <state relative-caret-position="390">
+                  <caret line="42" column="17" selection-start-line="42" selection-start-column="17" selection-end-line="42" selection-end-column="17" />
                   <folding>
                     <element signature="e#0#65#0" expanded="true" />
                   </folding>
@@ -27,20 +35,34 @@
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/results/1556651541/plots/03000-policy.png">
-              <provider selected="true" editor-type-id="images" />
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/results/1556651541/plots/03000-riskmap.png">
-              <provider selected="true" editor-type-id="images" />
+            <entry file="file://$PROJECT_DIR$/test.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="465">
+                  <caret line="31" column="25" selection-start-line="31" selection-start-column="25" selection-end-line="31" selection-end-column="25" />
+                  <folding>
+                    <element signature="e#25#56#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/helpers/policy_plotter.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="1530">
+                  <caret line="108" column="28" selection-start-line="108" selection-start-column="28" selection-end-line="108" selection-end-column="28" />
+                  <folding>
+                    <element signature="e#0#18#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/make_plots.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="225">
-                  <caret line="15" column="24" selection-end-line="33" />
+                <state relative-caret-position="690">
+                  <caret line="46" column="15" selection-start-line="46" selection-start-column="15" selection-end-line="46" selection-end-column="15" />
                   <folding>
                     <element signature="e#0#31#0" expanded="true" />
                   </folding>
@@ -51,22 +73,10 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/plot_generators/plot.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="150">
+                <state relative-caret-position="120">
                   <caret line="10" column="1" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
                   <folding>
                     <element signature="e#0#31#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/test.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="285">
-                  <caret line="19" selection-start-line="19" selection-end-line="19" />
-                  <folding>
-                    <element signature="e#25#56#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -79,8 +89,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/networks/qnetworks.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="990">
-                  <caret line="66" selection-start-line="66" selection-end-line="66" />
+                <state relative-caret-position="825">
+                  <caret line="55" column="58" selection-start-line="55" selection-start-column="58" selection-end-line="55" selection-end-column="58" />
                 </state>
               </provider>
             </entry>
@@ -88,8 +98,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/agents/dqn_lipton.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="759">
-                  <caret line="83" column="30" selection-start-line="83" selection-start-column="30" selection-end-line="83" selection-end-column="30" />
+                <state relative-caret-position="15">
+                  <caret line="28" column="13" selection-start-line="28" selection-start-column="13" selection-end-line="28" selection-end-column="13" />
                   <folding>
                     <element signature="e#0#29#0" expanded="true" />
                   </folding>
@@ -100,7 +110,7 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/helpers/tools.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1095">
+                <state relative-caret-position="1035">
                   <caret line="73" selection-start-line="73" selection-end-line="73" />
                   <folding>
                     <element signature="e#0#18#0" expanded="true" />
@@ -163,19 +173,20 @@
         <option value="$PROJECT_DIR$/helpers/tools.py" />
         <option value="$PROJECT_DIR$/results/make_plots.py" />
         <option value="$PROJECT_DIR$/results/1556586291_lmb-0/readme.txt" />
-        <option value="$PROJECT_DIR$/make_plots.py" />
         <option value="$PROJECT_DIR$/agents/dqn.py" />
+        <option value="$PROJECT_DIR$/results/1556651541_lmb-0_k-05/readme.txt" />
         <option value="$PROJECT_DIR$/agents/dqn_lipton.py" />
-        <option value="$PROJECT_DIR$/test.py" />
         <option value="$PROJECT_DIR$/tiny_dqn.py" />
+        <option value="$PROJECT_DIR$/make_plots.py" />
+        <option value="$PROJECT_DIR$/test.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1773" />
-    <option name="y" value="264" />
-    <option name="width" value="996" />
-    <option name="height" value="557" />
+    <option name="x" value="1366" />
+    <option name="y" value="25" />
+    <option name="width" value="1920" />
+    <option name="height" value="1055" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -227,27 +238,7 @@
               <item name="tiny-dqn" type="b2602c69:ProjectViewProjectNode" />
               <item name="tiny-dqn" type="462c0819:PsiDirectoryNode" />
               <item name="results" type="462c0819:PsiDirectoryNode" />
-              <item name="1556651494" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="tiny-dqn" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tiny-dqn" type="462c0819:PsiDirectoryNode" />
-              <item name="results" type="462c0819:PsiDirectoryNode" />
-              <item name="1556651494" type="462c0819:PsiDirectoryNode" />
-              <item name="plots" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="tiny-dqn" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tiny-dqn" type="462c0819:PsiDirectoryNode" />
-              <item name="results" type="462c0819:PsiDirectoryNode" />
-              <item name="1556651541" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="tiny-dqn" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tiny-dqn" type="462c0819:PsiDirectoryNode" />
-              <item name="results" type="462c0819:PsiDirectoryNode" />
-              <item name="1556651541" type="462c0819:PsiDirectoryNode" />
-              <item name="plots" type="462c0819:PsiDirectoryNode" />
+              <item name="1556831512-03" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -259,26 +250,26 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/results/merged" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/results/merged" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/plot_generators" />
       <recent name="$PROJECT_DIR$/models" />
       <recent name="$PROJECT_DIR$/agents" />
-      <recent name="$PROJECT_DIR$/networks" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/results/1556831512-03" />
+      <recent name="$PROJECT_DIR$/results/1556829021-02" />
+      <recent name="$PROJECT_DIR$/results/1556829021-02/plots" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/plot_generators/test" />
-      <recent name="$PROJECT_DIR$/models/1539727651" />
-      <recent name="$PROJECT_DIR$/outputs/1539727651" />
-      <recent name="$PROJECT_DIR$/summaries" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -292,6 +283,35 @@
         </RuleState>
       </list>
     </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="tiny_dqn" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="tiny-dqn" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tiny_dqn.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.tiny_dqn" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -309,24 +329,28 @@
       <workItem from="1556313459279" duration="8912000" />
       <workItem from="1556486533263" duration="7390000" />
       <workItem from="1556575385058" duration="7621000" />
-      <workItem from="1556638081465" duration="10734000" />
+      <workItem from="1556638081465" duration="18633000" />
+      <workItem from="1556727363366" duration="4885000" />
+      <workItem from="1556737469060" duration="27000" />
+      <workItem from="1556820242479" duration="10119000" />
+      <workItem from="1557271524672" duration="244000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="50925000" />
+    <option name="totallyTimeSpent" value="74099000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1366" y="25" width="1920" height="1055" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14781217" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16275346" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39956802" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -387,97 +411,12 @@
       </map>
     </option>
   </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/tiny_dqn$tiny_dqn.coverage" NAME="tiny_dqn Coverage Results" MODIFIED="1556823943934" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/results/1556323888_lmb-01/plots/01000-riskmap.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/results/1556323888_lmb-01/plots/03000-riskmap.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/results/1556323888_lmb-01/plots/03000-policy.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/results/1556325272/plots/01000-riskmap.png" />
-    <entry file="file://$PROJECT_DIR$/results/1556325272/plots/01000-policy.png" />
-    <entry file="file://$PROJECT_DIR$/results/1556325272/plots/03000-policy.png" />
-    <entry file="file://$PROJECT_DIR$/results/1556325272/plots/03000-riskmap.png" />
-    <entry file="file://$PROJECT_DIR$/helpers/policy_plotter.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="18" column="43" selection-start-line="18" selection-start-column="43" selection-end-line="18" selection-end-column="43" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tiny_dqn_grid.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="207" column="27" lean-forward="true" selection-start-line="207" selection-start-column="27" selection-end-line="207" selection-end-column="27" />
-          <folding>
-            <element signature="e#0#65#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/results/1556490978/plots/03000-policy.png" />
-    <entry file="file://$PROJECT_DIR$/results/1556490978/plots/03000-riskmap.png" />
-    <entry file="file://$PROJECT_DIR$/results/1556490978/plots/01000-riskmap.png" />
-    <entry file="file://$PROJECT_DIR$/results/1556493818/plots/01000-policy.png" />
-    <entry file="file://$PROJECT_DIR$/results/1556493818/plots/01000-riskmap.png" />
-    <entry file="file://$PROJECT_DIR$/results/1556493818/plots/03000-policy.png" />
-    <entry file="file://$PROJECT_DIR$/results/1556493818/plots/03000-riskmap.png" />
-    <entry file="file://$PROJECT_DIR$/results/plotsend-cummulative-exp_name.png" />
-    <entry file="file://$PROJECT_DIR$/results/end-cummulative-exp_name.png" />
-    <entry file="file://$PROJECT_DIR$/results/1556586291_lmb-0_k-20/plots/01000-riskmap.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/results/1556586291_lmb-0_k-20/plots/01000-policy.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/results/1556586291_lmb-0_k-20/plots/03000-policy.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/results/1556586291_lmb-0_k-20/readme.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="76" selection-start-column="76" selection-end-column="76" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/end-cummulative-exp_name.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/networks/qnetworks.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="990">
-          <caret line="66" selection-start-line="66" selection-end-line="66" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/summaries/summaries.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" selection-start-line="19" selection-end-line="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/results/1556639325/plots/01000-riskmap.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/results/1556639325/plots/01000-policy.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/results/1556639325/plots/03000-policy.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/results/1556639325/plots/03000-riskmap.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/results/1556586291_lmb-0_k-20/plots/03000-riskmap.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/results/1556639325/plots/03000-riskmap.png" />
+    <entry file="file://$PROJECT_DIR$/results/1556586291_lmb-0_k-20/plots/03000-riskmap.png" />
     <entry file="file://$PROJECT_DIR$/agents/dqn.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="199">
@@ -488,9 +427,95 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/results/1556640642_lmb-0_k-10/plots/01000-riskmap.png" />
+    <entry file="file://$PROJECT_DIR$/results/1556640642_lmb-0_k-10/plots/01000-policy.png" />
+    <entry file="file://$PROJECT_DIR$/results/1556640642_lmb-0_k-10/plots/03000-policy.png" />
+    <entry file="file://$PROJECT_DIR$/results/1556640642_lmb-0_k-10/plots/03000-riskmap.png" />
+    <entry file="file://$PROJECT_DIR$/results/1556642255_lmb-0_k-05/plots/03000-riskmap.png" />
+    <entry file="file://$PROJECT_DIR$/results/1556642255_lmb-0_k-05/plots/03000-policy.png" />
+    <entry file="file://$PROJECT_DIR$/results/1556642255_lmb-0_k-05/plots/01000-policy.png" />
+    <entry file="file://$PROJECT_DIR$/results/1556642255_lmb-0_k-05/plots/01000-riskmap.png" />
+    <entry file="file://$PROJECT_DIR$/results/1556649819/plots/01000-riskmap.png" />
+    <entry file="file://$PROJECT_DIR$/results/1556651494/plots/00001-riskmap.png" />
+    <entry file="file://$PROJECT_DIR$/results/1556651541_lmb-0_k-05_n-01/plots/01000-policy.png" />
+    <entry file="file://$PROJECT_DIR$/results/1556651541_lmb-0_k-05_n-01/plots/01000-riskmap.png" />
+    <entry file="file://$PROJECT_DIR$/results/1556651541_lmb-0_k-05_n-01/plots/03000-policy.png" />
+    <entry file="file://$PROJECT_DIR$/results/1556651541_lmb-0_k-05_n-01/plots/03000-riskmap.png" />
+    <entry file="file://$PROJECT_DIR$/results/1556651541_lmb-0_k-05_n-01/readme.txt" />
+    <entry file="file://$PROJECT_DIR$/results/1556653053_lmb-0_k-05_n-03/plots/01000-policy.png" />
+    <entry file="file://$PROJECT_DIR$/results/1556655651_lmb-0_k-05_n-04/plots/01000-riskmap.png" />
+    <entry file="file://$PROJECT_DIR$/results/1556653053_lmb-0_k-05_n-03/plots/03000-riskmap.png" />
+    <entry file="file://$PROJECT_DIR$/results/1556655651_lmb-0_k-05_n-04/plots/03000-riskmap.png" />
+    <entry file="file://$PROJECT_DIR$/results/1556663196_k-05_n-01/plots/03000-policy.png" />
+    <entry file="file://$PROJECT_DIR$/results/1556663196_k-05_n-01/plots/03000-riskmap.png" />
+    <entry file="file://$PROJECT_DIR$/results/1556664139_k-05_n-02/plots/01000-riskmap.png" />
+    <entry file="file://$PROJECT_DIR$/results/1556665711_k-05_n-03/plots/03000-riskmap.png" />
+    <entry file="file://$PROJECT_DIR$/results/1556729008/plots/03000-riskmap.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/reward-1556731340.png" />
+    <entry file="file://$PROJECT_DIR$/results/1556731340/plots/01000-riskmap.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/results/1556820556/plots/01000-riskmap.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/results/1556820556/plots/01000-policy.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/results/1556820556/plots/03000-riskmap.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/results/1556820556/plots/03000-policy.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/results/1556824376/plots/01000-riskmap.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/results/1556824376/plots/01000-policy.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/results/1556826137-01/plots/01000-policy.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/results/1556826137-01/plots/01000-riskmap.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/results/1556826137-01/plots/03000-policy.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/results/1556829021-02/plots/reward-cartpole.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/results/1556829021-02/end-cummulative-cartpole.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/results/1556831512-03/reward-cartpole.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tiny_dqn.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="42" column="17" selection-start-line="42" selection-start-column="17" selection-end-line="42" selection-end-column="17" />
+          <folding>
+            <element signature="e#0#65#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/helpers/policy_plotter.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1530">
+          <caret line="108" column="28" selection-start-line="108" selection-start-column="28" selection-end-line="108" selection-end-column="28" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/plot_generators/plot.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
+        <state relative-caret-position="120">
           <caret line="10" column="1" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
           <folding>
             <element signature="e#0#31#0" expanded="true" />
@@ -498,53 +523,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/results/1556640642_lmb-0_k-10/plots/01000-riskmap.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/results/1556640642_lmb-0_k-10/plots/01000-policy.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/results/1556640642_lmb-0_k-10/plots/03000-policy.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/results/1556640642_lmb-0_k-10/plots/03000-riskmap.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/results/1556642255_lmb-0_k-05/plots/03000-riskmap.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/results/1556642255_lmb-0_k-05/plots/03000-policy.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/results/1556642255_lmb-0_k-05/plots/01000-policy.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/results/1556642255_lmb-0_k-05/plots/01000-riskmap.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/make_plots.py">
+    <entry file="file://$PROJECT_DIR$/networks/qnetworks.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="24" selection-end-line="33" />
-          <folding>
-            <element signature="e#0#31#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" selection-start-line="19" selection-end-line="19" />
-          <folding>
-            <element signature="e#25#56#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="825">
+          <caret line="55" column="58" selection-start-line="55" selection-start-column="58" selection-end-line="55" selection-end-column="58" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/helpers/tools.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1095">
+        <state relative-caret-position="1035">
           <caret line="73" selection-start-line="73" selection-end-line="73" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
@@ -552,43 +540,45 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/summaries/summaries.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" selection-start-line="19" selection-end-line="19" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/agents/dqn_lipton.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="759">
-          <caret line="83" column="30" selection-start-line="83" selection-start-column="30" selection-end-line="83" selection-end-column="30" />
+        <state relative-caret-position="15">
+          <caret line="28" column="13" selection-start-line="28" selection-start-column="13" selection-end-line="28" selection-end-column="13" />
           <folding>
             <element signature="e#0#29#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/results/1556649819/plots/01000-riskmap.png">
+    <entry file="file://$PROJECT_DIR$/results/1556831512-03/end-cummulative-cartpole.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/results/1556651494/plots/00001-riskmap.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/results/1556651541/plots/01000-policy.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/results/1556651541/plots/01000-riskmap.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tiny_dqn.py">
+    <entry file="file://$PROJECT_DIR$/test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="650">
-          <caret line="207" column="26" selection-start-line="207" selection-start-column="26" selection-end-line="207" selection-end-column="26" />
+        <state relative-caret-position="465">
+          <caret line="31" column="25" selection-start-line="31" selection-start-column="25" selection-end-line="31" selection-end-column="25" />
           <folding>
-            <element signature="e#0#65#0" expanded="true" />
+            <element signature="e#25#56#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/results/1556651541/plots/03000-policy.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/results/1556651541/plots/03000-riskmap.png">
-      <provider selected="true" editor-type-id="images" />
+    <entry file="file://$PROJECT_DIR$/make_plots.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="690">
+          <caret line="46" column="15" selection-start-line="46" selection-start-column="15" selection-end-line="46" selection-end-column="15" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
     </entry>
   </component>
 </project>

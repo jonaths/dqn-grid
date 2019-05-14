@@ -18,7 +18,7 @@ class DQNLiptonAgent(DQNAgent):
         self.safe_memory = deque([], maxlen=self.replay_memory_size)
         self.danger_memory = deque([], maxlen=self.replay_memory_size)
         # el numero de pasos al estado peligroso
-        self.nk = 5
+        self.nk = 4
         # learning and environment
         self.num_actions = num_actions
         self.eps_min = eps_min
@@ -55,15 +55,15 @@ class DQNLiptonAgent(DQNAgent):
         self.init = None
         self.merged = None
         self.saver = None
-        self.lmb = 5
+        self.lmb = 10
         self.lmb_phase_in = 10000
 
         pass
 
     def get_lambda(self, steps):
         lmb = min(self.lmb, 1. * self.lmb * steps / self.lmb_phase_in)
-        return 0
-        # return lmb
+        # return 0
+        return lmb
 
     def create_fear_networks(self):
         pass
